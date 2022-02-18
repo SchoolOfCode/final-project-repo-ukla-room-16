@@ -1,6 +1,6 @@
 
 
-const apiLink ='https://movie-quote-api.herokuapp.com/v1/quote/?censored';
+const apiLink ='   ';
 
 
 export async function getServerSideProps(){
@@ -12,16 +12,16 @@ export async function getServerSideProps(){
 } 
 
 
-const quotes = ({data}) => {
+const somename = ({data}) => {
     return (
         <div className={styles.container}>
-           <h1>Guess the movie...</h1> 
+           <h1>Something.</h1> 
 
-           <h3>{data.quote}</h3>
-<h3>{data.show}</h3>
+           <h3>{data.something}</h3>
+<h3>{data.somethingelse}</h3>
 
 
         
         </div>
     )}
-export default quotes
+export default somename
