@@ -7,20 +7,22 @@ const UserInput = () => {
 
   async function onSubmit(postText) {
     const postObj = {
-        familyID: 1,
-        userID: 3,
-        username: "Alan",
-        postText: "some string",
-        createdAt: "2019-10-04T12:00:17.000Z"
+      familyID: 1,
+      userID: 3,
+      username: "Alan",
+      postText: postText,
+      createdAt: "2019-10-04T12:00:17.000Z",
     };
-    
-    const res = await fetch(`${API_URL}/posts`, {
+
+    const request = new Request(`${API_URL}/posts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(postObj),
     });
-    const result = await res.json()
-    console.log(result)
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data)
+    alert("Post created")
   }
 
   function handleChange(e) {
