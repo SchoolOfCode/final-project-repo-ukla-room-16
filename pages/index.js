@@ -13,8 +13,8 @@ export default function Home() {
       <Image
       src={frontimage}
       alt="Picture of a family from grandparents, to children and grandchildren"
-      width="700em"
-      height="700em"
+      width="600em"
+      height="600em"
     />
 
 
