@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import UserInput from '../Components/UserInput';
-import Feed from '../components/Feed'
+import UserInput from '../component/UserInput';
+import Feed from '../component/Feed'
 
 export default function Home() {
   return (
