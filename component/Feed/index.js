@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Post from "./post/post";
+import Post from "./Post";
 
 function Feed() {
   const [feed, setFeed] = useState([]);
@@ -24,7 +24,7 @@ function Feed() {
     }
     getPosts();
   }, []);
-  console.log(API_URL)
+  
 
   if (error !== "") {
     return (
