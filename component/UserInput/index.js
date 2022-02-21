@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const UserInput = () => {
-  const URL = process.env.NEXT_PUBLIC_BACKEND_ROUTE
+  const URL = process.env.NEXT_PUBLIC_URL
   const [text, setText] = useState("");
   console.log(text);
 
