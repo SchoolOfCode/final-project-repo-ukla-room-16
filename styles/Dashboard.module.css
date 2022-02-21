@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboard {
+  width: 148px;
+  height: 90px;
+
+  background-color: red;
+}
+
+.header {
+  width: 1728px;
+  height: 83px;
+  left: 0px;
+  top: -13px;
+  background: #000000;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.searchBar {
+  width: 439px;
+  height: 74.76px;
+  margin-bottom: 2rem;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.tree {
+  border: 2px solid black;
+  width: 431px;
+  height: 344px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.events {
+  width: 431px;
+  height: 406px;
+  left: 1249px;
+  top: 593px;
+
+  background: rgba(15, 163, 177, 0.15);
+  box-shadow: 0px 4px 4px rgba(83, 79, 79, 0.25);
+  border-radius: 15px;
+}
