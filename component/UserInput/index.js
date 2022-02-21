@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const UserInput = () => {
-  const API_URL = "http://ukla16.herokuapp.com";
+  const API_URL = "https://ukla16.herokuapp.com";
   const [text, setText] = useState("");
   console.log(text);
 
