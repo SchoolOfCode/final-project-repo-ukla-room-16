@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Post from "./Post";
 
 function Feed() {
-  const URL = process.env.NEXT_PUBLIC_
+  const URL = process.env.NEXT_PUBLIC_BACKEND_ROUTE
   const [feed, setFeed] = useState([]);
   const [error, setError] = useState("");
 
