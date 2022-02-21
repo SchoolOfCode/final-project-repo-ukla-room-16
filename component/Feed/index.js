@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import Post from "./Post";
 
 function Feed() {
+  const URL = process.env.NEXT_PUBLIC_
   const [feed, setFeed] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
     async function getPosts() {
       try {
-        const response = await fetch(`https://ukla16.herokuapp.com/posts`);
+        const response = await fetch(`${URL}/posts`);
         const data = await response.json();
         if (data.success === true) {
           setFeed(data.payload);

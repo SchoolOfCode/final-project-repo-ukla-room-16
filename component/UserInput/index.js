@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const UserInput = () => {
-  const API_URL = "http://ukla16.herokuapp.com";
+  const URL = process.env.NEXT_PUBLIC_
   const [text, setText] = useState("");
   console.log(text);
 
@@ -14,7 +14,7 @@ const UserInput = () => {
       created_at: "2019-10-04T11:00:17.000Z",
     };
 
-    const res = await fetch(`${API_URL}/posts`, {
+    const res = await fetch(`${URL}/posts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(postObj),
