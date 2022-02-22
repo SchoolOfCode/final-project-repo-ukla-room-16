@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import frontimage from "../images/familia_frontpage_image.jpg"
-import logofamilia from "../images/Familia.png"
+import logofamilia from "../images/Familia_logo_name.png"
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0';
 
