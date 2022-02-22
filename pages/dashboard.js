@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Dashboard.module.css";
 import UserInput from "../component/UserInput";
 import Feed from "../component/Feed";
-import landingPic from "../images/Familia9.png";
+import logo from "../images/Familia9.png";
 import addIcon from "../images/icons8-add-100.png";
 import familytree from "../images/familytree.jpg";
 import userProfilePicture from "../images/user-icon.jpeg"
@@ -14,7 +14,7 @@ export default function Dashboard() {
     <div>
       <header className={styles.header}>
      
-       <Image src={landingPic} width="150px" height="150px" />
+       <Image src={logo} width="150px" height="150px" />
      <p> My family name</p> 
       
        <Image src={userProfilePicture} width="80px" height="80px" />
