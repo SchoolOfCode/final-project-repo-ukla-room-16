@@ -13,7 +13,9 @@ function Feed() {
         const response = await fetch(`${URL}/posts`);
         const data = await response.json();
         if (data.success === true) {
-          setFeed(data.payload);
+          setFeed(data.payload.sort((a,b) => {
+            return b.created_at - a.created_at
+          }));
           console.log(feed)
           setError("");
         } else {
@@ -35,6 +37,7 @@ function Feed() {
       </div>
     );
   }
+
 
   return (
     <div className={styles.feed}>
