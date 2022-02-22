@@ -4,7 +4,7 @@ import styles from "../../styles/UserInput.module.css"
 
 const UserInput = () => {
   // const URL = process.env.NEXT_PUBLIC_URL
-  const URL ="https://ukla16.herokuapp.com"
+  const URL ="https://ukla16.herokuapp.com";
   const [text, setText] = useState("");
   console.log(text);
 
