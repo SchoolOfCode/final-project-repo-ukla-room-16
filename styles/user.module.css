@@ -44,3 +44,19 @@
   align-content: space-between;
 
 }
+
+.info {
+  display: inline-grid;
+  row-gap: 20px;
+  grid-template-rows: repeat(2, 150px);
+  
+  
+
+
+
+  /* flex-direction: column;
+  justify-content:space-between;
+  align-items: baseline; */
+  /* align-content:space-around; */
+}
+

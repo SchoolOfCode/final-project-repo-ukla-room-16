@@ -6,14 +6,14 @@ export default function User(){
     return (
         <div className={css.container}>
             <div className={css.profile}>
-                <img src="https://www.pngitem.com/pimgs/m/90-906935_animated-faces-my-hero-design-clip-art-woman.png" alt="user-profile-picure" />
+                <img src="//www.pngitem.com/pimgs/m/90-906935_animated-faces-my-hero-design-clip-art-woman.png"/>
                 <h1> Username </h1>
                 <h2> Dob </h2>
                 <p> email address </p>
                 <p> mobile number </p>
                 <p> home address </p>
             </div>
-
+<div className={css.info}>
             <div className={css.favouriteFood}>
                 <img src="https://ak.picdn.net/shutterstock/videos/1085657018/thumb/11.jpg?ip=x480" />
                 <h6> Favourite Food: </h6>
@@ -60,5 +60,5 @@ export default function User(){
                 </p>
             </div>
         </div>
-    )
+  </div>  )
 }
