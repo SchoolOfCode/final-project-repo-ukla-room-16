@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import styles from "../../styles/UserInput.module.css"
+
 const UserInput = () => {
   const URL = process.env.NEXT_PUBLIC_
   const [text, setText] = useState("");
@@ -28,9 +30,9 @@ const UserInput = () => {
   }
 
   return (
-    <div>
-      <input type="text" onChange={handleChange} />
-      <button onClick={() => onSubmit(text)}>Submit</button>
+    <div className={styles.container}>
+      <input className={styles.textinput} type="text" onChange={handleChange} placeholder="Shout out to your love ones:" />
+      <button className={styles.submitbutton} onClick={() => onSubmit(text)}>Post</button>
     </div>
   );
 };
