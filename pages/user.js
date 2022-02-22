@@ -5,6 +5,8 @@ import meal from '../images/meal.jpeg';
 import profile from '../images/profile.jpeg';
 import medicals from '../images/medicals.jpeg';
 import clothes from '../images/clothes.jpeg';
+import shoes from '../images/shoes-icon.jpeg'
+
 
 
 export default function User(){
@@ -30,14 +32,14 @@ export default function User(){
             </div>
 
             <div className={css.medicals}>
-                <img src={medicals} alt="medical-info" />
+                <Image src={medicals} alt="medical-info"  width="100px" height="100"/>
                 <h6> Blood type: o- </h6>
               
                 <h6> Allergies: No allergies </h6>
             </div>
 
             <div className={css.clothesSize}>
-                <img src={clothes} alt="clothes-size" />
+                <Image src={clothes} alt="clothes-size"  width="100px" height="100" />
                 <h6> Clothes size </h6>
                 <p>
                     <ul>
@@ -53,7 +55,7 @@ export default function User(){
             </div>
 
             <div className={css.shoeSize}>
-                <img src="https://i.pinimg.com/550x/de/13/be/de13bedba8ab6783e2e460ff0e58e0a5.jpg" alt="shoe-size" />
+                <Image src={shoes} alt="shoe-size" width="100px" height="100"/>
                <h6> Shoe size </h6>
                 <p>
                     <ul>
