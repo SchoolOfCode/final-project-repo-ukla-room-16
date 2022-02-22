@@ -13,9 +13,7 @@ font-family:sans-serif
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg); */
-/* } */ 
-
-
+/* } */
 
 .container {
   padding: 0 2rem;
@@ -132,4 +130,29 @@ font-family:sans-serif
     width: 100%;
     flex-direction: column;
   }
+}
+
+.home {
+  display: flex;
+  justify-content: space-around;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.top {
+  background-color: orange;
+}
+
+.box {
+  padding: 20% 15% 20% 15%;
+  width: 100%;
+  background: orange;
+  border-radius: 10px;
+}
+
+.login:hover {
+  color: white;
 }
