@@ -1,14 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import UserInput from "../component/UserInput";
-import Feed from "../component/Feed";
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import frontimage from "../images/familia_frontpage_image.jpg"
 import logofamilia from "../images/Familia2.png"
-import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0';
 
 export default function Home() {
