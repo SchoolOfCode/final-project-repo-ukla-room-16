@@ -4,6 +4,7 @@ import Image from 'next/image';
 import meal from '../images/meal.jpeg';
 import profile from '../images/profile.jpeg';
 import medicals from '../images/medicals.jpeg';
+import clothes from '../images/clothes.jpeg';
 
 
 export default function User(){
@@ -36,7 +37,7 @@ export default function User(){
             </div>
 
             <div className={css.clothesSize}>
-                <img src="https://thumbs.dreamstime.com/b/clothes-logo-template-vector-icon-design-181127120.jpg" alt="clothes-size" />
+                <img src={clothes} alt="clothes-size" />
                 <h6> Clothes size </h6>
                 <p>
                     <ul>
