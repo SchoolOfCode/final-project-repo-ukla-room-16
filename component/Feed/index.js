@@ -3,7 +3,7 @@ import Post from "./Post";
 import styles from "../../styles/Feed.module.css";
 
 function Feed() {
-  const URL = process.env.NEXT_PUBLIC_
+  const URL = process.env.NEXT_PUBLIC_URL
   const [feed, setFeed] = useState([]);
   const [error, setError] = useState("");
 
