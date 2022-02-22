@@ -11,12 +11,26 @@
   text-align: center;
 }
 
+.info {
+  display: inline-grid;
+  grid-template-rows: repeat(2, 150px);
+  gap: 10px 10px;
+  grid-template-areas:
+    "favouriteFood"
+    "medicals"
+    "clothesSize"
+    "shoeSize";
+}
+
 .favouriteFood {
+  grid-area: favouriteFood;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
   align-content: space-between;
+  color: black;
+  text-align: left;
 }
 
 .medicals {
@@ -46,26 +60,5 @@
 
 }
 
-.info {
-  display: inline-grid;
-  /* row-gap: 20px; */
-  grid-template-rows: repeat(2, 150px);
-  gap: 10px 10px;
-  grid-template-areas:
-    "favouriteFood"
-    "medicals"
-    "clothesSize"
-    "shoeSize";
-  /* margin: auto;
-  height: 100vh; */
-  
-
-
-
-  /* flex-direction: column;
-  justify-content:space-between;
-  align-items: baseline; */
-  /* align-content:space-around; */
-}
 
 
