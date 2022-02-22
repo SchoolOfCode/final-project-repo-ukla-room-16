@@ -42,14 +42,22 @@
   justify-content: space-between;
   align-items: stretch;
   align-content: space-between;
+  color: red;
 
 }
 
 .info {
   display: inline-grid;
-  row-gap: 20px;
+  /* row-gap: 20px; */
   grid-template-rows: repeat(2, 150px);
-  
+  gap: 10px 10px;
+  grid-template-areas:
+    "favouriteFood"
+    "medicals"
+    "clothesSize"
+    "shoeSize";
+  /* margin: auto;
+  height: 100vh; */
   
 
 
@@ -59,4 +67,5 @@
   align-items: baseline; */
   /* align-content:space-around; */
 }
+
 
