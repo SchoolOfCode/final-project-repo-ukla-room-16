@@ -1,54 +1,101 @@
+.header {
+  width: 98vw;
+  height: 10vh;
+  background: rgba(255, 232, 130, 0.4);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+ 
+}
 .container {
   display: flex;
+  width: 98vw;
   flex-direction: row;
   justify-content: space-between;
+  /* border: 3px green solid; */
+
+}
+
+/* .container > * {
   border: 3px green solid;
 
+} */
+
+.leftcolumn {
+  width: 20vw;
 }
 
-.container > * {
-  border: 3px green solid;
-
+.middlecolumn {
+  width: 55vw;
 }
 
-.dashboard {
-  width: 148px;
-  height: 90px;
-
-  background-color: red;
+.rightcolumn {
+  width: 20vw;
 }
 
-.header {
-  width: 100vw;
-  height: 10vh;
-  background: #ffd2d2;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+
+.searchcontainer {
+display: flex;
+border: 1px solid #121212;
+box-sizing: border-box;
+border-radius: 10px;
 }
 
 .searchBar {
-  width: 439px;
-  height: 74.76px;
-  margin-bottom: 2rem;
-  border: 1px solid #000000;
+  width: 100%;
+  font-size: 20px;
+  border:none;
+  box-sizing: border-box;
   border-radius: 10px;
 }
 
+.searchbutton {
+  display: inline-block;
+  padding: 0.7em 0.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3369ff;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+}
+.searchbutton:active {
+  box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+}
+@media all and (max-width: 30em) {
+  .searchbutton {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+
+
+
 .tree {
   border: 2px solid black;
-  width: 431px;
+  width: 100%;
   height: 344px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
+  margin-top: 10px;
 }
 
 .events {
-  width: 431px;
+  width: 100%;
   height: 406px;
-  left: 1249px;
-  top: 593px;
-
   background: rgba(15, 163, 177, 0.15);
   box-shadow: 0px 4px 4px rgba(83, 79, 79, 0.25);
   border-radius: 15px;
+  margin-top: 10px;
 }

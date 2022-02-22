@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Post from "./Post";
+import styles from "../../styles/Feed.module.css";
 
 function Feed() {
   const URL = process.env.NEXT_PUBLIC_
@@ -36,7 +37,7 @@ function Feed() {
   }
 
   return (
-    <div>
+    <div className={styles.feed}>
       {feed.map((item) => {
         return (
           <Post

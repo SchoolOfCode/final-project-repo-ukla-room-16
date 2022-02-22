@@ -31,7 +31,7 @@ const UserInput = () => {
 
   return (
     <div className={styles.container}>
-      <input className={styles.textinput} type="text" onChange={handleChange} placeholder="Shout out to your love ones:" />
+      <input className={styles.textinput} type="text" onChange={handleChange} placeholder="Shout out to your loved ones:" />
       <button className={styles.submitbutton} onClick={() => onSubmit(text)}>Post</button>
     </div>
   );

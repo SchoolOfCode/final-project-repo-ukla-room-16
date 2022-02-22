@@ -3,13 +3,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 725.23px;
-  height: 74.76px;
+  width: 90%;
 
   background: #ffffff;
   border: 1px solid #121212;
   box-sizing: border-box;
   border-radius: 10px;
+
 }
 
 .textinput {
@@ -20,7 +20,7 @@
 
 
 .submitbutton {
-  display: inline-block;
+  /* display: inline-block; */
   padding: 0.7em 1.7em;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.2em;
