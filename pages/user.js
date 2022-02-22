@@ -1,12 +1,16 @@
 import Head from 'next/head';
 import css from '../styles/user.module.css';
+import Image from 'next/image';
+import meal from '../images/meal.jpeg';
+import profile from '../images/profile.jpeg';
+import medicals from '../images/medicals.jpeg';
 
 
 export default function User(){
     return (
         <div className={css.container}>
             <div className={css.profile}>
-                <img src="//www.pngitem.com/pimgs/m/90-906935_animated-faces-my-hero-design-clip-art-woman.png"/>
+                <Image src={profile} alt="user-profile" width="100px" height="100"/>
                 <h1> Username </h1>
                 <h2> Dob </h2>
                 <p> email address </p>
@@ -15,7 +19,7 @@ export default function User(){
             </div>
 <div className={css.info}>
             <div className={css.favouriteFood}>
-                <img src="https://ak.picdn.net/shutterstock/videos/1085657018/thumb/11.jpg?ip=x480" />
+                <Image src={meal} alt="favourite-meal" width="100px" height="100"/>
                 <h6> Favourite Food: </h6>
                 {/* <ul>
                     <li>
@@ -25,7 +29,7 @@ export default function User(){
             </div>
 
             <div className={css.medicals}>
-                <img src="https://media.istockphoto.com/vectors/medic-stethoscope-concept-logotype-template-design-business-logo-icon-vector-id1200712144?k=20&m=1200712144&s=612x612&w=0&h=sNMhJLCryisznj072aZ2TeSDSi90w3PJ8NuUR8ErxaM=" alt="medical-info" />
+                <img src={medicals} alt="medical-info" />
                 <h6> Blood type: o- </h6>
               
                 <h6> Allergies: No allergies </h6>
