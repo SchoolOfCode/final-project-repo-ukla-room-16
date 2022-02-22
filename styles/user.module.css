@@ -1,25 +1,46 @@
-
-  
-.user-container {
-
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
 }
 
 .profile {
-
+  align-items: center;
+  text-align: center;
 }
 
-.favourite-food {
-
+.favouriteFood {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-between;
 }
 
 .medicals {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-between;
+}
+
+.clothesSize {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-between;
 
 }
 
-.clothes-sizes {
-
-}
-
-.shoe-size {
+.shoeSize {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-between;
 
 }
