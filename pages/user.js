@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Css from '../styles/user.module.css';
 
+
 export default function User(){
     return (
         <div className="user-container">
