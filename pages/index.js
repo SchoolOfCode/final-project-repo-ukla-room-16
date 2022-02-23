@@ -6,7 +6,6 @@ import logofamilia from "../images/Familia2.png";
 import { useUser } from "@auth0/nextjs-auth0";
 import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
-import FamilyForm from "../component/CreateTree/FamilyForm";
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
@@ -38,7 +37,6 @@ export default function Home() {
         <br></br>
         <CreateTree />
         <button>Join a Tree</button>
-        <FamilyForm />
       </>
     );
   }

@@ -4,14 +4,12 @@ import FamilyForm from "./FamilyForm";
 function CreateTree() {
   const [display, setDisplay] = useState(false);
 
-  function buttonClick() {
-    setDisplay(true);
-  }
 
   return (
     <div>
-      {/* <button onClick={buttonClick}>Create A Tree</button> */}
-      <FamilyForm />
+      <button onClick={() => setDisplay(true)}>Create A Tree</button>
+      <FamilyForm onClose={() => setDisplay(false)}
+          display={display} setDisplay={setDisplay}/>
     </div>
   );
 }
