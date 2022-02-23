@@ -5,6 +5,7 @@ import frontimage from "../images/familia_frontpage_image.jpg";
 import logofamilia from "../images/Familia2.png";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
+import NewUsers from "../component/NewUser";
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
@@ -19,6 +20,8 @@ export default function Home() {
   if (user) {
     return (
       <>
+      <NewUsers user={user.name}/>
+      {console.log(user.name)}
         {/* here picking the full name of the user to display welcome message to */}
         <h1> Welcome {user.name}!</h1>
         {/* displaying a log out button under the welcome message */}
