@@ -5,15 +5,14 @@
 const NewUsers = ({ name, email }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
 
-  async function onLogin(name,email) {
+  async function onLogin(nameOfUser,emailOfUser) {
 
     const postObj = {
       family_id: 1,
-      full_name: name,
-      email: email
+      full_name: nameOfUser,
+      email: emailOfUser
     };
 
-    console.log(postObj)
 
     //fetching the users table
     const res = await fetch(`${URL}/users`, {
@@ -41,7 +40,7 @@ const NewUsers = ({ name, email }) => {
       }
   }
 
-  onLogin(name, email);
+  onLogin(name,email)
 
   return <div></div>;
 };
