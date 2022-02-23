@@ -147,10 +147,13 @@ font-family:sans-serif
 }
 
 .box {
-  padding: 20% 15% 20% 15%;
+  padding: 25% 35% 25% 35%;
   width: 100%;
-  background: orange;
+  background: rgba(255, 0, 0, 0.603);
   border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 
 .login:hover {
