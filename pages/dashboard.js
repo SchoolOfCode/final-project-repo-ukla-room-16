@@ -13,7 +13,7 @@ import gallery from "../images/gallery.png";
 import calendar from "../images/calendar.png";
 import contacts from "../images/contacts.png";
 
-export default function Dashboard() {
+export default function Home() {
   return (
     <div>
       <header className={styles.header}>
