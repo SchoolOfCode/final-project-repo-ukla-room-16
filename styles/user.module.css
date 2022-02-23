@@ -1,0 +1,23 @@
+.container {
+  background-color: #f1f6ed;
+}
+.subContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.subInfo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
+}
