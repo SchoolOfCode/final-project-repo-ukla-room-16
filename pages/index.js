@@ -12,6 +12,11 @@ import CreateTree from "../component/CreateTree";
 export default function Home() {
   const { user, error, isLoading } = useUser();
 
+<Head>
+        <title>Familia</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
 
