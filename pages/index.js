@@ -74,7 +74,7 @@ export default function Home() {
 
         <div className={styles.box}>
           <a href="/api/auth/login" className={styles.login}>
-            Login / Sign Up
+            Login - Sign Up
           </a>
         </div>
       </div>
