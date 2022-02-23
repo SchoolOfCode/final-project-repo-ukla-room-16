@@ -7,6 +7,7 @@ import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
 import { useState, useEffect } from "react";
+import EditableComponent from "../component/EditField";
 
 export default function User() {
   const [user, setUser] = useState({});
@@ -33,12 +34,35 @@ export default function User() {
     getUser();
   }, []);
 
+
+
+
+
+
+
+
+
   return (
     <div className={css.container}>
+
       <div className={css.subContainer}>
         <Image src={userProfile} width="259px" height="213px" />
+
+
+        
+      <EditableComponent Text={user.full_name}/>
+      <EditableComponent Text={user.email}/>
+      
+         
+
+
+
+
+{/* 
         <h2>{user.full_name}</h2>
-        <button>EDIT</button>
+
+
+        <button>EDIT</button> */}
         <h3> DOB </h3>
         <p> Email Address </p>
         <p> Mobile Number </p>
@@ -78,3 +102,5 @@ export default function User() {
     </div>
   );
 }
+
+
