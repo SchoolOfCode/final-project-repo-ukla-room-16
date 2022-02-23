@@ -6,13 +6,39 @@ import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
+import { useState, useEffect } from "react";
 
 export default function User() {
+  const [user, setUser] = useState({});
+  const [error, setError] = useState("");
+  const URL = process.env.NEXT_PUBLIC_URL;
+  console.log(user)
+
+  useEffect(() => {
+    async function getUser() {
+      try {
+        const response = await fetch(`${URL}/users/1`);
+        const data = await response.json();
+        if (data.success === true) {
+          setUser(data.payload[0]);
+          setError("");
+        } else {
+          setError("Fetch didn't work :(");
+        }
+      } catch (err) {
+        console.log(err);
+        setError(err.message);
+      }
+    }
+    getUser();
+  }, []);
+
   return (
     <div className={css.container}>
       <div className={css.subContainer}>
         <Image src={userProfile} width="259px" height="213px" />
-        <h2>User Name</h2>
+        <h2>{user.full_name}</h2>
+        <button>EDIT</button>
         <h3> DOB </h3>
         <p> Email Address </p>
         <p> Mobile Number </p>
