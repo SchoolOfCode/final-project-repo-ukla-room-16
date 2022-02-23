@@ -1,4 +1,7 @@
 //PASSING IN THE PROP USERS (WITH JUST THE NAME AND EMAIL)
+
+
+
 const NewUsers = ({ name, email }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
 
@@ -31,7 +34,9 @@ const NewUsers = ({ name, email }) => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(postObj),
-        })};
+        })
+      const data = await res.json()
+    console.log(data)};
         postUsers()
       }
   }

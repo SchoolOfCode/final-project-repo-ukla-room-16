@@ -5,6 +5,7 @@ import frontimage from "../images/familia_frontpage_image.jpg";
 import logofamilia from "../images/Familia2.png";
 import { useUser } from "@auth0/nextjs-auth0";
 import NewUsers from "../component/NewUser";
+import CreateTree from "../component/CreateTree";
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
@@ -32,6 +33,10 @@ export default function Home() {
 
         {/* displaying a log out button under the welcome message */}
         <a href="/api/auth/logout">Logout</a>
+
+        <br></br>
+        <CreateTree />
+        <button>Join a Tree</button>
       </>
     );
   }
