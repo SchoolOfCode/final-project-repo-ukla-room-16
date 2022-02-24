@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import frontimage from "../images/familia_frontpage_image.jpg";
+//import frontimage from "../images/familia_frontpage_image.jpg";
 
-import logofamilia from "../images/Familia9.png";
+//import logofamilia from "../images/Familia9.png";
 
 import { useUser } from "@auth0/nextjs-auth0";
 import NewUsers from "../component/NewUser";
@@ -19,7 +19,7 @@ export default function Home() {
 
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
-
+familia
 
   //display error message in case of issue
   if (error) return <div>{error.message}</div>;
@@ -55,19 +55,19 @@ export default function Home() {
         <h1 className={styles.title}>
           {/* Familia </h1> */}
 
-          <Image
+          {/* <Image
             src={logofamilia}
             alt="logo saying Familia, the name of our app"
             className={styles.logo}
-          />
+          /> */}
         </h1>
         {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
-        <Image
+        {/* <Image
           src={frontimage}
           alt="Picture of a family from grandparents, to children and grandchildren"
           width="1000em"
           height="450em"
-        />
+        /> */}
       </div>
       <div className={styles.right}>
         {/* auth0 button to go to login/sign up box */}
