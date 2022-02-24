@@ -53,7 +53,7 @@ export default function User() {
           <div className={css.subInfo}>
             <Image src={meal} width="85px" height="90px" />
             <ul>
-              <p>Favourite foods: Sushi - Pasta.</p>
+              <p>Favourite foods: {user.fav_food}</p>
             </ul>
           </div>
           <div className={css.subInfo}>
@@ -66,8 +66,8 @@ export default function User() {
           <div className={css.subInfo}>
             <Image src={clothes} width="80px" height="90px" />
             <ul>
-              <p>Upper-Body: Medium</p>
-              <p>Lower-Body: 33 cm</p>
+              <p>Upper-Body: {user.clothes_size_upper}</p>
+              <p>Lower-Body: {user.clothes_size_lower}</p>
             </ul>
           </div>
           <div className={css.subInfo}>

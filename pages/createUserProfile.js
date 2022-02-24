@@ -28,15 +28,20 @@ export default function createUserProfile() {
   const [emergencyContact, setEmergencyContact] = useState("");
 
   async function handleClick() {
-    
-    const response = await fetch(`${URL}/users/1`, {
+    const updatesArray = [{ profile_name: userName}, {email: email}, {mobile_number: mobile}];
+    console.log("testing!!!!!!!!!!", updatesArray[0])
+    updatesArray.forEach(async (update) => {
+      console.log(update)
+      const response = await fetch(`${URL}/users/1`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ profile_name: userName, email: email }),
+      body: JSON.stringify({ profile_name: userName}),
     });
 
     const data = await response.json();
     console.log(data);
+    })
+    
     router.push("/user");
   }
 
@@ -45,7 +50,7 @@ export default function createUserProfile() {
   }
 
   function emailAddy(e) {
-    setAddress(e.target.value);
+    setEmail(e.target.value);
   }
   function dateOfBirth(e) {
     setDob(e.target.value);
