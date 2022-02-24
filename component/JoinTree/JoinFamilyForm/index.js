@@ -31,39 +31,8 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
 
   //WHEN YOU CLICK THE SUBMIT BUTTON, THIS FUNCTION TAKES PLACE. IT TAKES IN THE TEXT ENTERED BY THE USER AS ITS PARAMETER
   async function onSubmit(familyName) {
-    //POSTING TO NEW FAMILY TO FAMILIES TABLE FROM LINES 36-65
-    const familyPostObj = {
-      name: familyName,
-    };
 
-    //FETCHING THE FAMILIES TABLE
-    const familyRes = await fetch(`${URL}/families`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    const familyData = await familyRes.json();
-    console.log(familyData);
-
-    //CHECKING IF THAT FAMILY EXISTS
-    const indexOfFamily = familyData.payload.findIndex((family) => {
-      return family.name === familyPostObj.name;
-    });
-
-    //IF THAT FAMILY DOES NOT EXIST, ADD THEM TO THE FAMILIES TABLE
-    if (indexOfFamily === -1) {
-      async function postFamilies() {
-        const familyPostRes = await fetch(`${URL}/families`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(familyPostObj),
-        });
-        const familyPostData = await familyPostRes.json();
-        console.log(familyPostData);
-      }
-      postFamilies();
-    }
-
-    //FIND THE USER ID OF THE PERSON TRYING TO ADD TO THEIR FAMILY TABLE
+    //FIND THE USER ID OF THE PERSON TRYING TO JOIN THE TREE
 
     //FETCHING THE USERS TABLE
     const userRes = await fetch(`${URL}/users`, {
@@ -82,7 +51,7 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
     //A FUNCTION TO CHANGE THE FAMILY_ID IN THE USERS TABLES
     async function passingFamilyIdOnSubmit(familyName) {
 
-      //FETCH FROM FAMILIES AGAIN WITH THE NEW POSTED FAMILY NAME
+      //FETCH FROM FAMILIES 
       const familyRes = await fetch(`${URL}/families`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -94,6 +63,10 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
       const indexOfFamilyName = familyData.payload.findIndex((family) => {
         return family.name === familyName;
       });
+
+      if(indexOfFamilyName === -1) {
+        return alert("Family does not exist")
+      }
       const idOfFamilyName = familyData.payload[indexOfFamilyName].id;
 
       //NOW THAT WE HAVE THE USER ID, AND THE FAMILY ID, WE NEED TO PUT THIS INFORMATION IN THE USERS TABLE. REMEMBER FOR UPDATING USERS IN THE USERS TABLE, WE DO UPDATE USERS BY ID.
@@ -130,14 +103,15 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
         </div>
         <div className={styles.body}>
           {
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.form}>
               <input
-                placeholder="Family Name"
+                placeholder="Enter your existing family name"
                 onChange={handleChange}
                 value={text}
                 required
+                className={styles.input}
               />
-              <button onClick={() => onSubmit(text)}>Submit</button>
+              <button onClick={() => onSubmit(text)} className={styles.submit}>Submit</button>
             </form>
           }
         </div>

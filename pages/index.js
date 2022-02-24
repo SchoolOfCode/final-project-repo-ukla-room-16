@@ -27,20 +27,27 @@ export default function Home() {
 
   if (user) {
     return (
-      <>
-        {/* here we are passing down the name and email of the user as a prop */}
-        <NewUsers name={user.name} email={user.email} />
+      <div className={styles.tree}>
+        <div className={styles.user}>
+          {/* here we are passing down the name and email of the user as a prop */}
+          <NewUsers name={user.name} email={user.email} />
 
-        {/* here picking the full name of the user to display welcome message to */}
-        <h1> Welcome {user.name}!</h1>
+          {/* here picking the full name of the user to display welcome message to */}
+          <h1 className={styles.welcome}> Welcome {user.name}!</h1>
 
-        {/* displaying a log out button under the welcome message */}
-        <a href="/api/auth/logout">Logout</a>
-
-        <br></br>
-        <CreateTree email={user.email} />
-        <JoinTree email={user.email} />
-      </>
+          {/* displaying a log out button under the welcome message */}
+          <div className={styles.imageAndLogout}>
+            <img src={user.picture} className={styles.userimage}></img>
+          <button className={styles.logoutbutton}>
+            <a href="/api/auth/logout">Logout</a>
+          </button>
+          </div>
+        </div>
+        <div className={styles.treebutton}>
+          <CreateTree email={user.email} />
+          <JoinTree email={user.email} />
+        </div>
+      </div>
     );
   }
 

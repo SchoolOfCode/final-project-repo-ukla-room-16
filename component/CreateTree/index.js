@@ -1,5 +1,6 @@
 import { useState } from "react";
-import FamilyForm from "./FamilyForm";
+import FamilyForm from "./CreateFamilyForm";
+import styles from "../../styles/JoinTree.module.css";
 
 function CreateTree({email}) {
   const [display, setDisplay] = useState(false);
@@ -7,7 +8,7 @@ function CreateTree({email}) {
 
   return (
     <div>
-      <button onClick={() => setDisplay(true)}>Create A Tree</button>
+      <button onClick={() => setDisplay(true)} className={styles.button}>Create A Tree</button>
       <FamilyForm onClose={() => setDisplay(false)}
           display={display} setDisplay={setDisplay} email={email}/>
     </div>

@@ -49,6 +49,20 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
       return family.name === familyPostObj.name;
     });
 
+    //IF THAT FAMILY DOES NOT EXIST, ADD THEM TO THE FAMILIES TABLE
+    if (indexOfFamily === -1) {
+      async function postFamilies() {
+        const familyPostRes = await fetch(`${URL}/families`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(familyPostObj),
+        });
+        const familyPostData = await familyPostRes.json();
+        console.log(familyPostData);
+      }
+      postFamilies();
+    }
+
     //FIND THE USER ID OF THE PERSON TRYING TO ADD TO THEIR FAMILY TABLE
 
     //FETCHING THE USERS TABLE
@@ -67,6 +81,7 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
 
     //A FUNCTION TO CHANGE THE FAMILY_ID IN THE USERS TABLES
     async function passingFamilyIdOnSubmit(familyName) {
+
       //FETCH FROM FAMILIES AGAIN WITH THE NEW POSTED FAMILY NAME
       const familyRes = await fetch(`${URL}/families`, {
         method: "GET",
@@ -115,14 +130,15 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
         </div>
         <div className={styles.body}>
           {
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.form}>
               <input
-                placeholder="Enter your existing family name"
+                placeholder="Family Name"
                 onChange={handleChange}
                 value={text}
                 required
+                className={styles.input}
               />
-              <button onClick={() => onSubmit(text)}>Submit</button>
+              <button onClick={() => onSubmit(text)} className={styles.submit}>Submit</button>
             </form>
           }
         </div>
