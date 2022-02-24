@@ -8,6 +8,7 @@ import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
 import { useState, useEffect } from "react";
 import EditableComponent from "../component/EditableComponent";
+import Link from "next/link";
 
 export default function User() {
   const [user, setUser] = useState({});
@@ -38,7 +39,9 @@ export default function User() {
     <div className={css.container}>
       <div className={css.subContainer}>
         <Image src={userProfile} width="259px" height="213px" />
-
+        <Link href="/createUserProfile">
+          <a>createUserProfile</a>
+        </Link>
         <p>{user.full_name}</p>
         <h3> {user.dob} </h3>
         <p> {user.email} </p>
