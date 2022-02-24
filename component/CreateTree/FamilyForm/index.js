@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
-import styles from "../../../styles/CreateTree.module.css"
+import styles from "../../../styles/CreateTree.module.css";
 
 function FamilyForm({ display, setDisplay, onClose }) {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -29,7 +29,7 @@ function FamilyForm({ display, setDisplay, onClose }) {
 
   async function onSubmit(familyName) {
     const postObj = {
-      name: familyName
+      name: familyName,
     };
 
     //fetching the families table
@@ -38,30 +38,95 @@ function FamilyForm({ display, setDisplay, onClose }) {
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
-    console.log(data)
-
+    console.log(data);
 
     //CHECKING IF THAT FAMILY EXISTS
-    const index = data.payload.findIndex(family => { return family.name === postObj.name})
+    const index = data.payload.findIndex((family) => {
+      return family.name === postObj.name;
+    });
 
     //IF THAT FAMILY DOES NOT EXIST, ADD THEM TO THE FAMILIES TABLE
-      if(index === -1) {
-        async function postFamilies() {
-          const res = await fetch(`${URL}/families`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(postObj),
-        })
-      const data = await res.json()
-    console.log(data)};
-        postFamilies()
+    if (index === -1) {
+      async function postFamilies() {
+        const res = await fetch(`${URL}/families`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(postObj),
+        });
+        const data = await res.json();
+        console.log(data);
       }
+      postFamilies();
     }
+
+    /*     const postObj = {
+      name: familyName,
+    }; */
+
+    //fetching the families table
+    const res = await fetch(`${URL}/users`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    console.log(data);
+
+    //CHECKING IF THAT FAMILY EXISTS
+    const index = data.payload.findIndex((family) => {
+      return family.name === postObj.name;
+    });
+
+    //IF THAT FAMILY DOES NOT EXIST, ADD THEM TO THE FAMILIES TABLE
+    if (index === -1) {
+      async function postFamilies() {
+        const res = await fetch(`${URL}/families`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(postObj),
+        });
+        const data = await res.json();
+        console.log(data);
+      }
+      postFamilies();
+    }
+
+    async function passingFamilyIdOnSubmit(familyName) {
+      const postObj = {
+        family_id: id,
+        //We're getting id info from line 75.
+      };
+
+      const res = await fetch(`${URL}/families`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      console.log(data);
+
+      //CHECKING IF THAT USER EXISTS
+      const index = data.payload.findIndex((family) => {
+        return family.name === familyName;
+      });
+      const id = data.payload[index].id;
+      //IF THAT USER DOES NOT EXIST, ADD THEM TO THE USERS TABLE
+
+      async function putFamilyIdToUser() {
+        const res = await fetch(`${URL}/users`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(postObj),
+        });
+        const data = await res.json();
+        console.log(data);
+      }
+      putFamilyIdToUser();
+    }
+    passingFamilyIdOnSubmit(familyName);
+  }
 
   function handleChange(e) {
     setText(e.target.value);
   }
-
 
   const modalContent = display ? (
     <div className={styles.overlay}>
@@ -97,6 +162,5 @@ function FamilyForm({ display, setDisplay, onClose }) {
     return null;
   }
 }
-
 
 export default FamilyForm;
