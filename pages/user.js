@@ -40,33 +40,34 @@ export default function User() {
       <div className={css.subContainer}>
         <Image src={userProfile} width="259px" height="213px" />
         <Link href="/createUserProfile">
-          <a>createUserProfile</a>
+          <a className={css.createProfile}>Update Profile</a>
         </Link>
-        <p>{user.full_name}</p>
+        <p>{user.profile_name}</p>
+        <p>{user.mobile_number}</p>
         <h3> {user.dob} </h3>
+        <p> {user.address} </p>
         <p> {user.email} </p>
-        <p> Mobile Number </p>
-        <p> Home Address </p>
+        <p> {user.gender} </p>
 
         <div className={css.info}>
           <div className={css.subInfo}>
             <Image src={meal} width="85px" height="90px" />
             <ul>
-              <p>Favourite foods: Sushi - Pasta.</p>
+              <p>Favourite foods: {user.fav_food}</p>
             </ul>
           </div>
           <div className={css.subInfo}>
             <Image src={medical} width="80px" height="50px" />
             <ul>
-              <p>Blood type: 0-</p>
-              <p>Allergies: None</p>
+              <p>Blood type:{user.blood_type} </p>
+              <p>Allergies: {user.allergies}</p>
             </ul>
           </div>
           <div className={css.subInfo}>
             <Image src={clothes} width="80px" height="90px" />
             <ul>
-              <p>Upper-Body: Medium</p>
-              <p>Lower-Body: 33 cm</p>
+              <p>Upper-Body: {user.clothes_size_upper}</p>
+              <p>Lower-Body: {user.clothes_size_lower}</p>
             </ul>
           </div>
           <div className={css.subInfo}>
