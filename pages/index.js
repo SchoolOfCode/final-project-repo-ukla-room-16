@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import frontimage from "../images/familia_frontpage_image.jpg";
 import logofamilia from "../images/Familia9.png";
-
+import JoinTree from "../component/JoinTree";
 import { useUser } from "@auth0/nextjs-auth0";
 import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
@@ -11,10 +11,10 @@ import CreateTree from "../component/CreateTree";
 export default function Home() {
   const { user, error, isLoading } = useUser();
 
-<Head>
-        <title>Familia</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+  <Head>
+    <title>Familia</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  </Head>;
 
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
@@ -38,8 +38,8 @@ export default function Home() {
         <a href="/api/auth/logout">Logout</a>
 
         <br></br>
-        <CreateTree email={user.email}/>
-        <button>Join a Tree</button>
+        <CreateTree email={user.email} />
+        <JoinTree email={user.email} />
       </>
     );
   }
