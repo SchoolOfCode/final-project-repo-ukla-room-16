@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Post from "./Post";
+import styles from "../../styles/Feed.module.css";
 
 function Feed() {
-  const URL = process.env.NEXT_PUBLIC_
+  const URL = process.env.NEXT_PUBLIC_URL
   const [feed, setFeed] = useState([]);
   const [error, setError] = useState("");
 
@@ -12,7 +13,9 @@ function Feed() {
         const response = await fetch(`${URL}/posts`);
         const data = await response.json();
         if (data.success === true) {
-          setFeed(data.payload);
+          setFeed(data.payload.sort((a,b) => {
+            return b.created_at - a.created_at
+          }));
           console.log(feed)
           setError("");
         } else {
@@ -35,8 +38,9 @@ function Feed() {
     );
   }
 
+
   return (
-    <div>
+    <div className={styles.feed}>
       {feed.map((item) => {
         return (
           <Post
