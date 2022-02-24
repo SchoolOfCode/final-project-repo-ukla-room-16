@@ -31,7 +31,6 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
 
   //WHEN YOU CLICK THE SUBMIT BUTTON, THIS FUNCTION TAKES PLACE. IT TAKES IN THE TEXT ENTERED BY THE USER AS ITS PARAMETER
   async function onSubmit(familyName) {
-    
     //POSTING TO NEW FAMILY TO FAMILIES TABLE FROM LINES 36-65
     const familyPostObj = {
       name: familyName,
@@ -82,10 +81,6 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
 
     //A FUNCTION TO CHANGE THE FAMILY_ID IN THE USERS TABLES
     async function passingFamilyIdOnSubmit(familyName) {
-      const familyIdObj = {
-        family_id: idOfFamilyName,
-        //We're getting id info from line 75.
-      };
 
       //FETCH FROM FAMILIES AGAIN WITH THE NEW POSTED FAMILY NAME
       const familyRes = await fetch(`${URL}/families`, {
