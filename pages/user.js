@@ -7,13 +7,13 @@ import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
 import { useState, useEffect } from "react";
-import EditableComponent from "../component/EditField";
+import EditableComponent from "../component/EditableComponent";
 
 export default function User() {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const URL = process.env.NEXT_PUBLIC_URL;
-  console.log(user)
+  console.log(user);
 
   useEffect(() => {
     async function getUser() {
@@ -34,37 +34,14 @@ export default function User() {
     getUser();
   }, []);
 
-
-
-
-
-
-
-
-
   return (
     <div className={css.container}>
-
       <div className={css.subContainer}>
         <Image src={userProfile} width="259px" height="213px" />
 
-
-        
-      <EditableComponent Text={user.full_name}/>
-      <EditableComponent Text={user.email}/>
-      
-         
-
-
-
-
-{/* 
-        <h2>{user.full_name}</h2>
-
-
-        <button>EDIT</button> */}
-        <h3> DOB </h3>
-        <p> Email Address </p>
+        <p>{user.full_name}</p>
+        <h3> {user.dob} </h3>
+        <p> {user.email} </p>
         <p> Mobile Number </p>
         <p> Home Address </p>
 
@@ -102,5 +79,3 @@ export default function User() {
     </div>
   );
 }
-
-
