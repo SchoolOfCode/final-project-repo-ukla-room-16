@@ -8,7 +8,6 @@ const NewUsers = ({ name, email }) => {
   async function onLogin(nameOfUser,emailOfUser) {
 
     const postObj = {
-      family_id: 1,
       full_name: nameOfUser,
       email: emailOfUser
     };

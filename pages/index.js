@@ -38,7 +38,7 @@ export default function Home() {
         <a href="/api/auth/logout">Logout</a>
 
         <br></br>
-        <CreateTree />
+        <CreateTree email={user.email}/>
         <button>Join a Tree</button>
       </>
     );

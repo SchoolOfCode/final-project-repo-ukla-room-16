@@ -2,16 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styles from "../../../styles/CreateTree.module.css";
 
-function FamilyForm({ display, setDisplay, onClose }) {
+function FamilyForm({ display, setDisplay, onClose, email }) {
   const URL = process.env.NEXT_PUBLIC_URL;
 
   const [text, setText] = useState("");
   const [isBrowser, setIsBrowser] = useState(false);
 
+  //handle change of text
   function handleChange(e) {
     setText(e.target.value);
   }
 
+  //when you click the submit button, close the modal and make the input empty
   function handleSubmit(event) {
     event.preventDefault();
     setText("");
@@ -27,100 +29,95 @@ function FamilyForm({ display, setDisplay, onClose }) {
     onClose();
   };
 
+  //WHEN YOU CLICK THE SUBMIT BUTTON, THIS FUNCTION TAKES PLACE. IT TAKES IN THE TEXT ENTERED BY THE USER AS ITS PARAMETER
   async function onSubmit(familyName) {
-    const postObj = {
+    
+    //POSTING TO NEW FAMILY TO FAMILIES TABLE FROM LINES 36-65
+    const familyPostObj = {
       name: familyName,
     };
 
-    //fetching the families table
-    const res = await fetch(`${URL}/families`, {
+    //FETCHING THE FAMILIES TABLE
+    const familyRes = await fetch(`${URL}/families`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    const data = await res.json();
-    console.log(data);
+    const familyData = await familyRes.json();
+    console.log(familyData);
 
     //CHECKING IF THAT FAMILY EXISTS
-    const index = data.payload.findIndex((family) => {
-      return family.name === postObj.name;
+    const indexOfFamily = familyData.payload.findIndex((family) => {
+      return family.name === familyPostObj.name;
     });
 
     //IF THAT FAMILY DOES NOT EXIST, ADD THEM TO THE FAMILIES TABLE
-    if (index === -1) {
+    if (indexOfFamily === -1) {
       async function postFamilies() {
-        const res = await fetch(`${URL}/families`, {
+        const familyPostRes = await fetch(`${URL}/families`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(postObj),
+          body: JSON.stringify(familyPostObj),
         });
-        const data = await res.json();
-        console.log(data);
+        const familyPostData = await familyPostRes.json();
+        console.log(familyPostData);
       }
       postFamilies();
     }
 
-    /*     const postObj = {
-      name: familyName,
-    }; */
+    //FIND THE USER ID OF THE PERSON TRYING TO ADD TO THEIR FAMILY TABLE
 
-    //fetching the families table
-    const res = await fetch(`${URL}/users`, {
+    //FETCHING THE USERS TABLE
+    const userRes = await fetch(`${URL}/users`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    const data = await res.json();
-    console.log(data);
+    const userData = await userRes.json();
+    console.log(userData);
 
-    //CHECKING IF THAT FAMILY EXISTS
-    const index = data.payload.findIndex((family) => {
-      return family.name === postObj.name;
+    //FINDING ID OF THE USER - WE USE EMAIL TO FIND THE PERSON AS THAT DOESN'T CHANGE
+    const index = userData.payload.findIndex((person) => {
+      return person.email === email;
     });
+    const userId = userData.payload[index].id;
 
-    //IF THAT FAMILY DOES NOT EXIST, ADD THEM TO THE FAMILIES TABLE
-    if (index === -1) {
-      async function postFamilies() {
-        const res = await fetch(`${URL}/families`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(postObj),
-        });
-        const data = await res.json();
-        console.log(data);
-      }
-      postFamilies();
-    }
-
+    //A FUNCTION TO CHANGE THE FAMILY_ID IN THE USERS TABLES
     async function passingFamilyIdOnSubmit(familyName) {
-      const postObj = {
-        family_id: id,
+      const familyIdObj = {
+        family_id: idOfFamilyName,
         //We're getting id info from line 75.
       };
 
-      const res = await fetch(`${URL}/families`, {
+      //FETCH FROM FAMILIES AGAIN WITH THE NEW POSTED FAMILY NAME
+      const familyRes = await fetch(`${URL}/families`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
-      const data = await res.json();
-      console.log(data);
+      const familyData = await familyRes.json();
+      console.log(familyData);
 
-      //CHECKING IF THAT USER EXISTS
-      const index = data.payload.findIndex((family) => {
+      //FINDING THE FAMILY THAT MATCHES THE NAME THE USER GAVE
+      const indexOfFamilyName = familyData.payload.findIndex((family) => {
         return family.name === familyName;
       });
-      const id = data.payload[index].id;
-      //IF THAT USER DOES NOT EXIST, ADD THEM TO THE USERS TABLE
+      const idOfFamilyName = familyData.payload[indexOfFamilyName].id;
 
+      //NOW THAT WE HAVE THE USER ID, AND THE FAMILY ID, WE NEED TO PUT THIS INFORMATION IN THE USERS TABLE. REMEMBER FOR UPDATING USERS IN THE USERS TABLE, WE DO UPDATE USERS BY ID.
       async function putFamilyIdToUser() {
-        const res = await fetch(`${URL}/users`, {
+        const putUserRes = await fetch(`${URL}/users/${userId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(postObj),
+          body: JSON.stringify({
+            family_id: idOfFamilyName,
+          }),
         });
-        const data = await res.json();
-        console.log(data);
+
+        const putUserData = await putUserRes.json();
       }
+
       putFamilyIdToUser();
     }
+
+    //RUNNING THE FUNCTION WITH THE FAMILY NAME
     passingFamilyIdOnSubmit(familyName);
   }
 
