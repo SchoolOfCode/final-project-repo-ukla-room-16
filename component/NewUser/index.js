@@ -7,7 +7,6 @@ const NewUsers = ({ name, email, picture }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [newUser, setNewUser] = useState(false)
 
-  if(newUser === false) {
   async function onLogin(nameOfUser,emailOfUser, pictureOfUser) {
 
     const postObj = {
@@ -23,12 +22,14 @@ const NewUsers = ({ name, email, picture }) => {
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
-    console.log(data)
 
 
     //CHECKING IF THAT USER EXISTS
     const index = data.payload.findIndex(person => { return person.email === postObj.email})
-
+    if(index>=0) {
+      setNewUser(true)
+    }
+    if(newUser === false) {
     //IF THAT USER DOES NOT EXIST, ADD THEM TO THE USERS TABLE
       if(index === -1) {
         async function postUsers() {
@@ -37,15 +38,13 @@ const NewUsers = ({ name, email, picture }) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(postObj),
         })
-      const data = await res.json()
-    console.log(data)};
+      const data = await res.json()};
         postUsers()
       }
   }
 
-  onLogin(name,email, picture)
-  setNewUser(true)
 }
+onLogin(name,email, picture)
 
   return <div></div>;
 };
