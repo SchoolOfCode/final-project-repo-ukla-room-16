@@ -2,9 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import frontimage from "../images/familia_frontpage_image.jpg";
-
+import Link from "next/link";
 import logofamilia from "../images/Familia9.png";
-
 import { useUser } from "@auth0/nextjs-auth0";
 import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
@@ -44,6 +43,10 @@ export default function Home() {
         <br></br>
         <CreateTree />
         <button>Join a Tree</button>
+
+<Link href="/dashboard">Homepage</Link>
+
+
       </>
     );
   }
