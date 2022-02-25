@@ -32,7 +32,7 @@ export default function createUserProfile() {
   useEffect(() => {
     async function getUser() {
       try {
-        const response = await fetch(`${URL}/users/2`);
+        const response = await fetch(`${URL}/users/1`);
         const data = await response.json();
         if (data.success === true) {
           setUser(data.payload[0]);
@@ -140,7 +140,9 @@ export default function createUserProfile() {
             </ul>
           </div>
           <div className={styles.subInfo}>
-            <Image src={medical} width="80px" height="50px" />
+          <div>
+            <Image src={medical} width="80px" height="90px" />
+          </div>
             <ul>
               <input
                 className={styles.input}

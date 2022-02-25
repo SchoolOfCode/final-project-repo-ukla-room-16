@@ -10,6 +10,7 @@ import crossButton from "../images/bluecross.png";
 import { useState, useEffect } from "react";
 import EditableComponent from "../component/EditableComponent";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function User() {
   const [user, setUser] = useState({});
@@ -17,10 +18,14 @@ export default function User() {
   const URL = process.env.NEXT_PUBLIC_URL;
   console.log(user);
 
+  const router = useRouter()
+  const { id } = router.query;
+  console.log("query id:", router.query.id);
+
   useEffect(() => {
     async function getUser() {
       try {
-        const response = await fetch(`${URL}/users/2`);
+        const response = await fetch(`${URL}/users/1`);
         const data = await response.json();
         if (data.success === true) {
           setUser(data.payload[0]);
@@ -36,7 +41,7 @@ export default function User() {
     getUser();
   }, []);
 
-console.log(user.picture)
+  console.log(user.picture)
 
   return (
     <div className={styles.container}>
@@ -47,7 +52,7 @@ console.log(user.picture)
           </a>
         </Link>
 
-        {/* <Image src={user.picture ? user.picture: userProfile} width="259px" height="213px" /> */}
+        <Image src={user.picture ? user.picture: userProfile} width="250px" height="200px" />
         <Link href="/updateUserProfile">
           <a className={styles.createProfile}>Update Profile</a>
         </Link>
@@ -66,7 +71,10 @@ console.log(user.picture)
             </ul>
           </div>
           <div className={styles.subInfo}>
-            <Image src={medical} width="80px" height="50px" />
+          <div>
+            <Image src={medical} width="80px" height="90px" />
+          </div>
+            
             <ul>
               <p>Blood type: {user.blood_type} </p>
               <p>Allergies: {user.allergies}</p>
