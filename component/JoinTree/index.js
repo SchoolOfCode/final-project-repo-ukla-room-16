@@ -7,7 +7,7 @@ function JoinTree({ email }) {
 
   return (
     <div>
-      <button onClick={() => setDisplay(true)} className={styles.button}>Join A Tree</button>
+      <button onClick={() => setDisplay(true)} className={styles.jointreebutton}>Join A Tree</button>
       <FamilyForm
         onClose={() => setDisplay(false)}
         display={display}

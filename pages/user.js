@@ -44,7 +44,8 @@ export default function User() {
     <div className={css.container}>
 
       <div className={css.subContainer}>
-<Link href="/dashboard"><a className={css.goHome}><Image src={crossButton} width="15px" height="15px"/></a></Link>
+
+      <Link href="/dashboard"><a className={css.goHome}>X</a></Link>
 
         <Image src={userProfile} width="259px" height="213px" />
         <Link href="/createUserProfile">
