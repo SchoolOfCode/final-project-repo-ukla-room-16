@@ -9,7 +9,8 @@ const NewUsers = ({ name, email }) => {
 
     const postObj = {
       full_name: nameOfUser,
-      email: emailOfUser
+      email: emailOfUser,
+      picture: "hello"
     };
 
 
