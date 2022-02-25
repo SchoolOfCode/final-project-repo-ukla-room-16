@@ -130,13 +130,13 @@ export default function Home() {
         {/* displaying a log out button under the welcome message */}
         <center><a href="/api/auth/logout" className={styles.logout}>Logout</a></center>
 
-          {/* displaying a log out button under the welcome message */}
+          {/* displaying a log out button under the welcome message
           <a href="/api/auth/logout">Logout</a>
           <center>
             <CreateTree email={user.email} />
             <JoinTree email={user.email} />
           </center>
-          <Link href="/dashboard">Homepage</Link>
+          <Link href="/dashboard">Homepage</Link> */}
         </>
       );
     }

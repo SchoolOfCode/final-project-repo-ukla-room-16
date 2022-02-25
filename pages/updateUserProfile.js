@@ -8,6 +8,7 @@ import shoes from "../images/shoes.png";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
+import Link from "next/link";
 
 export default function createUserProfile() {
   const router = useRouter();
@@ -59,8 +60,10 @@ export default function createUserProfile() {
   }
 
   return (
+  
     <div className={styles.container}>
       <div className={styles.subContainer}>
+    <Link href="/user"><a className={styles.goToUser}>X</a></Link>
         <h3 style={{ color: "red" }}>
           Only update the fields you want to change
         </h3>
@@ -198,5 +201,6 @@ export default function createUserProfile() {
         <button onClick={handleClick}>Submit</button>
       </div>
     </div>
+    
   );
 }
