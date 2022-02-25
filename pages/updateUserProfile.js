@@ -64,11 +64,11 @@ export default function createUserProfile() {
         <h3 style={{ color: "red" }}>
           Only update the fields you want to change
         </h3>
-        <Image
+        {/* <Image
           src={user.picture ? user.picture : userProfile}
           width="259px"
           height="213px"
-        />
+        /> */}
 
         <input
           className={styles.input}
