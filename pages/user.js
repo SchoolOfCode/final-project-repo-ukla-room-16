@@ -45,14 +45,14 @@ export default function User() {
 
   console.log(user.picture)
 
+
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <Link href="/dashboard">
-          <a className={styles.goHome}>
-            <Image src={crossButton} width="15px" height="15px" />
-          </a>
-        </Link>
+        
+
+      <Link href="/dashboard"><a className={styles.goHome}>X</a></Link>
+
 
         <Image src={user.picture ? user.picture: userProfile} width="250px" height="200px" />
         <Link href="/updateUserProfile">
