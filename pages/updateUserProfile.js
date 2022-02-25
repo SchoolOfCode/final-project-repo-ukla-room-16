@@ -5,7 +5,7 @@ import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function createUserProfile() {
@@ -25,6 +25,29 @@ export default function createUserProfile() {
   const [shoeSize, setShoeSize] = useState("");
   const [gender, setGender] = useState("");
   const [emergencyContact, setEmergencyContact] = useState("");
+  const [user, setUser] = useState({});
+  const [error, setError] = useState("");
+
+
+  useEffect(() => {
+    async function getUser() {
+      try {
+        const response = await fetch(`${URL}/users/2`);
+        const data = await response.json();
+        if (data.success === true) {
+          setUser(data.payload[0]);
+          setError("");
+        } else {
+          setError("Fetch didn't work :(");
+        }
+      } catch (err) {
+        console.log(err);
+        setError(err.message);
+      }
+    }
+    getUser();
+  }, []);
+
 
   async function handleClick() {
     const updatesArray = [
@@ -58,7 +81,7 @@ export default function createUserProfile() {
     <div className={styles.container}>
       <div className={styles.subContainer}>
         <h3 style={{color: "red"}}>Only update the fields you want to change</h3>
-        <Image src={userProfile} width="259px" height="213px" />
+        <Image src={user.picture ? user.picture: userProfile} width="259px" height="213px" />
 
         <input
           className={styles.input}

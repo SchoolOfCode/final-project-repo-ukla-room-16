@@ -20,7 +20,7 @@ export default function User() {
   useEffect(() => {
     async function getUser() {
       try {
-        const response = await fetch(`${URL}/users/1`);
+        const response = await fetch(`${URL}/users/2`);
         const data = await response.json();
         if (data.success === true) {
           setUser(data.payload[0]);
@@ -36,6 +36,8 @@ export default function User() {
     getUser();
   }, []);
 
+console.log(user.picture)
+
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
@@ -45,7 +47,7 @@ export default function User() {
           </a>
         </Link>
 
-        <Image src={userProfile} width="259px" height="213px" />
+        {/* <Image src={user.picture ? user.picture: userProfile} width="259px" height="213px" /> */}
         <Link href="/updateUserProfile">
           <a className={styles.createProfile}>Update Profile</a>
         </Link>
