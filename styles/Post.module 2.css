@@ -1,0 +1,30 @@
+.container {
+  margin: 40px 0;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.postinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.postinfo > * {
+    margin: 5px;
+}
+
+.timestamp {
+    color: grey;
+}
+
+.textbox {
+  background: rgba(255, 232, 130, 0.4);
+  padding: 10px;
+  width: 90%;
+  /* height: 215px; */
+
+  border-radius: 20px;
+}
