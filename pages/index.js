@@ -41,7 +41,7 @@ console.log(user);
       <NewUsers name={user.name} email={user.email}/>
 
         {/* here picking the full name of the user to display welcome message to */}
-        <h1><center> Welcome {user.name}!</center></h1>
+        <h1><center> Welcome {user.given_name}!</center></h1>
 
         {/* displaying a log out button under the welcome message */}
         <a href="/api/auth/logout">Logout</a>
