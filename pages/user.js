@@ -13,14 +13,16 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function User() {
+  
+
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const URL = process.env.NEXT_PUBLIC_URL;
   console.log(user);
 
-  const router = useRouter()
-  const { id } = router.query;
-  console.log("query id:", router.query.id);
+  // const router = useRouter()
+  // const { id } = router.query;
+  // console.log("query id:", router.query.id);
 
   useEffect(() => {
     async function getUser() {

@@ -7,6 +7,7 @@ import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useUser } from "@auth0/nextjs-auth0";
 
 export default function createUserProfile() {
   const router = useRouter();
@@ -25,29 +26,10 @@ export default function createUserProfile() {
   const [shoeSize, setShoeSize] = useState("");
   const [gender, setGender] = useState("");
   const [emergencyContact, setEmergencyContact] = useState("");
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
   const [error, setError] = useState("");
 
-
-  useEffect(() => {
-    async function getUser() {
-      try {
-        const response = await fetch(`${URL}/users/1`);
-        const data = await response.json();
-        if (data.success === true) {
-          setUser(data.payload[0]);
-          setError("");
-        } else {
-          setError("Fetch didn't work :(");
-        }
-      } catch (err) {
-        console.log(err);
-        setError(err.message);
-      }
-    }
-    getUser();
-  }, []);
-
+  const { user, isLoading } = useUser();
 
   async function handleClick() {
     const updatesArray = [
@@ -59,10 +41,10 @@ export default function createUserProfile() {
       { fav_food: favFood },
       { blood_type: bloodType },
       { allergies: allergies },
-      {emergency_contacts: emergencyContact},
-      {clothes_size_upper: upperClothes},
-      {clothes_size_lower: lowerClothes},
-      {shoe_size: shoeSize}
+      { emergency_contacts: emergencyContact },
+      { clothes_size_upper: upperClothes },
+      { clothes_size_lower: lowerClothes },
+      { shoe_size: shoeSize },
     ];
     console.log(updatesArray);
     updatesArray.forEach(async (update) => {
@@ -73,15 +55,20 @@ export default function createUserProfile() {
       });
     });
 
-    
-    setTimeout(() => router.push("/user"), 1000)
+    setTimeout(() => router.push("/user"), 1000);
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <h3 style={{color: "red"}}>Only update the fields you want to change</h3>
-        <Image src={user.picture ? user.picture: userProfile} width="259px" height="213px" />
+        <h3 style={{ color: "red" }}>
+          Only update the fields you want to change
+        </h3>
+        <Image
+          src={user.picture ? user.picture : userProfile}
+          width="259px"
+          height="213px"
+        />
 
         <input
           className={styles.input}
@@ -140,9 +127,9 @@ export default function createUserProfile() {
             </ul>
           </div>
           <div className={styles.subInfo}>
-          <div>
-            <Image src={medical} width="80px" height="90px" />
-          </div>
+            <div>
+              <Image src={medical} width="80px" height="90px" />
+            </div>
             <ul>
               <input
                 className={styles.input}
