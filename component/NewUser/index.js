@@ -1,48 +1,48 @@
 //PASSING IN THE PROP USERS (WITH JUST THE NAME AND EMAIL)
-
-
-
-const NewUsers = ({ name, email }) => {
+import { useEffect } from "react";
+//CUSTOM HOOK ?
+const NewUsers = ({ name, email, picture }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
 
-  async function onLogin(nameOfUser,emailOfUser) {
+  useEffect(() => {
+    async function onLogin(nameOfUser, emailOfUser, pictureOfUser) {
+       console.log("On login running")
+      const postObj = {
+        full_name: nameOfUser,
+        email: emailOfUser,
+        picture: pictureOfUser,
+      };
 
-    const postObj = {
-      full_name: nameOfUser,
-      email: emailOfUser,
-      picture: "hello"
-    };
+      const res = await fetch(`${URL}/users`);
+      const data = await res.json();
 
+      //CHECKING IF THAT USER EXISTS
+      const index = data.payload.findIndex((person) => {
+        return person.email === postObj.email;
+      });
 
-    //fetching the users table
-    const res = await fetch(`${URL}/users`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    const data = await res.json();
-    console.log(data)
+      console.log("this is the index" + index)
 
-
-    //CHECKING IF THAT USER EXISTS
-    const index = data.payload.findIndex(person => { return person.email === postObj.email})
-
-    //IF THAT USER DOES NOT EXIST, ADD THEM TO THE USERS TABLE
-      if(index === -1) {
-        async function postUsers() {
-          const res = await fetch(`${URL}/users`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(postObj),
-        })
-      const data = await res.json()
-    console.log(data)};
-        postUsers()
+      if (index === -1) {
+          async function postUsers() {
+            const res = await fetch(`${URL}/users`, {
+              method: "POST",
+              //EXTRA INFORMATION RELATED TO THE REQUEST 
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(postObj),
+            });
+            const data = await res.json();
+            console.log("This is the new user ", data)
+          }
+          postUsers();
+        
       }
-  }
-
-  onLogin(name,email)
-
-  return <div></div>;
+    }
+    onLogin(name, email, picture);
+    console.log("Use effect is running")
+  }, []);
+  //fetching the users table
+  return null;
 };
 
 export default NewUsers;

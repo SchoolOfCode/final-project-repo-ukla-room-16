@@ -18,7 +18,6 @@ export default function User() {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const URL = process.env.NEXT_PUBLIC_URL;
-  console.log(user);
 
   // const router = useRouter()
   // const { id } = router.query;

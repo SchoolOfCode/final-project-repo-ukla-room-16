@@ -12,7 +12,6 @@ function Feed() {
         const data = await response.json();
         if (data.success === true) {
           setFeed(data.payload);
-          console.log(feed)
           setError("");
         } else {
           setError("Fetch didn't work :(");

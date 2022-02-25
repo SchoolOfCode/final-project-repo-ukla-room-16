@@ -16,7 +16,6 @@ function Feed() {
           setFeed(data.payload.sort((a,b) => {
             return b.created_at - a.created_at
           }));
-          console.log(feed)
           setError("");
         } else {
           setError("Fetch didn't work :(");

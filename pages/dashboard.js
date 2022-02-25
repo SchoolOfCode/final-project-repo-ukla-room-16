@@ -86,3 +86,12 @@ export default function Home() {
     </div>
   );
 }
+
+// import { useRouter } from 'next/router'
+
+// export default function Dashboard() {
+//   const router = useRouter()
+//   const { pid } = router.query
+
+//   return <p>Post: {pid}</p>
+// }
