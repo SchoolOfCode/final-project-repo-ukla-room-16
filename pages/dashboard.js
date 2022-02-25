@@ -25,7 +25,7 @@ export default function Home() {
 
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
-        <p><b>{user.family_name}</b></p>
+        {/* <p><b>{user.family_name}</b></p> */}
 
 
         <Link href="/user"><a><Image src={user.picture} width="70px" height="70px" /></a></Link>
