@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FamilyForm from "./FamilyForm";
+import styles from "../../styles/CreateTree.module.css"
 
 function CreateTree() {
   const [display, setDisplay] = useState(false);
@@ -7,7 +8,7 @@ function CreateTree() {
 
   return (
     <div>
-      <button onClick={() => setDisplay(true)}>Create A Tree</button>
+      <button onClick={() => setDisplay(true)} className={styles.createtreebutton}>Create A Tree</button>
       <FamilyForm onClose={() => setDisplay(false)}
           display={display} setDisplay={setDisplay}/>
     </div>

@@ -63,6 +63,8 @@ export default function createUserProfile() {
   }
 
   return (
+    
+   
     <div className={css.container}>
       <div className={css.subContainer}>
         <Image src={userProfile} width="259px" height="213px" />
@@ -106,5 +108,6 @@ export default function createUserProfile() {
         </div>
       </div>
     </div>
+    
   );
 }

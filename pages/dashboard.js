@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Dashboard.module.css";
 import UserInput from "../component/UserInput";
@@ -13,14 +14,17 @@ import gallery from "../images/gallery.png";
 import calendar from "../images/calendar.png";
 import contacts from "../images/contacts.png";
 
+
 export default function Home() {
   return (
     <div>
+  
+
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
-        <p> My family name</p>
+        <p>family Name</p>
 
-        <Image src={userProfilePicture} width="80px" height="80px" />
+        <Link href="/user"><a><Image src={userProfilePicture} width="80px" height="80px" /></a></Link>
       </header>
 
       <div className={styles.container}>
