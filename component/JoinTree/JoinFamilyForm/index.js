@@ -95,7 +95,7 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.header}>
-          <a href="#" onClick={handleCloseClick}>
+          <a href="#" onClick={handleCloseClick} className={styles.x}>
             x
           </a>
         </div>
