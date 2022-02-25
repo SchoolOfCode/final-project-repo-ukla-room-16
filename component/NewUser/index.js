@@ -1,10 +1,13 @@
 //PASSING IN THE PROP USERS (WITH JUST THE NAME AND EMAIL)
+import {useState} from 'react'
 
 
 
 const NewUsers = ({ name, email }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
+  const [newUser, setNewUser] = useState(false)
 
+  if(newUser === false) {
   async function onLogin(nameOfUser,emailOfUser) {
 
     const postObj = {
@@ -41,6 +44,8 @@ const NewUsers = ({ name, email }) => {
   }
 
   onLogin(name,email)
+  setNewUser(true)
+}
 
   return <div></div>;
 };
