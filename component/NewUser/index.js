@@ -3,17 +3,17 @@ import {useState} from 'react'
 
 
 
-const NewUsers = ({ name, email }) => {
+const NewUsers = ({ name, email, picture }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [newUser, setNewUser] = useState(false)
 
   if(newUser === false) {
-  async function onLogin(nameOfUser,emailOfUser) {
+  async function onLogin(nameOfUser,emailOfUser, pictureOfUser) {
 
     const postObj = {
       full_name: nameOfUser,
       email: emailOfUser,
-      picture: "hello"
+      picture: pictureOfUser
     };
 
 
@@ -43,7 +43,7 @@ const NewUsers = ({ name, email }) => {
       }
   }
 
-  onLogin(name,email)
+  onLogin(name,email, picture)
   setNewUser(true)
 }
 

@@ -87,7 +87,7 @@ export default function Home() {
             </header>
 
             {/* here we are passing down the name and email of the user as a prop */}
-            <NewUsers name={user.name} email={user.email} />
+            <NewUsers name={user.name} email={user.email} picture={user.picture}/>
 
             {/* here picking the full name of the user to display welcome message to */}
             <h1>
