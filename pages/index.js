@@ -49,14 +49,12 @@ export default function Home() {
       console.log(data);
 
       //CHECKING IF THAT USER EXISTS IN THE USERS TABLE
-      // const index = data.payload.findIndex((person) => {
-      //   return person.email === personLoggingIn.email;
-      // });
-
-      const index = 6;
+      const index = data.payload.findIndex((person) => {
+        return person.email === personLoggingIn.email;
+      });
 
       //IF THAT USER DOES EXISTS, CHECK IF THEY HAVE A FAMILY ID.
-      if (index !== -1) {
+      if (index !== -1 && data.payload[index].family_id) {
         familyID = data.payload[index].family_id;
         if (familyID > 0) {
           setHasFamilyID(true);
