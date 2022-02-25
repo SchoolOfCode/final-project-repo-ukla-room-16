@@ -45,35 +45,16 @@ export default function createUserProfile() {
     router.push("/user");
   }
 
-  function handleUser(e) {
-    setUserName(e.target.value);
-  }
-
-  function emailAddy(e) {
-    setEmail(e.target.value);
-  }
-  function dateOfBirth(e) {
-    setDob(e.target.value);
-  }
-  function userMobile(e) {
-    setMobile(e.target.value);
-  }
-  function userAddress(e) {
-    setAddress(e.target.value);
-  }
-
-  return (
-    
-   
+   return (
     <div className={css.container}>
       <div className={css.subContainer}>
         <Image src={userProfile} width="259px" height="213px" />
 
-        <input type="text" onChange={handleUser} placeholder="name" />
-        <input type="text" onChange={emailAddy} placeholder="email" />
-        <input type="text" onChange={dateOfBirth} placeholder="DOB" />
-        <input type="text" onChange={userMobile} placeholder="mobile number" />
-        <input type="text" onChange={userAddress} placeholder="home address" />
+        <input type="text" onChange={e=> {(setUserName(e.target.value))}} placeholder="name"/>
+        <input type="text" onChange={e=> {(setEmail(e.target.value))}} placeholder="email" />
+        <input type="text" onChange={e=> {(setDob(e.target.value))}} placeholder="DOB" />
+        <input type="text" onChange={e=> {(setMobile(e.target.value))}} placeholder="mobile number" />
+        <input type="text" onChange={e=> {(setAddress(e.target.value))}} placeholder="home address" />
         <button onClick={handleClick}>Submit</button>
 
         <div className={css.info}>
