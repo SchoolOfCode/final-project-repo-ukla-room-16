@@ -19,7 +19,7 @@ export default function createUserProfile() {
   const [mobile, setMobile] = useState("");
   const [address, setAddress] = useState("");
   const [favfood, setFaveFood] = useState("");
-  const [bloodType, seBloodType] = useState("");
+  const [bloodType, setBloodType] = useState("");
   const [allergies, setAllergies] = useState("");
   const [upperClothes, setUpperClothes] = useState("");
   const [lowerClothes, setLowerClothes] = useState("");
@@ -53,40 +53,40 @@ export default function createUserProfile() {
         <input type="text" onChange={e=> {(setUserName(e.target.value))}} placeholder="name"/>
         <input type="text" onChange={e=> {(setEmail(e.target.value))}} placeholder="email" />
         <input type="text" onChange={e=> {(setDob(e.target.value))}} placeholder="DOB" />
+        <input type="text" onChange={e=> {(setGender(e.target.value))}} placeholder="gender"  />
         <input type="text" onChange={e=> {(setMobile(e.target.value))}} placeholder="mobile number" />
         <input type="text" onChange={e=> {(setAddress(e.target.value))}} placeholder="home address" />
-        <button onClick={handleClick}>Submit</button>
-
+       
         <div className={css.info}>
           <div className={css.subInfo}>
             <Image src={meal} width="85px" height="90px" />
             <ul>
-              <p>Favourite foods: Sushi - Pasta.</p>
+            <input type="text" onChange={e=> {(setFaveFood(e.target.value))}} placeholder="favourite food"  />
             </ul>
           </div>
           <div className={css.subInfo}>
             <Image src={medical} width="80px" height="50px" />
             <ul>
-              <p>Blood type: 0-</p>
-              <p>Allergies: None</p>
+            <input type="text" onChange={e=> {(setBloodType(e.target.value))}} placeholder="blood type"  />
+            <input type="text" onChange={e=> {(setAllergies(e.target.value))}} placeholder="allergies"  />
+            <input type="text" onChange={e=> {(setEmergencyContact(e.target.value))}} placeholder="emergency contact"  />
             </ul>
           </div>
           <div className={css.subInfo}>
             <Image src={clothes} width="80px" height="90px" />
             <ul>
-              <p>Upper-Body: Medium</p>
-              <p>Lower-Body: 33 cm</p>
+            <input type="text" onChange={e=> {(setUpperClothes(e.target.value))}} placeholder="clothes size upper"  />
+            <input type="text" onChange={e=> {(setLowerClothes(e.target.value))}} placeholder="clothes size lower"  />
             </ul>
           </div>
           <div className={css.subInfo}>
             <Image src={shoes} width="80px" height="90px" />
             <ul>
-              <p>US: 7</p>
-              <p>UK: 6</p>
-              <p>UE: 28cm</p>
+            <input type="text" onChange={e=> {(setShoeSize(e.target.value))}} placeholder="shoe size"  />
             </ul>
           </div>
         </div>
+        <button onClick={handleClick}>Submit</button>
       </div>
     </div>
     
