@@ -33,7 +33,8 @@ console.log(user);
       <Link href="/dashboard"><Image src={logofamilia} width="150px" height="150px" /></Link>
         <p><b>{user.family_name}</b></p>
 
-        <Link href="/user"><a><Image src={userProfilePicture} width="80px" height="80px" /></a></Link>
+        <Link href="/user"><a><Image src={user.picture} width="70px" height="70px" /></a></Link>
+        
       </header>
 
       {/* here we are passing down the name and email of the user as a prop */}
@@ -46,8 +47,10 @@ console.log(user);
         <a href="/api/auth/logout">Logout</a>
 
         <br></br>
+        <center>
         <CreateTree />
         <button>Join a Tree</button>
+        </center>
         <br></br>
         <Link href="/dashboard">Homepage</Link>
 
