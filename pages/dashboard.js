@@ -13,6 +13,7 @@ import tracker from "../images/tracker.png";
 import gallery from "../images/gallery.png";
 import calendar from "../images/calendar.png";
 import contacts from "../images/contacts.png";
+import NavBar from "../component/NavBar"
 
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
 
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
-          <div className={styles.navbar}>
+          {/* <div className={styles.navbar}>
             <div className={styles.iconcircle}>
               <Image src={recipe} width="100%" height="100px" />
             </div>
@@ -45,10 +46,14 @@ export default function Home() {
             <div className={styles.iconcircle}>
               <Image src={tracker} width="100%" height="100px" />
             </div>
-          </div>
+          </div> */}
+          <NavBar />
         </div>
         <div className={styles.middlecolumn}>
+
+
           <UserInput />
+        
           <Feed />
         </div>
 

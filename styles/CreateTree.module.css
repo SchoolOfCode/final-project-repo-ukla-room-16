@@ -35,7 +35,7 @@
 .createtreebutton {
     display: inline-block;
     padding: 30px 50px;
-    margin: 0 20px 20px 0;
+    margin: 0 0.3em 0.3em 0;
     border-radius: 0.5em;
     box-sizing: border-box;
     text-decoration: none;

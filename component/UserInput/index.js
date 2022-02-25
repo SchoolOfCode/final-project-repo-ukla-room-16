@@ -1,12 +1,13 @@
 import { useState } from "react";
-
 import styles from "../../styles/UserInput.module.css";
+// import {useRouter} from "next/router";
+
 
 const UserInput = () => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
   console.log(text);
-
+  
   async function onSubmit(postText) {
     const postObj = {
       family_id: 1,
@@ -15,7 +16,7 @@ const UserInput = () => {
       post_text: postText,
       created_at: `${Date.now()}`,
     };
-
+    
     try {
       const res = await fetch(`${URL}/posts`, {
         method: "POST",
@@ -26,9 +27,13 @@ const UserInput = () => {
     } catch (error) {
       throw new Error(error);
     }
-
+    
   }
-
+  // const Router = useRouter();
+  // const forceReload = () => {
+  //   Router.reload()
+  // }
+  
   function handleChange(e) {
     setText(e.target.value);
     
@@ -42,11 +47,12 @@ const UserInput = () => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
-      <button className={styles.submitbutton} onClick={() => onSubmit(text)}>
+      <button className={styles.postbutton} onClick={() => onSubmit(text)} >
         Post
       </button>
     </div>
   );
 };
+
 
 export default UserInput;

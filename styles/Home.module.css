@@ -1,6 +1,7 @@
 
 .container {
   padding: 0 2rem;
+ 
 }
 
 .main {
@@ -192,7 +193,7 @@
 
 .logout  {
   display: inline-block;
-  padding: 30px 50px;
+  padding: 20px 30px;
   margin: 0 0.3em 0.3em 0;
   border-radius: 0.5em;
   box-sizing: border-box;
@@ -217,4 +218,24 @@
     display: block;
     margin: 0.4em auto;
   }
+}
+
+.containerbuttons {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 98vw;
+
+
+}
+.leftcolumn {
+  display: flex;
+justify-content: center;
+}
+
+.rightcolumn {
+  display: flex;
+justify-content: center;
+
 }

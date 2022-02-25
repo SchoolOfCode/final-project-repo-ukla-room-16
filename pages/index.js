@@ -10,6 +10,7 @@ import CreateTree from "../component/CreateTree";
 import css from "../styles/Dashboard.module.css";
 import userProfilePicture from "../images/user-icon.jpeg";
 import JoinTree from "../component/JoinTree";
+import NavBar from "../component/NavBar";
 
 
 export default function Home() {
@@ -41,13 +42,23 @@ console.log(user);
 
         {/* here picking the full name of the user to display welcome message to */}
         <h1><center> Welcome {user.given_name}!</center></h1>
+      
+      
+      {/* <NavBar /> */}
 
 
-        
+
+
+<div className={styles.containerbuttons}>
+        <div className={styles.leftcolumn}>
         <CreateTree email={user.email} />
+        </div>
+        <div className={styles.rightcolumn}>
         <JoinTree email={user.email} />
+        </div>
+        </div>
        
-        <Link href="/dashboard">Homepage</Link>
+        {/* <Link href="/dashboard">Homepage</Link> */}
 
         {/* displaying a log out button under the welcome message */}
         <center><a href="/api/auth/logout" className={styles.logout}>Logout</a></center>

@@ -1,34 +1,35 @@
-import { useState } from "react";
+import { useHistory } from 'react-router-dom';
 
-import styles from "../../styles/SearchInput.module.css";
+const SearchBar = ({ searchQuery, setSearchQuery }) => {
+    const history = useHistory();
+    const onSubmit = (e) => {
+        history.push(`?s=${searchQuery}`);
+        e.preventDefault();
+    };
 
-const SearchInput = () => {
-  const URL = process.env.NEXT_PUBLIC_URL;
-  const [text, setText] = useState("");
-  console.log(text);
-
-  async function onSubmit(searchtext) {
-   
-    
-  function handleChange(e) {
-    setText(e.target.value);
-    
-  }
-
-  return (
-    <div className={styles.container}>
-      <input
-        className={styles.textinput}
-        type="text"
-        onChange={handleChange}
-        placeholder="Search"
-      />
-      <button className={styles.submitbutton} onClick={() => onSubmit(text)}>
-        Search
-      </button>
-    </div>
-  );
+    return (
+        <form
+            action="/"
+            method="get"
+            autoComplete="off"
+            onSubmit={onSubmit}
+        >
+            <label htmlFor="header-search">
+                <span className="visually-hidden">
+                    Search posts
+                </span>
+            </label>
+            <input
+                value={searchQuery}
+                onInput={(e) => setSearchQuery(e.target.value)}
+                type="text"
+                id="header-search"
+                placeholder="Search posts"
+                name="s"
+            />
+            <button type="submit">Search</button>
+        </form>
+    );
 };
-}
 
-export default SearchInput
+export default SearchBar;
