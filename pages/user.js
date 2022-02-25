@@ -1,12 +1,12 @@
 import Head from "next/head";
-import css from "../styles/user.module.css";
+import styles from "../styles/user.module.css";
 import Image from "next/image";
 import meal from "../images/meal.png";
 import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
-import crossButton from "../images/bluecross.png"
+import crossButton from "../images/bluecross.png";
 import { useState, useEffect } from "react";
 import EditableComponent from "../component/EditableComponent";
 import Link from "next/link";
@@ -37,18 +37,17 @@ export default function User() {
   }, []);
 
   return (
-
-    
-  
-  
-    <div className={css.container}>
-
-      <div className={css.subContainer}>
-<Link href="/dashboard"><a className={css.goHome}><Image src={crossButton} width="15px" height="15px"/></a></Link>
+    <div className={styles.container}>
+      <div className={styles.subContainer}>
+        <Link href="/dashboard">
+          <a className={styles.goHome}>
+            <Image src={crossButton} width="15px" height="15px" />
+          </a>
+        </Link>
 
         <Image src={userProfile} width="259px" height="213px" />
-        <Link href="/createUserProfile">
-          <a className={css.createProfile}>Update Profile</a>
+        <Link href="/updateUserProfile">
+          <a className={styles.createProfile}>Update Profile</a>
         </Link>
         <p>{user.profile_name}</p>
         <p>{user.mobile_number}</p>
@@ -57,38 +56,35 @@ export default function User() {
         <p> {user.email} </p>
         <p> {user.gender} </p>
 
-        <div className={css.info}>
-          <div className={css.subInfo}>
+        <div className={styles.info}>
+          <div className={styles.subInfo}>
             <Image src={meal} width="85px" height="90px" />
             <ul>
               <p>Favourite foods: {user.fav_food}</p>
             </ul>
           </div>
-          <div className={css.subInfo}>
+          <div className={styles.subInfo}>
             <Image src={medical} width="80px" height="50px" />
             <ul>
-              <p>Blood type:{user.blood_type} </p>
+              <p>Blood type: {user.blood_type} </p>
               <p>Allergies: {user.allergies}</p>
             </ul>
           </div>
-          <div className={css.subInfo}>
+          <div className={styles.subInfo}>
             <Image src={clothes} width="80px" height="90px" />
             <ul>
               <p>Upper-Body: {user.clothes_size_upper}</p>
               <p>Lower-Body: {user.clothes_size_lower}</p>
             </ul>
           </div>
-          <div className={css.subInfo}>
+          <div className={styles.subInfo}>
             <Image src={shoes} width="80px" height="90px" />
             <ul>
-              <p>US: 7</p>
-              <p>UK: 6</p>
-              <p>UE: 28cm</p>
+              <p>Shoe size: {user.shoe_size}</p>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    
   );
 }

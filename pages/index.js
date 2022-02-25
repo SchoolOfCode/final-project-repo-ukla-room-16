@@ -43,7 +43,7 @@ console.log(user);
         <h1><center> Welcome {user.given_name}!</center></h1>
 
         {/* displaying a log out button under the welcome message */}
-        <a href="/api/auth/logout">Logout</a>>
+        <a href="/api/auth/logout">Logout</a>
         <center>
         <CreateTree email={user.email} />
         <JoinTree email={user.email} />
