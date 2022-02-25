@@ -17,6 +17,8 @@ import contacts from "../images/contacts.png";
 export default function Home() {
   return (
     <div>
+
+
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
         <p> My family name</p>

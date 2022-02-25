@@ -37,6 +37,10 @@ export default function User() {
   }, []);
 
   return (
+
+    
+  
+  
     <div className={css.container}>
 
       <div className={css.subContainer}>
@@ -85,5 +89,6 @@ export default function User() {
         </div>
       </div>
     </div>
+    
   );
 }

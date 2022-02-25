@@ -11,10 +11,6 @@ import CreateTree from "../component/CreateTree";
 export default function Home() {
   const { user, error, isLoading } = useUser();
 
-<Head>
-        <title>Familia</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
 
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
@@ -43,8 +39,8 @@ export default function Home() {
         <br></br>
         <CreateTree />
         <button>Join a Tree</button>
-
-<Link href="/dashboard">Homepage</Link>
+        <br></br>
+        <Link href="/dashboard">Homepage</Link>
 
 
       </>
@@ -52,6 +48,7 @@ export default function Home() {
   }
 
   return (
+  
     <div className={styles.home}>
       {/* logo of the app display */}
       <div className={styles.left}>
@@ -82,5 +79,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    
   );
 }
