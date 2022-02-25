@@ -45,6 +45,8 @@ export default function User() {
 
       <div className={css.subContainer}>
 
+      <Link href="/dashboard"><a className={css.goHome}>X</a></Link>
+
         <Image src={userProfile} width="259px" height="213px" />
         <Link href="/createUserProfile">
           <a className={css.createProfile}>Update Profile</a>
