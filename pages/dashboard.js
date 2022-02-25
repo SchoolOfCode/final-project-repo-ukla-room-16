@@ -14,14 +14,15 @@ import gallery from "../images/gallery.png";
 import calendar from "../images/calendar.png";
 import contacts from "../images/contacts.png";
 
+
 export default function Home() {
   return (
     <div>
-
+  
 
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
-        <p> My family name</p>
+        <p>family Name</p>
 
         <Link href="/user"><a><Image src={userProfilePicture} width="80px" height="80px" /></a></Link>
       </header>
