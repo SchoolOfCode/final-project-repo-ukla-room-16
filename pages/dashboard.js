@@ -14,19 +14,21 @@ import gallery from "../images/gallery.png";
 import calendar from "../images/calendar.png";
 import contacts from "../images/contacts.png";
 import NavBar from "../component/NavBar"
-
+import { useUser } from "@auth0/nextjs-auth0";
 
 export default function Home() {
+  const { user, error, isLoading } = useUser();
+
   return (
     <div>
   
 
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
-        <p>family Name</p>
+        <p><b>{user.family_name}</b></p>
 
-        <Link href="/user"><a><Image src={userProfilePicture} width="80px" height="80px" /></a></Link>
-      </header>
+        <Link href="/user"><a><Image src={user.picture} width="70px" height="70px" /></a></Link>
+          </header>
 
       <div className={styles.container}>
         <div className={styles.leftcolumn}>

@@ -9,12 +9,17 @@
   }
   
   .iconcircle {
-    background: lightgrey;
-    width: 8vw;
-    height: 8vw;
+    background: rgba(255, 232, 130, 0.4);
+    width: 7vw;
+    height: 7vw;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .images {
+    width:4em;
+    height:4em;
   }
   

@@ -12,19 +12,19 @@ function NavBar() {
     return (
    <div className={styles.navbar}>
    <div className={styles.iconcircle}>
-     <Image src={recipe} width="100%" height="100px" />
+     <Image src={recipe} width="50%" height="50%" />
    </div>
    <div className={styles.iconcircle}>
-     <Image src={contacts} width="100%" height="100px" />
+     <Image src={contacts} width="50%" height="50%" />
    </div>
    <div className={styles.iconcircle}>
-     <Image src={gallery} width="100%" height="100px" />
+     <Image src={gallery} width="50%" height="50%" />
    </div>
    <div className={styles.iconcircle}>
-     <Image src={calendar} width="100%" height="100px" />
+     <Image src={calendar} width="50%" height="50%"  />
    </div>
    <div className={styles.iconcircle}>
-     <Image src={tracker} width="100%" height="100px" />
+     <Image src={tracker} width="50%" height="50%"  />
    </div>
  </div>
     );

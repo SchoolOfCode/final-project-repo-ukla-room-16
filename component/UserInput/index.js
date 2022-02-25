@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
 // import {useRouter} from "next/router";
 
@@ -7,6 +7,7 @@ const UserInput = () => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
   console.log(text);
+  
   
   async function onSubmit(postText) {
     const postObj = {
@@ -29,6 +30,7 @@ const UserInput = () => {
     }
     
   }
+
   // const Router = useRouter();
   // const forceReload = () => {
   //   Router.reload()
@@ -38,6 +40,7 @@ const UserInput = () => {
     setText(e.target.value);
     
   }
+
 
   return (
     <div className={styles.container}>
