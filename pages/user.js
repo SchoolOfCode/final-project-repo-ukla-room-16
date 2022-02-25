@@ -6,14 +6,16 @@ import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
+import crossButton from "../images/bluecross.png"
 import { useState, useEffect } from "react";
-import EditableComponent from "../component/EditField";
+import EditableComponent from "../component/EditableComponent";
+import Link from "next/link";
 
 export default function User() {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const URL = process.env.NEXT_PUBLIC_URL;
-  console.log(user)
+  console.log(user);
 
   useEffect(() => {
     async function getUser() {
@@ -34,59 +36,46 @@ export default function User() {
     getUser();
   }, []);
 
-
-
-
-
-
-
-
-
   return (
+
+    
+  
+  
     <div className={css.container}>
 
       <div className={css.subContainer}>
+<Link href="/dashboard"><a className={css.goHome}><Image src={crossButton} width="15px" height="15px"/></a></Link>
+
         <Image src={userProfile} width="259px" height="213px" />
-
-
-        
-      <EditableComponent Text={user.full_name}/>
-      <EditableComponent Text={user.email}/>
-      
-         
-
-
-
-
-{/* 
-        <h2>{user.full_name}</h2>
-
-
-        <button>EDIT</button> */}
-        <h3> DOB </h3>
-        <p> Email Address </p>
-        <p> Mobile Number </p>
-        <p> Home Address </p>
+        <Link href="/createUserProfile">
+          <a className={css.createProfile}>Update Profile</a>
+        </Link>
+        <p>{user.profile_name}</p>
+        <p>{user.mobile_number}</p>
+        <h3> {user.dob} </h3>
+        <p> {user.address} </p>
+        <p> {user.email} </p>
+        <p> {user.gender} </p>
 
         <div className={css.info}>
           <div className={css.subInfo}>
             <Image src={meal} width="85px" height="90px" />
             <ul>
-              <p>Favourite foods: Sushi - Pasta.</p>
+              <p>Favourite foods: {user.fav_food}</p>
             </ul>
           </div>
           <div className={css.subInfo}>
             <Image src={medical} width="80px" height="50px" />
             <ul>
-              <p>Blood type: 0-</p>
-              <p>Allergies: None</p>
+              <p>Blood type:{user.blood_type} </p>
+              <p>Allergies: {user.allergies}</p>
             </ul>
           </div>
           <div className={css.subInfo}>
             <Image src={clothes} width="80px" height="90px" />
             <ul>
-              <p>Upper-Body: Medium</p>
-              <p>Lower-Body: 33 cm</p>
+              <p>Upper-Body: {user.clothes_size_upper}</p>
+              <p>Lower-Body: {user.clothes_size_lower}</p>
             </ul>
           </div>
           <div className={css.subInfo}>
@@ -100,7 +89,6 @@ export default function User() {
         </div>
       </div>
     </div>
+    
   );
 }
-
-

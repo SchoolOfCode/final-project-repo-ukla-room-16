@@ -27,6 +27,7 @@ const UserInput = () => {
 
   function handleChange(e) {
     setText(e.target.value);
+    
   }
 
   return (

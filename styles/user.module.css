@@ -1,14 +1,33 @@
 .container {
   background-color: #f1f6ed;
 }
+
+
 .subContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 40%;
+  min-width: 300px;
   background-color: white;
   margin: 0 auto;
 }
+.createProfile {
+  align-self: flex-end;
+  border-radius: 20px;
+ padding: 10px;
+ margin: 10px;
+ background-color: aqua;
+}
+
+.goHome {
+  align-self: flex-end;
+  border-radius: 20px;
+ padding: 10px;
+ margin: 10px;
+ background-color: aqua;
+}
+
 
 .info {
   display: flex;
