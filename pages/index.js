@@ -42,14 +42,15 @@ console.log(user);
         {/* here picking the full name of the user to display welcome message to */}
         <h1><center> Welcome {user.given_name}!</center></h1>
 
-        {/* displaying a log out button under the welcome message */}
-        <a href="/api/auth/logout">Logout</a>>
-        <center>
+
+        
         <CreateTree email={user.email} />
         <JoinTree email={user.email} />
-        </center>
+       
         <Link href="/dashboard">Homepage</Link>
 
+        {/* displaying a log out button under the welcome message */}
+        <center><a href="/api/auth/logout" className={styles.logout}>Logout</a></center>
 
       </>
     );
