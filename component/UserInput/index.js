@@ -16,17 +16,22 @@ const UserInput = () => {
       created_at: `${Date.now()}`,
     };
 
-    const res = await fetch(`${URL}/posts`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(postObj),
-    });
-    const data = await res.json();
-    console.log(data);
+    try {
+      const res = await fetch(`${URL}/posts`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(postObj),
+      });
+      const data = await res.json();
+    } catch (error) {
+      throw new Error(error);
+    }
+
   }
 
   function handleChange(e) {
     setText(e.target.value);
+    
   }
 
   return (
