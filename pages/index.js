@@ -9,6 +9,8 @@ import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
 import css from "../styles/Dashboard.module.css";
 import userProfilePicture from "../images/user-icon.jpeg";
+import JoinTree from "../component/JoinTree";
+
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
@@ -16,7 +18,6 @@ export default function Home() {
 console.log(user);
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
-familia
 
   //display error message in case of issue
   if (error) return <div>{error.message}</div>;
@@ -42,14 +43,11 @@ familia
         <h1><center> Welcome {user.given_name}!</center></h1>
 
         {/* displaying a log out button under the welcome message */}
-        <a href="/api/auth/logout">Logout</a>
-
-        <br></br>
+        <a href="/api/auth/logout">Logout</a>>
         <center>
-        <CreateTree />
-        <button>Join a Tree</button>
+        <CreateTree email={user.email} />
+        <JoinTree email={user.email} />
         </center>
-        <br></br>
         <Link href="/dashboard">Homepage</Link>
 
 
@@ -65,19 +63,19 @@ familia
         <h1 className={styles.title}>
           {/* Familia </h1> */}
 
-          {/* <Image
+          <Image
             src={logofamilia}
             alt="logo saying Familia, the name of our app"
             className={styles.logo}
-          /> */}
+          />
         </h1>
         {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
-        {/* <Image
+        <Image
           src={frontimage}
           alt="Picture of a family from grandparents, to children and grandchildren"
           width="1000em"
           height="450em"
-        /> */}
+        />
       </div>
       <div className={styles.right}>
         {/* auth0 button to go to login/sign up box */}

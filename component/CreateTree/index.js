@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FamilyForm from "./FamilyForm";
+import FamilyForm from "./CreateFamilyForm";
 import styles from "../../styles/CreateTree.module.css"
 
 function CreateTree({email}) {
