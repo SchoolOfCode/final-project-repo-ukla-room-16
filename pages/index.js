@@ -7,11 +7,13 @@ import logofamilia from "../images/Familia9.png";
 import { useUser } from "@auth0/nextjs-auth0";
 import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
+import css from "../styles/Dashboard.module.css";
+import userProfilePicture from "../images/user-icon.jpeg";
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
 
-
+console.log(user);
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
 
@@ -27,11 +29,18 @@ export default function Home() {
   if (user) {
     return (
       <>
+      <header className={css.header}>
+      <Link href="/dashboard"><Image src={logofamilia} width="150px" height="150px" /></Link>
+        <p><b>{user.family_name}</b></p>
+
+        <Link href="/user"><a><Image src={userProfilePicture} width="80px" height="80px" /></a></Link>
+      </header>
+
       {/* here we are passing down the name and email of the user as a prop */}
       <NewUsers name={user.name} email={user.email}/>
 
         {/* here picking the full name of the user to display welcome message to */}
-        <h1> Welcome {user.name}!</h1>
+        <h1><center> Welcome {user.name}!</center></h1>
 
         {/* displaying a log out button under the welcome message */}
         <a href="/api/auth/logout">Logout</a>
