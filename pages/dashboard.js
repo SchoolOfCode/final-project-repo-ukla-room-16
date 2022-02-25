@@ -28,7 +28,7 @@ export default function Home() {
         {/* <p><b>{user.family_name}</b></p> */}
 
 
-        <Link href="/user"><a><Image src={user.picture} width="70px" height="70px" /></a></Link>
+        {/* <Link href="/user"><a><Image src={user.picture} width="70px" height="70px" /></a></Link> */}
           </header>
 
 
