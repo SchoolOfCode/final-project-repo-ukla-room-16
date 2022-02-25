@@ -1,17 +1,16 @@
 .container {
   background-color: #f1f6ed;
 }
-
-
 .subContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40%;
-  min-width: 300px;
+  min-width: 400px;
   background-color: white;
   margin: 0 auto;
 }
+
 .createProfile {
   align-self: center;
   border-radius: 20px;
@@ -31,7 +30,6 @@
  font-weight: bold;
  background-color: #cc1010;
 }
-
 
 .info {
   display: flex;

@@ -50,8 +50,10 @@ console.log(user);
 
 
 
+
 <div className={styles.containerbuttons}>
         <div className={styles.leftcolumn}>
+
         <CreateTree email={user.email} />
         </div>
         <div className={styles.rightcolumn}>

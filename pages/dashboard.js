@@ -27,8 +27,10 @@ export default function Home() {
         <Image src={logo} width="150px" height="150px" />
         <p><b>{user.family_name}</b></p>
 
+
         <Link href="/user"><a><Image src={user.picture} width="70px" height="70px" /></a></Link>
           </header>
+
 
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
