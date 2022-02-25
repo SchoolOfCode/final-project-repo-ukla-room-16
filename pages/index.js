@@ -26,6 +26,7 @@ console.log(user);
   // when user logs in say welcome with the name of the user.
   // The object returned when logging in has various keys which can be used
 
+  
   if (user) {
     return (
       <>
