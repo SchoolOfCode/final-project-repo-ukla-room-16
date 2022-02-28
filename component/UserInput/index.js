@@ -3,7 +3,7 @@ import styles from "../../styles/UserInput.module.css";
 // import {useRouter} from "next/router";
 
 
-const UserInput = () => {
+const UserInput = ({person}) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
   console.log(text);
@@ -11,9 +11,9 @@ const UserInput = () => {
   
   async function onSubmit(postText) {
     const postObj = {
-      family_id: 1,
-      user_id: 3,
-      user_name: "Alan",
+      family_id: person.family_id,
+      user_id: person.user_id,
+      user_name: person.full_name,
       post_text: postText,
       created_at: `${Date.now()}`,
     };

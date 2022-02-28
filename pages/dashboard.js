@@ -13,24 +13,64 @@ import tracker from "../images/tracker.png";
 import gallery from "../images/gallery.png";
 import calendar from "../images/calendar.png";
 import contacts from "../images/contacts.png";
-import NavBar from "../component/NavBar"
+import NavBar from "../component/NavBar";
 import { useUser } from "@auth0/nextjs-auth0";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const URL = process.env.NEXT_PUBLIC_URL;
   const { user, error, isLoading } = useUser();
+  const [familyID, setFamilyID] = useState("")
+  const [person, setPerson] = useState("")
+  console.log("1")
+  console.log(person)
 
+  useEffect(()=> {
+        
+        async function getUsers(personLoggingIn) {
+
+          const res = await fetch(`${URL}/users`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          });
+          const data = await res.json();
+          console.log(data);
+          const index = data.payload.findIndex((person) => {
+            return person.email === personLoggingIn.email;
+          });
+  
+          setPerson(data.payload[index])
+          //IF THAT USER DOES EXISTS, CHECK IF THEY HAVE A FAMILY ID.
+          if (index !== -1 && data.payload[index].family_id) {
+            setFamilyID(data.payload[index].family_id);
+          }
+          //   getUsers(user)
+          // }
+        }
+      if (user) {
+        getUsers(user);
+      }
+
+      },[user])
+
+    console.log(familyID)
+    console.log("2 " )
+    console.log(person)
   return (
     <div>
-  
-
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
         {/* <p><b>{user.family_name}</b></p> */}
-<p><b>Family Name</b></p>
+        <p>
+          <b>Family Name</b>
+        </p>
 
-        <Link href="/user"><a><Image src={userProfilePicture} width="70px" height="70px" /></a></Link>
-          </header>
-
+        <Link href="/user">
+          <a>
+            <Image src={userProfilePicture} width="70px" height="70px" />
+          </a>
+        </Link>
+      </header>
 
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
@@ -54,11 +94,9 @@ export default function Home() {
           <NavBar />
         </div>
         <div className={styles.middlecolumn}>
+          <UserInput person={person}/>
 
-
-          <UserInput />
-        
-          <Feed />
+          <Feed familyID={familyID} person={person} />
         </div>
 
         <div className={styles.rightcolumn}>

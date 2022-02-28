@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../../../styles/Post.module.css";
 import profilePic from "../../../images/user-icon.jpeg";
 
-function Post({ username, postText, createdAt }) {
+function Post({ username, postText, createdAt, picture }) {
   let currentTime = Date.now();
   let timedistance = currentTime - createdAt;
   let timeAgo;
@@ -26,7 +26,7 @@ function Post({ username, postText, createdAt }) {
   return (
     <div className={styles.container}>
       <div className={styles.postinfo}>
-        <Image src={profilePic} width="80px" height="80px" />
+        <Image src={picture ? picture : profilePic} width="80px" height="80px" />
         <p className={styles.username}>{username}</p>
         <p className={styles.timestamp}>{timeAgo}</p>
       </div>
