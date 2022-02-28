@@ -48,7 +48,6 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
       });
       const data = await res.json();
-      console.log(data);
 
       //CHECKING IF THAT USER EXISTS IN THE USERS TABLE
       const index = data.payload.findIndex((person) => {
@@ -62,7 +61,6 @@ export default function Home() {
           setHasFamilyID(true);
         }
       }
-      console.log(hasFamilyID);
     }
 
     //RUN THE FUNCTION WITH THE USER FROM AUTH0 
