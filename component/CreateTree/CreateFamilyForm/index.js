@@ -42,7 +42,6 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
       headers: { "Content-Type": "application/json" },
     });
     const familyData = await familyRes.json();
-    console.log(familyData);
 
     //CHECKING IF THAT FAMILY EXISTS
     const indexOfFamily = familyData.payload.findIndex((family) => {
@@ -58,7 +57,6 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
           body: JSON.stringify(familyPostObj),
         });
         const familyPostData = await familyPostRes.json();
-        console.log(familyPostData);
       }
       postFamilies();
     }
@@ -71,7 +69,6 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
       headers: { "Content-Type": "application/json" },
     });
     const userData = await userRes.json();
-    console.log(userData);
 
     //FINDING ID OF THE USER - WE USE EMAIL TO FIND THE PERSON AS THAT DOESN'T CHANGE
     const index = userData.payload.findIndex((person) => {
@@ -88,7 +85,6 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
         headers: { "Content-Type": "application/json" },
       });
       const familyData = await familyRes.json();
-      console.log(familyData);
 
       //FINDING THE FAMILY THAT MATCHES THE NAME THE USER GAVE
       const indexOfFamilyName = familyData.payload.findIndex((family) => {
@@ -124,7 +120,7 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.header}>
-          <a href="#" onClick={handleCloseClick}>
+          <a href="#" onClick={handleCloseClick} className={styles.x}>
             x
           </a>
         </div>
