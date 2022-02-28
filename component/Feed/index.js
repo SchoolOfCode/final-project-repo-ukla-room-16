@@ -70,6 +70,7 @@ function Feed({ person }) {
             createdAt={item.created_at}
             picture={item.picture}
             id = {item.id}
+            userID={item.user_id}
           />
         );
       })}

@@ -19,46 +19,41 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const URL = process.env.NEXT_PUBLIC_URL;
-  const { user, isLoading, error} = useUser();
-  const [person, setPerson] = useState("")
-  const [familyName, setFamilyName] = useState("")
-console.log(user)
-console.log("personh8t8ghrjghrhgurh")
-console.log(person)
-  useEffect(()=> {
-        
-        async function getUsers(personLoggingIn) {
+  const { user, isLoading, error } = useUser();
+  const [person, setPerson] = useState("");
+  const [familyName, setFamilyName] = useState("");
+  console.log(user);
+  console.log("personh8t8ghrjghrhgurh");
+  console.log(person);
+  useEffect(() => {
+    async function getUsers(personLoggingIn) {
+      const res = await fetch(`${URL}/users`, {
+        method: "GET",
+      });
+      const data = await res.json();
+      const index = data.payload.findIndex((person) => {
+        return person.email === personLoggingIn.email;
+      });
 
-          const res = await fetch(`${URL}/users`, {
-            method: "GET",
-          });
-          const data = await res.json();
-          const index = data.payload.findIndex((person) => {
-            return person.email === personLoggingIn.email;
-          });
+      setPerson(data.payload[index]);
 
-          setPerson(data.payload[index])
+      let familyID = data.payload[index].family_id;
 
-          let familyID = data.payload[index].family_id
+      const familyRes = await fetch(`${URL}/families/${familyID}`, {
+        method: "GET",
+      });
+      const familyData = await familyRes.json();
+      const familyIndex = familyData.payload.findIndex((family) => {
+        return family.id === familyID;
+      });
+      setFamilyName(familyData.payload[familyIndex].name);
+    }
+    if (user) {
+      getUsers(user);
+    }
+  }, [user]);
 
-          const familyRes = await fetch(`${URL}/families/${familyID}`, {
-            method: "GET",
-          });
-          const familyData = await familyRes.json();
-          const familyIndex = familyData.payload.findIndex((family) => {
-            return family.id === familyID;
-          });
-          setFamilyName(familyData.payload[familyIndex].name)
-  
-        }
-      if (user) {
-        getUsers(user);
-      }
-
-      },[user])
-
-
-      // waiting message on loading between pages
+  // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
 
   //display error message in case of issue
@@ -98,10 +93,10 @@ console.log(person)
               <Image src={tracker} width="100%" height="100px" />
             </div>
           </div> */}
-          <NavBar/>
+          <NavBar />
         </div>
         <div className={styles.middlecolumn}>
-          <UserInput person={person}/>
+          <UserInput person={person} />
 
           <Feed person={person} />
         </div>
