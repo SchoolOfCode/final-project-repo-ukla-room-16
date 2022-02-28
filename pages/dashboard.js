@@ -19,33 +19,37 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const URL = process.env.NEXT_PUBLIC_URL;
-  const { user, error, isLoading } = useUser();
-  const [familyID, setFamilyID] = useState("")
+  const { user, isLoading, error} = useUser();
   const [person, setPerson] = useState("")
-  console.log("1")
-  console.log(person)
-
+  const [familyName, setFamilyName] = useState("")
+console.log(user)
+console.log("personh8t8ghrjghrhgurh")
+console.log(person)
   useEffect(()=> {
         
         async function getUsers(personLoggingIn) {
 
           const res = await fetch(`${URL}/users`, {
             method: "GET",
-            headers: { "Content-Type": "application/json" },
           });
           const data = await res.json();
-          console.log(data);
           const index = data.payload.findIndex((person) => {
             return person.email === personLoggingIn.email;
           });
-  
+
           setPerson(data.payload[index])
-          //IF THAT USER DOES EXISTS, CHECK IF THEY HAVE A FAMILY ID.
-          if (index !== -1 && data.payload[index].family_id) {
-            setFamilyID(data.payload[index].family_id);
-          }
-          //   getUsers(user)
-          // }
+
+          let familyID = data.payload[index].family_id
+
+          const familyRes = await fetch(`${URL}/families/${familyID}`, {
+            method: "GET",
+          });
+          const familyData = await familyRes.json();
+          const familyIndex = familyData.payload.findIndex((family) => {
+            return family.id === familyID;
+          });
+          setFamilyName(familyData.payload[familyIndex].name)
+  
         }
       if (user) {
         getUsers(user);
@@ -53,21 +57,24 @@ export default function Home() {
 
       },[user])
 
-    console.log(familyID)
-    console.log("2 " )
-    console.log(person)
+
+      // waiting message on loading between pages
+  if (isLoading) return <div>...loading</div>;
+
+  //display error message in case of issue
+  if (error) return <div>{error.message}</div>;
   return (
     <div>
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
         {/* <p><b>{user.family_name}</b></p> */}
         <p>
-          <b>Family Name</b>
+          <b>{familyName}</b>
         </p>
 
         <Link href="/user">
           <a>
-            <Image src={userProfilePicture} width="70px" height="70px" />
+            <Image src={user.picture} width="70px" height="70px" />
           </a>
         </Link>
       </header>
@@ -91,12 +98,12 @@ export default function Home() {
               <Image src={tracker} width="100%" height="100px" />
             </div>
           </div> */}
-          <NavBar />
+          <NavBar/>
         </div>
         <div className={styles.middlecolumn}>
           <UserInput person={person}/>
 
-          <Feed familyID={familyID} person={person} />
+          <Feed person={person} />
         </div>
 
         <div className={styles.rightcolumn}>

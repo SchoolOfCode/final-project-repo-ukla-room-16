@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
 // import {useRouter} from "next/router";
 
-
 const UserInput = ({person}) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
   console.log(text);
+  console.log("person picture = ", person.picture)
   
   
   async function onSubmit(postText) {
@@ -16,8 +16,8 @@ const UserInput = ({person}) => {
       user_name: person.full_name,
       post_text: postText,
       created_at: `${Date.now()}`,
+      picture: person.picture
     };
-    
     try {
       const res = await fetch(`${URL}/posts`, {
         method: "POST",

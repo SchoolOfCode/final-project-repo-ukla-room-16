@@ -2,8 +2,9 @@ import Image from "next/image";
 
 import styles from "../../../styles/Post.module.css";
 import profilePic from "../../../images/user-icon.jpeg";
+import {useState, useEffect} from 'react'
 
-function Post({ username, postText, createdAt, picture }) {
+function Post({ username, postText, createdAt, picture}) {
   let currentTime = Date.now();
   let timedistance = currentTime - createdAt;
   let timeAgo;
@@ -26,7 +27,7 @@ function Post({ username, postText, createdAt, picture }) {
   return (
     <div className={styles.container}>
       <div className={styles.postinfo}>
-        <Image src={picture ? picture : profilePic} width="80px" height="80px" />
+        <Image src={picture ? picture:profilePic} width="60vh" height="60vh" />
         <p className={styles.username}>{username}</p>
         <p className={styles.timestamp}>{timeAgo}</p>
       </div>
