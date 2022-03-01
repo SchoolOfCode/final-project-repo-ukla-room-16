@@ -1,5 +1,5 @@
 import React from 'react';
-import FamilyTree from './mytree';
+import FamilyTree from '../component/MyTree/mytree';
 
 export default function App () {
     
