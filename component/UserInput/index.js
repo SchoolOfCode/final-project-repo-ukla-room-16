@@ -27,15 +27,9 @@ const UserInput = ({person}) => {
     }
     
   }
-
-  // const Router = useRouter();
-  // const forceReload = () => {
-  //   Router.reload()
-  // }
   
   function handleChange(e) {
     setText(e.target.value);
-    
   }
 
 

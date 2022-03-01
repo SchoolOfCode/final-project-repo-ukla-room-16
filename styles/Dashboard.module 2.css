@@ -1,13 +1,4 @@
-.header {
-  width: 98vw;
-  height: 10vh;
-  background: rgba(255, 232, 130, 0.4);
-  border-radius: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
- 
-}
+
 .container {
   display: flex;
   width: 98vw;

@@ -47,7 +47,7 @@ export default function createUserProfile() {
       { clothes_size_lower: lowerClothes },
       { shoe_size: shoeSize },
     ];
-    console.log(updatesArray);
+    
     updatesArray.forEach(async (update) => {
       const response = await fetch(`${URL}/users/${router.query.id}`, {
         method: "PUT",
@@ -56,17 +56,22 @@ export default function createUserProfile() {
       });
     });
 
-    setTimeout(() => router.push({
-      pathname: '/user',
-      query: {id: router.query.id},}),
-       1000);
+    setTimeout(
+      () =>
+        router.push({
+          pathname: "/user",
+          query: { id: router.query.id },
+        }),
+      1000
+    );
   }
 
   return (
-  
     <div className={styles.container}>
       <div className={styles.subContainer}>
-    <Link href="/user"><a className={styles.goToUser}>X</a></Link>
+        <Link href="/user">
+          <a className={styles.goToUser}>X</a>
+        </Link>
         <h3 style={{ color: "red" }}>
           Only update the fields you want to change
         </h3>
@@ -75,7 +80,6 @@ export default function createUserProfile() {
           width="259px"
           height="213px"
         /> */}
-
         <input
           className={styles.input}
           type="text"
@@ -84,7 +88,6 @@ export default function createUserProfile() {
           }}
           placeholder="name"
         />
-        {/* <input className={styles.input} type="text" onChange={e=> {(setEmail(e.target.value))}} placeholder="email" /> */}
         <input
           className={styles.input}
           type="text"
@@ -204,6 +207,5 @@ export default function createUserProfile() {
         <button onClick={handleClick}>Submit</button>
       </div>
     </div>
-    
   );
 }

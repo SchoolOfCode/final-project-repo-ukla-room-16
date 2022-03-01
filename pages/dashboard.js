@@ -3,12 +3,12 @@ import Image from "next/image";
 import styles from "../styles/Dashboard.module.css";
 import UserInput from "../component/UserInput";
 import Feed from "../component/Feed";
-import logo from "../images/Familia9.png";
 import addIcon from "../images/icons8-add-100.png";
 import familytree from "../images/familytree.jpg";
 import NavBar from "../component/NavBar";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useEffect, useState } from "react";
+import Header from "../component/Header";
 
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -39,7 +39,7 @@ export default function Dashboard() {
       const familyIndex = familyData.payload.findIndex((family) => {
         return family.id === familyID;
       });
-      console.log({familyData})
+      console.log({ familyData });
       setFamilyName(familyData.payload[familyIndex].name);
     }
     if (user) {
@@ -49,24 +49,12 @@ export default function Dashboard() {
 
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
-
   //display error message in case of issue
   if (error) return <div>{error.message}</div>;
+
   return (
     <div>
-      <header className={styles.header}>
-        <Image src={logo} width="150px" height="150px" />
-        <p>
-          <b>{familyName}</b>
-        </p>
-
-        <Link href={`/user?id=${person.id}`}>
-          <a>
-            <Image src={user.picture} width="70px" height="70px" />
-          </a>
-        </Link>
-        <a href="/api/auth/logout" className={styles.logout}>Logout</a>
-      </header>
+      <Header user={user} person={person} children={<h1>{familyName}</h1>} />
 
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
@@ -74,7 +62,6 @@ export default function Dashboard() {
         </div>
         <div className={styles.middlecolumn}>
           <UserInput person={person} />
-
           <Feed person={person} />
         </div>
 
