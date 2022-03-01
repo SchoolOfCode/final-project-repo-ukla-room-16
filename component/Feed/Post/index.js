@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import styles from "../../../styles/Post.module.css";
 import profilePic from "../../../images/user-icon.jpeg";
-import {useState, useEffect} from 'react'
 
-function Post({ username, postText, createdAt, picture, userID}) {
+function Post({ post }) {
+  const { user_id, user_name, post_text, picture, created_at } = post;
+
   let currentTime = Date.now();
-  let timedistance = currentTime - createdAt;
+  let timedistance = currentTime - created_at;
   let timeAgo;
   if (timedistance < 60000) {
     timeAgo = `${Math.floor(timedistance / 1000)} seconds ago`;
@@ -27,16 +29,21 @@ function Post({ username, postText, createdAt, picture, userID}) {
   return (
     <div className={styles.container}>
       <div className={styles.postinfo}>
-      <Link href={`/user?id=${userID}`}>
-        <Image src={picture ? picture:profilePic} width="60vh" height="60vh" />
-      </Link>
-        
-        <p className={styles.username}>{username}</p>
+        <Link href={`/users?id=${user_id}`}>
+          <a>
+            <Image
+              src={picture ? picture : profilePic}
+              width="60vh"
+              height="60vh"
+            />
+          </a>
+        </Link>
+        <p className={styles.username}>{user_name}</p>
         <p className={styles.timestamp}>{timeAgo}</p>
       </div>
 
       <div className={styles.textbox}>
-        <p>{postText}</p>
+        <p>{post_text}</p>
       </div>
     </div>
   );

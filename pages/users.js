@@ -1,17 +1,16 @@
 import { useUser } from "@auth0/nextjs-auth0";
 import { useState, useEffect } from "react";
-
-import Head from "next/head";
-import styles from "../styles/user.module.css";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
+
+import styles from "../styles/users.module.css";
 import meal from "../images/meal.png";
 import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
-import crossButton from "../images/bluecross.png";
-import Link from "next/link";
-import { useRouter } from "next/router";
+
 
 export default function User() {
   const router = useRouter();

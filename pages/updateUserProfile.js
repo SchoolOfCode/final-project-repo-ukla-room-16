@@ -1,22 +1,20 @@
-import styles from "../styles/updateUserProfile.module.css";
+import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/router";
+
+import styles from "../styles/updateUserProfile.module.css";
 import meal from "../images/meal.png";
-import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { useUser } from "@auth0/nextjs-auth0";
-import Link from "next/link";
 
 export default function createUserProfile() {
   const router = useRouter();
   const URL = process.env.NEXT_PUBLIC_URL;
+
   const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
-  // const [profilePic, setProfilePic] = useState("");
   const [mobile, setMobile] = useState("");
   const [address, setAddress] = useState("");
   const [favFood, setFavFood] = useState("");
@@ -27,10 +25,6 @@ export default function createUserProfile() {
   const [shoeSize, setShoeSize] = useState("");
   const [gender, setGender] = useState("");
   const [emergencyContact, setEmergencyContact] = useState("");
-  // const [user, setUser] = useState({});
-  const [error, setError] = useState("");
-
-  const { user, isLoading } = useUser();
 
   async function handleClick() {
     const updatesArray = [
@@ -59,7 +53,7 @@ export default function createUserProfile() {
     setTimeout(
       () =>
         router.push({
-          pathname: "/user",
+          pathname: "/users",
           query: { id: router.query.id },
         }),
       1000
@@ -69,7 +63,7 @@ export default function createUserProfile() {
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <Link href="/user">
+        <Link href={`/users?id=${router.query.id}`} >
           <a className={styles.goToUser}>X</a>
         </Link>
         <h3 style={{ color: "red" }}>

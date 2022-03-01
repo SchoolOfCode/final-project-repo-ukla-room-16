@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
 // import {useRouter} from "next/router";
 
-const UserInput = ({person}) => {
+const UserInput = ({ person }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
-  
+
   async function onSubmit(postText) {
     const postObj = {
       family_id: person.family_id,
@@ -13,7 +13,7 @@ const UserInput = ({person}) => {
       user_name: person.profile_name,
       post_text: postText,
       created_at: `${Date.now()}`,
-      picture: person.picture
+      picture: person.picture,
     };
     try {
       const res = await fetch(`${URL}/posts`, {
@@ -22,16 +22,16 @@ const UserInput = ({person}) => {
         body: JSON.stringify(postObj),
       });
       const data = await res.json();
+      document.querySelector(`.${styles.textinput}`).value = "";
+      console.log(data)
     } catch (error) {
       throw new Error(error);
     }
-    
   }
-  
+
   function handleChange(e) {
     setText(e.target.value);
   }
-
 
   return (
     <div className={styles.container}>
@@ -41,12 +41,11 @@ const UserInput = ({person}) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
-      <button className={styles.postbutton} onClick={() => onSubmit(text)} >
+      <button className={styles.postbutton} onClick={() => onSubmit(text)}>
         Post
       </button>
     </div>
   );
 };
-
 
 export default UserInput;

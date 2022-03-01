@@ -1,10 +1,30 @@
 .header {
-    width: 98vw;
-    height: 10vh;
-    background: rgba(255, 232, 130, 0.4);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-   
-  }
+  width: 100vw;
+  height: 10vh;
+  background: rgb(255, 233, 110);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.userDisplay {
+  background-color: #cc1010;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userDisplay > * {
+  margin: 10px;
+}
+
+.logout {
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(255, 233, 110);
+  padding: 6px;
+  border-radius: 5px;
+}
