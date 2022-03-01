@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Dashboard.module.css";
@@ -7,12 +6,6 @@ import Feed from "../component/Feed";
 import logo from "../images/Familia9.png";
 import addIcon from "../images/icons8-add-100.png";
 import familytree from "../images/familytree.jpg";
-import userProfilePicture from "../images/user-icon.jpeg";
-import recipe from "../images/recipe.png";
-import tracker from "../images/tracker.png";
-import gallery from "../images/gallery.png";
-import calendar from "../images/calendar.png";
-import contacts from "../images/contacts.png";
 import NavBar from "../component/NavBar";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useEffect, useState } from "react";
@@ -72,6 +65,7 @@ export default function Dashboard() {
             <Image src={user.picture} width="70px" height="70px" />
           </a>
         </Link>
+        <a href="/api/auth/logout" className={styles.logout}>Logout</a>
       </header>
 
       <div className={styles.container}>
