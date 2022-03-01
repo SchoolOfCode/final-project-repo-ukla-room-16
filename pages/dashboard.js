@@ -17,14 +17,14 @@ import NavBar from "../component/NavBar";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
   const { user, isLoading, error } = useUser();
   const [person, setPerson] = useState("");
   const [familyName, setFamilyName] = useState("");
-  console.log(user);
-  console.log("personh8t8ghrjghrhgurh");
-  console.log(person);
+  console.log("user", user);
+  console.log("person", person);
+
   useEffect(() => {
     async function getUsers(personLoggingIn) {
       const res = await fetch(`${URL}/users`, {
@@ -46,6 +46,7 @@ export default function Home() {
       const familyIndex = familyData.payload.findIndex((family) => {
         return family.id === familyID;
       });
+      console.log({familyData})
       setFamilyName(familyData.payload[familyIndex].name);
     }
     if (user) {
@@ -62,12 +63,11 @@ export default function Home() {
     <div>
       <header className={styles.header}>
         <Image src={logo} width="150px" height="150px" />
-        {/* <p><b>{user.family_name}</b></p> */}
         <p>
           <b>{familyName}</b>
         </p>
 
-        <Link href="/user">
+        <Link href={`/user?id=${person.id}`}>
           <a>
             <Image src={user.picture} width="70px" height="70px" />
           </a>
@@ -76,23 +76,6 @@ export default function Home() {
 
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
-          {/* <div className={styles.navbar}>
-            <div className={styles.iconcircle}>
-              <Image src={recipe} width="100%" height="100px" />
-            </div>
-            <div className={styles.iconcircle}>
-              <Image src={contacts} width="100%" height="100px" />
-            </div>
-            <div className={styles.iconcircle}>
-              <Image src={gallery} width="100%" height="100px" />
-            </div>
-            <div className={styles.iconcircle}>
-              <Image src={calendar} width="100%" height="100px" />
-            </div>
-            <div className={styles.iconcircle}>
-              <Image src={tracker} width="100%" height="100px" />
-            </div>
-          </div> */}
           <NavBar />
         </div>
         <div className={styles.middlecolumn}>
@@ -126,12 +109,3 @@ export default function Home() {
     </div>
   );
 }
-
-// import { useRouter } from 'next/router'
-
-// export default function Dashboard() {
-//   const router = useRouter()
-//   const { pid } = router.query
-
-//   return <p>Post: {pid}</p>
-// }

@@ -19,7 +19,6 @@ export default function User() {
 
   const { user } = useUser();
   const [person, setPerson] = useState("");
-  console.log("the ids: ", person.id, id);
 
   const [profile, setProfile] = useState({});
   const [error, setError] = useState("");
@@ -62,8 +61,6 @@ export default function User() {
       getUserProfile();
     }
   }, [id]);
-
-  console.log(profile.picture);
 
   return (
     <div className={styles.container}>

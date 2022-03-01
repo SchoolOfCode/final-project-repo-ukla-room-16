@@ -18,7 +18,6 @@ export default function Home() {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [hasFamilyID, setHasFamilyID] = useState(false);
 
-  console.log(user);
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
 
