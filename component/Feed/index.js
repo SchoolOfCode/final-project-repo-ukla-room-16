@@ -36,10 +36,7 @@ function Feed({ person }) {
       const res = await fetch(`${URL}/posts?familyID=${familyID}`, {
         method: "GET",
       });
-      console.log(`URL = ${URL}/posts?familyID=${familyID}`);
       const data = await res.json();
-      console.log("correct data ");
-      console.log(data);
       setFeed(
         data.payload.sort((a, b) => {
           return b.created_at - a.created_at;
@@ -70,6 +67,7 @@ function Feed({ person }) {
             createdAt={item.created_at}
             picture={item.picture}
             id = {item.id}
+            userID={item.user_id}
           />
         );
       })}
