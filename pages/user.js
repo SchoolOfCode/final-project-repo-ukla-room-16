@@ -19,7 +19,6 @@ export default function User() {
 
   const { user } = useUser();
   const [person, setPerson] = useState("");
-  console.log("the ids: ", person.id, id);
 
   const [profile, setProfile] = useState({});
   const [error, setError] = useState("");
@@ -63,8 +62,6 @@ export default function User() {
     }
   }, [id]);
 
-  console.log(profile.picture);
-
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
@@ -77,7 +74,7 @@ export default function User() {
           width="250px"
           height="200px"
         />
-        <Link href="/updateUserProfile">
+        <Link href={`/updateUserProfile?id=${person.id}`}>
           <a style={{display: Number(person.id) === Number(id) ? "block" :"none"}} className={styles.createProfile}>Update Profile</a>
         </Link>
         <p>{profile.profile_name}</p>

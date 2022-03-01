@@ -5,15 +5,12 @@ import styles from "../../styles/UserInput.module.css";
 const UserInput = ({person}) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
-  console.log(text);
-  console.log("person picture = ", person.picture)
-  
   
   async function onSubmit(postText) {
     const postObj = {
       family_id: person.family_id,
       user_id: person.id,
-      user_name: person.full_name,
+      user_name: person.profile_name,
       post_text: postText,
       created_at: `${Date.now()}`,
       picture: person.picture
@@ -30,15 +27,9 @@ const UserInput = ({person}) => {
     }
     
   }
-
-  // const Router = useRouter();
-  // const forceReload = () => {
-  //   Router.reload()
-  // }
   
   function handleChange(e) {
     setText(e.target.value);
-    
   }
 
 
