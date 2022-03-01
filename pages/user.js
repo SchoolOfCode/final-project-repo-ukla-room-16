@@ -74,7 +74,7 @@ export default function User() {
           width="250px"
           height="200px"
         />
-        <Link href="/updateUserProfile">
+        <Link href={`/updateUserProfile?id=${person.id}`}>
           <a style={{display: Number(person.id) === Number(id) ? "block" :"none"}} className={styles.createProfile}>Update Profile</a>
         </Link>
         <p>{profile.profile_name}</p>

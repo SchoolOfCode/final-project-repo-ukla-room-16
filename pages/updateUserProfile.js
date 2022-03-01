@@ -56,7 +56,7 @@ export default function createUserProfile() {
       });
     });
 
-    setTimeout(() => router.push("/user"), 1000);
+    setTimeout(() => router.push("/user?id=33"), 1000);
   }
 
   return (
