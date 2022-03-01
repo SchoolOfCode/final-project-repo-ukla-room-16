@@ -1,8 +1,12 @@
-import React from 'react';
-import FamilyTree from '../component/MyTree/mytree';
+import React, { Component } from 'react';
+import FamilyTree from "./mytree.js"
 
-export default function App () {
-    
+export default class App extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
         return (
             <div style={{height: '100%'}}>
 
@@ -15,7 +19,5 @@ export default function App () {
                 ]} />
             </div>
         );
-            }
-    
-
-
+    }
+}
