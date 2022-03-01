@@ -49,14 +49,17 @@ export default function createUserProfile() {
     ];
     console.log(updatesArray);
     updatesArray.forEach(async (update) => {
-      const response = await fetch(`${URL}/users/1`, {
+      const response = await fetch(`${URL}/users/${router.query.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(update),
       });
     });
 
-    setTimeout(() => router.push("/user?id=33"), 1000);
+    setTimeout(() => router.push({
+      pathname: '/user',
+      query: {id: router.query.id},}),
+       1000);
   }
 
   return (

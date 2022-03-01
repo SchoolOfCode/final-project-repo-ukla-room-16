@@ -10,7 +10,7 @@ const UserInput = ({person}) => {
     const postObj = {
       family_id: person.family_id,
       user_id: person.id,
-      user_name: person.full_name,
+      user_name: person.profile_name,
       post_text: postText,
       created_at: `${Date.now()}`,
       picture: person.picture
