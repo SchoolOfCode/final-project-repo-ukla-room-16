@@ -35,7 +35,7 @@ export default function Dashboard() {
         method: "GET",
       });
       const familyData = await familyRes.json();
-      setFamilyName(familyData.payload[0].name);
+      setFamilyName(familyData.payload.name);
     }
     if (user) {
       getUsers(user);

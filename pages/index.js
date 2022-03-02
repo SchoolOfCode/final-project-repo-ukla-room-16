@@ -109,10 +109,10 @@ export default function Home() {
 
           <div className={styles.containerbuttons}>
             <div className={styles.leftcolumn}>
-              <CreateTree email={user.email} />
+              <CreateTree email={user.email} setHasFamilyID={setHasFamilyID}/>
             </div>
             <div className={styles.rightcolumn}>
-              <JoinTree email={user.email} />
+              <JoinTree email={user.email} setHasFamilyID={setHasFamilyID}/>
             </div>
           </div>
 

@@ -46,7 +46,7 @@ export default function User() {
         const response = await fetch(`${URL}/users/${id}`);
         const data = await response.json();
         if (data.success === true) {
-          setProfile(data.payload[0]);
+          setProfile(data.payload);
           setError("");
         } else {
           setError("Fetch didn't work :(");

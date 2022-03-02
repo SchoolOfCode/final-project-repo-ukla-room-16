@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import styles from "../../../styles/CreateTree.module.css";
 
-function FamilyForm({ display, setDisplay, onClose, email }) {
+function FamilyForm({ display, setDisplay, onClose, email, setHasFamilyID }) {
   const URL = process.env.NEXT_PUBLIC_URL;
 
   const [text, setText] = useState("");
@@ -78,6 +78,7 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
         });
 
         const putUserData = await putUserRes.json();
+        setHasFamilyID(true)
       }
 
       putFamilyIdToUser();

@@ -2,7 +2,7 @@ import { useState } from "react";
 import FamilyForm from "./CreateFamilyForm";
 import styles from "../../styles/CreateTree.module.css"
 
-function CreateTree({email}) {
+function CreateTree({email, setHasFamilyID}) {
   const [display, setDisplay] = useState(false);
 
 
@@ -10,7 +10,7 @@ function CreateTree({email}) {
     <div>
       <button onClick={() => setDisplay(true)} className={styles.createtreebutton}>Create A Tree</button>
       <FamilyForm onClose={() => setDisplay(false)}
-          display={display} setDisplay={setDisplay} email={email}/>
+          display={display} setDisplay={setDisplay} email={email} setHasFamilyID={setHasFamilyID}/>
     </div>
   );
 }

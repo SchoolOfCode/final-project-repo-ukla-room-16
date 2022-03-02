@@ -2,7 +2,7 @@ import { useState } from "react";
 import FamilyForm from "./JoinFamilyForm";
 import styles from "../../styles/JoinTree.module.css";
 
-function JoinTree({ email }) {
+function JoinTree({ email, setHasFamilyID }) {
   const [display, setDisplay] = useState(false);
 
   return (
@@ -13,6 +13,7 @@ function JoinTree({ email }) {
         display={display}
         setDisplay={setDisplay}
         email={email}
+        setHasFamilyID={setHasFamilyID}
       />
     </div>
   );
