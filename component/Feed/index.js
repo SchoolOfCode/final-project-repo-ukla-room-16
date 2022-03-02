@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Post from "./Post";
 import styles from "../../styles/Feed.module.css";
-import { useUser } from "@auth0/nextjs-auth0";
 
 function Feed({ person }) {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -32,10 +31,8 @@ function Feed({ person }) {
 
   useEffect(() => {
     async function getPosts(familyID) {
-      //FETCHING THE FAMILIES TABLE
-      const res = await fetch(`${URL}/posts?familyID=${familyID}`, {
-        method: "GET",
-      });
+      //FETCHING THE POSTS
+      const res = await fetch(`${URL}/posts?familyID=${familyID}`);
       const data = await res.json();
       console.log(data)
       setFeed(
@@ -59,6 +56,7 @@ function Feed({ person }) {
   }
   return (
     <div className={styles.feed}>
+
       {feed.map((item) => {
         return (
           <Post

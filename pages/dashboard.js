@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/Dashboard.module.css";
-import UserInput from "../component/UserInput";
-import Feed from "../component/Feed";
-import addIcon from "../images/icons8-add-100.png";
-import familytree from "../images/familytree.jpg";
-import NavBar from "../component/NavBar";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useEffect, useState } from "react";
+
+import styles from "../styles/Dashboard.module.css";
+import addIcon from "../images/icons8-add-100.png";
+import familytree from "../images/familytree.jpg";
+import UserInput from "../component/UserInput";
+import Feed from "../component/Feed";
+import NavBar from "../component/NavBar";
 import Header from "../component/Header";
 
 export default function Dashboard() {
@@ -27,20 +28,14 @@ export default function Dashboard() {
       const index = data.payload.findIndex((person) => {
         return person.email === personLoggingIn.email;
       });
-
       setPerson(data.payload[index]);
 
       let familyID = data.payload[index].family_id;
-
       const familyRes = await fetch(`${URL}/families/${familyID}`, {
         method: "GET",
       });
       const familyData = await familyRes.json();
-      const familyIndex = familyData.payload.findIndex((family) => {
-        return family.id === familyID;
-      });
-      console.log({ familyData });
-      setFamilyName(familyData.payload[familyIndex].name);
+      setFamilyName(familyData.payload[0].name);
     }
     if (user) {
       getUsers(user);

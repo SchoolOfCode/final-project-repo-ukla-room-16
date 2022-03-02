@@ -8,14 +8,12 @@ import logo from "../../images/Familia9.png";
 export default function Header({ user, person, children }) {
   return (
     <header className={styles.header}>
-      <Image src={logo} width="150px" height="150px" />
-
+      <Image src={logo} width="200px" height="150px" />
       <div>{children}</div>
-
-      <div>
-        <Link href={`/user?id=${person.id}`}>
+      <div className={styles.userDisplay}>
+        <Link href={`/users?id=${person.id}`}>
           <a>
-            <Image src={user.picture} width="70px" height="70px" />
+            <Image src={user.picture} width="60px" height="60px" />
           </a>
         </Link>
         <a href="/api/auth/logout" className={styles.logout}>
