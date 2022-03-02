@@ -9,6 +9,7 @@ import NavBar from "../component/NavBar";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useEffect, useState } from "react";
 import Header from "../component/Header";
+import FamilyTree from "../component/FamilyTree/mytree.js"
 
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -76,7 +77,8 @@ export default function Dashboard() {
           </div>
 
           <div className={styles.tree}>
-            <Image src={familytree} />
+            {/* <Image src={familytree} /> */}
+            <FamilyTree />
           </div>
 
           <div className={styles.events}>
