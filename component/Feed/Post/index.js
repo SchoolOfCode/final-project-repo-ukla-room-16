@@ -4,8 +4,13 @@ import Link from "next/link";
 import styles from "../../../styles/Post.module.css";
 import profilePic from "../../../images/user-icon.jpeg";
 
-function Post({ post }) {
-  const { user_id, user_name, post_text, picture, created_at } = post;
+import {useState, useEffect} from 'react'
+import heart from "../../../images/heart.png"
+import like from "../../../images/like.png"
+
+function Post({ username, postText, createdAt, picture, userID, id, likes, familyID, }) {
+  const URL = process.env.NEXT_PUBLIC_URL;
+  const [count, setCount] = useState(likes)
 
   let currentTime = Date.now();
   let timedistance = currentTime - created_at;
@@ -26,6 +31,83 @@ function Post({ post }) {
     timeAgo = `${Math.floor(timedistance / 3.154e10)} years ago`;
   }
 
+  async function IncrementCount(count) {
+    setCount(Number(count)+1)
+    console.log(`${URL}/posts/${id}`)
+    const res = await fetch(`${URL}/posts/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          likes: count
+        }),
+    })
+    const data = await res.json()
+    console.log(data)
+  }
+
+// useEffect( async function IncrementCount() {
+//   const res = await fetch(`${URL}/posts/${id}`, {
+//     method: "PUT",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//       family_id: familyID,
+//       user_id: userID,
+//       user_name: username,
+//       post_text: postText,
+//       created_at: createdAt,
+//       picture: picture,
+//       likes: count+1
+//     }),
+//   })
+//   const data= await res.json();
+// }, [count])
+
+// function IncrementCount() {
+//   setCount(count+1)
+// }
+
+// const putObj = {
+//   family_id: familyID,
+//       user_id: userID,
+//       user_name: username,
+//       post_text: postText,
+//       created_at: createdAt,
+//       picture: picture,
+//       likes: count+1
+// }
+
+// console.log(putObj)
+
+// async function IncrementCount() {
+// const res = await fetch(`${URL}/posts/${id}`, {
+//     method: "PUT",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//       family_id: familyID,
+//       user_id: userID,
+//       user_name: username,
+//       post_text: postText,
+//       created_at: createdAt,
+//       picture: picture,
+//       likes: count+1
+//     }),
+// })}
+
+//  useEffect(() => {
+//     async function getLikes() {
+//       //FETCHING THE POST TABLE
+//       const res = await fetch(`${URL}/posts/${id}`, {
+//         method: "GET",
+//       });
+//       const data = await res.json();
+//       console.log(data)
+//       setCount(data.payload.likes)
+//     }
+
+//     getLikes()
+//   }, [count]);
+
+
   return (
     <div className={styles.container}>
       <div className={styles.postinfo}>
@@ -45,7 +127,14 @@ function Post({ post }) {
       <div className={styles.textbox}>
         <p>{post_text}</p>
       </div>
-    </div>
+      <div className={styles.postbutton}>
+      <Image src={like} onClick={() => {IncrementCount(count)}} width="30vh" height="30vh" />
+      <div className={styles.like}>
+      <Image src={heart} width="30vh" height="30vh" />
+      <p>{count}</p>
+      </div>
+      </div>
+      </div>
   );
 }
 

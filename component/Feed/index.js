@@ -34,6 +34,7 @@ function Feed({ person }) {
       //FETCHING THE POSTS
       const res = await fetch(`${URL}/posts?familyID=${familyID}`);
       const data = await res.json();
+      console.log(data)
       setFeed(
         data.payload.sort((a, b) => {
           return b.created_at - a.created_at;
@@ -55,8 +56,21 @@ function Feed({ person }) {
   }
   return (
     <div className={styles.feed}>
-      {feed.map((post) => {
-        return <Post key={post.id} post={post} />;
+
+      {feed.map((item) => {
+        return (
+          <Post
+            key={item.id}
+            username={item.user_name}
+            postText={item.post_text}
+            createdAt={item.created_at}
+            picture={item.picture}
+            id={item.id}
+            userID={item.user_id}
+            likes={item.likes}
+            familyID={familyID}
+          />
+        );
       })}
     </div>
   );

@@ -14,7 +14,9 @@ const UserInput = ({ person }) => {
       post_text: postText,
       created_at: `${Date.now()}`,
       picture: person.picture,
+      likes: Number(0)
     };
+    console.log("postobj", postObj)
     try {
       const res = await fetch(`${URL}/posts`, {
         method: "POST",
@@ -23,7 +25,6 @@ const UserInput = ({ person }) => {
       });
       const data = await res.json();
       document.querySelector(`.${styles.textinput}`).value = "";
-      console.log(data)
     } catch (error) {
       throw new Error(error);
     }
