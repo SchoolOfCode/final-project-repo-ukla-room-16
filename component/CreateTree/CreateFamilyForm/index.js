@@ -91,6 +91,7 @@ function FamilyForm({ display, setDisplay, onClose, email }) {
         return family.name === familyName;
       });
       const idOfFamilyName = familyData.payload[indexOfFamilyName].id;
+      console.log(idOfFamilyName)
 
       //NOW THAT WE HAVE THE USER ID, AND THE FAMILY ID, WE NEED TO PUT THIS INFORMATION IN THE USERS TABLE. REMEMBER FOR UPDATING USERS IN THE USERS TABLE, WE DO UPDATE USERS BY ID.
       async function putFamilyIdToUser() {

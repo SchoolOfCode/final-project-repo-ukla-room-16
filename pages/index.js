@@ -12,11 +12,15 @@ import userProfilePicture from "../images/user-icon.jpeg";
 import JoinTree from "../component/JoinTree";
 import { useEffect, useState } from "react";
 import NavBar from "../component/NavBar";
+import { useRouter } from "next/router";
+import FullPageLoader from "../component/FullpageLoader";
 
 export default function Home() {
-  const { user, error, isLoading } = useUser();
+  const { user, error, isLoading, isAuthenticated } = useUser();
+
   const URL = process.env.NEXT_PUBLIC_URL;
   const [hasFamilyID, setHasFamilyID] = useState(false);
+  const router = useRouter();
 
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
@@ -66,13 +70,8 @@ export default function Home() {
     getUsers(user);
 
     //ONCE THE USER LOGS IN, AND THEY ALSO HAVE A FAMILY ID, DIRECT THEM TO THIS PAGE
-    if (hasFamilyID) {
-      return (
-        <div>
-          something
-          <a href="/api/auth/logout">Logout</a>
-        </div>
-      );
+      if (hasFamilyID) {
+        router.push("/dashboard");
     }
 
     //ONCE THE USER LOGS IN, AND THEY DON'T HAVE A FAMILY ID, DIRECT THEM TO THIS PAGE
@@ -135,10 +134,15 @@ export default function Home() {
           <Link href="/dashboard">Homepage</Link> */}
         </>
       );
+    } else if (!isAuthenticated) {
+      return (
+      <FullPageLoader />
+      )
     }
   }
 
   //IF THE USER IS NOT LOGGED IN, DIRECT THEM TO THIS PAGE
+
   return (
     <div className={styles.home}>
       {/* logo of the app display */}
