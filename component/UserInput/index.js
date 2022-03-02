@@ -13,8 +13,10 @@ const UserInput = ({person}) => {
       user_name: person.profile_name,
       post_text: postText,
       created_at: `${Date.now()}`,
-      picture: person.picture
+      picture: person.picture,
+      likes: Number(0)
     };
+    console.log("postobj", postObj)
     try {
       const res = await fetch(`${URL}/posts`, {
         method: "POST",
@@ -22,6 +24,7 @@ const UserInput = ({person}) => {
         body: JSON.stringify(postObj),
       });
       const data = await res.json();
+      console.log("post", data)
     } catch (error) {
       throw new Error(error);
     }

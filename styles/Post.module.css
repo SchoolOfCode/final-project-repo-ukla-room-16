@@ -28,3 +28,13 @@
 
   border-radius: 20px;
 }
+
+.like {
+  display: flex;
+  align-items: center;
+}
+
+.postbutton {
+  display:flex;
+  align-items: center;
+}
