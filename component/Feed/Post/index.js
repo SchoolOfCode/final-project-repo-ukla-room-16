@@ -13,7 +13,7 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
   const [count, setCount] = useState(likes)
 
   let currentTime = Date.now();
-  let timedistance = currentTime - created_at;
+  let timedistance = currentTime - createdAt;
   let timeAgo;
   if (timedistance < 60000) {
     timeAgo = `${Math.floor(timedistance / 1000)} seconds ago`;
