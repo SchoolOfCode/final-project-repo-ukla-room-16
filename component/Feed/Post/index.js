@@ -111,7 +111,7 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
   return (
     <div className={styles.container}>
       <div className={styles.postinfo}>
-        <Link href={`/users?id=${user_id}`}>
+        <Link href={`/users?id=${userID}`}>
           <a>
             <Image
               src={picture ? picture : profilePic}
@@ -120,12 +120,12 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
             />
           </a>
         </Link>
-        <p className={styles.username}>{user_name}</p>
+        <p className={styles.username}>{username}</p>
         <p className={styles.timestamp}>{timeAgo}</p>
       </div>
 
       <div className={styles.textbox}>
-        <p>{post_text}</p>
+        <p>{postText}</p>
       </div>
       <div className={styles.postbutton}>
       <Image src={like} onClick={() => {IncrementCount(count)}} width="30vh" height="30vh" />
