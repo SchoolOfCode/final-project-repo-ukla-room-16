@@ -37,6 +37,7 @@ function Feed({ person }) {
         method: "GET",
       });
       const data = await res.json();
+      console.log(data)
       setFeed(
         data.payload.sort((a, b) => {
           return b.created_at - a.created_at;
@@ -66,8 +67,10 @@ function Feed({ person }) {
             postText={item.post_text}
             createdAt={item.created_at}
             picture={item.picture}
-            id = {item.id}
+            id={item.id}
             userID={item.user_id}
+            likes={item.likes}
+            familyID={familyID}
           />
         );
       })}
