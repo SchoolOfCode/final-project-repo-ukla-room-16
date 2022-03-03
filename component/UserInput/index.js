@@ -7,6 +7,10 @@ const UserInput = ({ person, feed, setFeed }) => {
   const [text, setText] = useState("");
 
   async function onSubmit(postText) {
+    if(text ==="") {
+      alert("cannot post an empty text")
+      return;
+    }
     const postObj = {
       family_id: person.family_id,
       user_id: person.id,
@@ -31,6 +35,7 @@ const UserInput = ({ person, feed, setFeed }) => {
 
 
       document.querySelector(`.${styles.textinput}`).value = "";
+      setText("")
     } catch (error) {
       throw new Error(error);
     }
