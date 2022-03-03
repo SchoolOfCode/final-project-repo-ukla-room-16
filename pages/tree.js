@@ -1,6 +1,6 @@
 import React from "react";
 import FamilyTree from "../component/FamilyTree/mytree.js"
-import { ourData } from "../component/FamilyTree/FamilyData.js/familyData.js";
+import { ourData } from "../component/FamilyTree/mytree.js";
 
 
 export default function Tree() {
