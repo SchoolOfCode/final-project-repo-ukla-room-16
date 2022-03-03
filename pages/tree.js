@@ -1,59 +1,17 @@
 import React from "react";
-// import App from "../familytree/src/components/App/index.js"
-// import App from "../component/FamilyTree/app.js"
 import FamilyTree from "../component/FamilyTree/mytree.js"
+import { ourData } from "../component/FamilyTree/FamilyData.js/familyData.js";
+
 
 export default function Tree() {
+ 
+// here we are displaying the tree developped in the component folder under FamilyTree/mytree.js
   return (
     <div style={{height: '100%'}}>
       <FamilyTree
-        nodes={[
-          {
-            id: 1,
-            mid:6,
-            pids: [2],
-            name: "Amber McKenzie",
-            gender: "female",
-            img: "https://cdn.balkan.app/shared/2.jpg",
-          },
-          {
-            id: 2,
-            pids: [1],
-            name: "Ava Field",
-            gender: "male",
-            img: "https://cdn.balkan.app/shared/m30/5.jpg",
-          },
-          {
-            id: 3,
-            mid: 1,
-            fid: 2,
-            name: "Peter Stevens",
-            gender: "male",
-            img: "https://cdn.balkan.app/shared/m10/2.jpg",
-          },
-          {
-            id: 4,
-            mid: 1,
-            fid: 2,
-            name: "Savin Stevens",
-            gender: "male",
-            img: "https://cdn.balkan.app/shared/m10/1.jpg",
-          },
-          {
-            id: 5,
-            mid: 1,
-            fid: 2,
-            name: "Emma Stevens",
-            gender: "female",
-            img: "https://cdn.balkan.app/shared/w10/3.jpg",
-          },
-          {
-            id: 6,
-            name: "Bah blh",
-            gender: "female",
-            img: "https://cdn.balkan.app/shared/w10/3.jpg",
-          },
-        ]}
+        nodes={
+            ourData
+        }
       />
     </div>
   );

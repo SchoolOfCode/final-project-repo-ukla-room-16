@@ -10,6 +10,7 @@ import UserInput from "../component/UserInput";
 import Feed from "../component/Feed";
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
+import FamilyTree from "../component/FamilyTree/mytree.js"
 
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -72,7 +73,8 @@ export default function Dashboard() {
           </div>
 
           <div className={styles.tree}>
-            <Image src={familytree} />
+            {/* <Image src={familytree} /> */}
+            <FamilyTree />
           </div>
 
           <div className={styles.events}>
