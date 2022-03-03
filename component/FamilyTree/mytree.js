@@ -17,7 +17,7 @@ export default class extends Component {
       mode: "light",
       template: "hugo",
       //STARTING POINT OF THE FAMILY TREE
-      roots: [1],
+      roots: [3],
       nodeMenu: {
         edit: { text: "Edit" },
         details: { text: "Details" },
