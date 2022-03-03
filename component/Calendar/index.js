@@ -107,8 +107,8 @@
 
 
  // Client ID and API key from the Developer Console
- var CLIENT_ID = '4af3588c57a12049c7b84d49b857274f9e7a2289';
- var API_KEY = 'AIzaSyDlnlB1hS9PCrwi90gtGN6cWb8lOip9BKY';
+ var CLIENT_ID = 
+ var API_KEY = 
 
  // Array of API discovery doc URLs for APIs used by the quickstart
  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
