@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import Post from "./Post";
 import styles from "../../styles/Feed.module.css";
 
-function Feed({ person }) {
+function Feed({ person, feed, setFeed }) {
   const URL = process.env.NEXT_PUBLIC_URL;
-  const [feed, setFeed] = useState([]);
+  // const [feed, setFeed] = useState([]);
   const [error, setError] = useState("");
   let familyID = person.family_id;
 
@@ -40,6 +40,7 @@ function Feed({ person }) {
           return b.created_at - a.created_at;
         })
       );
+      console.log(feed)
     }
 
     if (familyID) {

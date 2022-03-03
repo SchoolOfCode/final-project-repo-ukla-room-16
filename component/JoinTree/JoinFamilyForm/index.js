@@ -78,7 +78,9 @@ function FamilyForm({ display, setDisplay, onClose, email, setHasFamilyID }) {
         });
 
         const putUserData = await putUserRes.json();
-        setHasFamilyID(true)
+        if(putUserData) {
+          setHasFamilyID(true)
+        }
       }
 
       putFamilyIdToUser();

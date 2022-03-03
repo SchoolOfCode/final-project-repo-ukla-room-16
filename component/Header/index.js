@@ -5,11 +5,12 @@ import Image from "next/image";
 import styles from "../../styles/Header.module.css";
 import logo from "../../images/Familia9.png";
 
-export default function Header({ user, person, children }) {
+export default function Header({ user, person, familyName }) {
+  console.log(familyName)
   return (
     <header className={styles.header}>
       <Image src={logo} width="200px" height="150px" />
-      <div>{children}</div>
+      <h1>{familyName}</h1>
       <div className={styles.userDisplay}>
         <Link href={`/users?id=${person.id}`}>
           <a>

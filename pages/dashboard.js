@@ -16,6 +16,7 @@ export default function Dashboard() {
   const { user, isLoading, error } = useUser();
   const [person, setPerson] = useState("");
   const [familyName, setFamilyName] = useState("");
+  const [feed, setFeed] = useState([])
   console.log("user", user);
   console.log("person", person);
 
@@ -35,7 +36,7 @@ export default function Dashboard() {
         method: "GET",
       });
       const familyData = await familyRes.json();
-      setFamilyName(familyData.payload.name);
+      setFamilyName(familyData.payload[0].name);
     }
     if (user) {
       getUsers(user);
@@ -49,15 +50,15 @@ export default function Dashboard() {
 
   return (
     <div>
-      <Header user={user} person={person} children={<h1>{familyName}</h1>} />
+      <Header user={user} person={person} familyName={familyName} />
 
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
           <NavBar />
         </div>
         <div className={styles.middlecolumn}>
-          <UserInput person={person} />
-          <Feed person={person} />
+          <UserInput person={person} feed={feed} setFeed={setFeed}/>
+          <Feed person={person} feed={feed} setFeed={setFeed}/>
         </div>
 
         <div className={styles.rightcolumn}>

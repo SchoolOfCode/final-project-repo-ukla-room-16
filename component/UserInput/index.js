@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
 // import {useRouter} from "next/router";
 
-const UserInput = ({ person }) => {
+const UserInput = ({ person, feed, setFeed }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
 
@@ -14,9 +14,8 @@ const UserInput = ({ person }) => {
       post_text: postText,
       created_at: `${Date.now()}`,
       picture: person.picture,
-      likes: Number(0)
+      likes: Number(0),
     };
-    console.log("postobj", postObj)
     try {
       const res = await fetch(`${URL}/posts`, {
         method: "POST",
@@ -24,6 +23,13 @@ const UserInput = ({ person }) => {
         body: JSON.stringify(postObj),
       });
       const data = await res.json();
+
+      //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
+      const newFeed =[data.payload[0], ...feed]
+      setFeed(newFeed);
+      console.log("feed", feed);
+
+
       document.querySelector(`.${styles.textinput}`).value = "";
     } catch (error) {
       throw new Error(error);
