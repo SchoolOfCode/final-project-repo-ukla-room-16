@@ -1,5 +1,4 @@
 import React from "react";
-import FamilyTree from "../component/FamilyTree/mytree.js"
 import { ourData } from "../component/FamilyTree/mytree.js";
 
 
