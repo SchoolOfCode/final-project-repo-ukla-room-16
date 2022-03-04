@@ -8,13 +8,14 @@ import meal from "../images/meal.png";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
+import DateOfBirth from "../component/DOB";
 
 export default function createUserProfile() {
   const router = useRouter();
   const URL = process.env.NEXT_PUBLIC_URL;
 
   const [userName, setUserName] = useState("");
-  const [dob, setDob] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
   const [mobile, setMobile] = useState("");
   const [address, setAddress] = useState("");
   const [favFood, setFavFood] = useState("");
@@ -25,13 +26,13 @@ export default function createUserProfile() {
   const [shoeSize, setShoeSize] = useState("");
   const [gender, setGender] = useState("");
   const [emergencyContact, setEmergencyContact] = useState("");
-
+  
   async function handleClick() {
     const updatesArray = [
       { profile_name: userName },
       { mobile_number: mobile },
       { address: address },
-      { dob: dob },
+      { dob: startDate.toString().slice(8,10) + startDate.toString().slice(3,7) + startDate.toString().slice(10,15) },
       { gender: gender },
       { fav_food: favFood },
       { blood_type: bloodType },
@@ -82,14 +83,15 @@ export default function createUserProfile() {
           }}
           placeholder="name"
         />
-        <input
+        {/* <input
           className={styles.input}
           type="text"
           onChange={(e) => {
             setDob(e.target.value);
           }}
           placeholder="DOB"
-        />
+        /> */}
+        <DateOfBirth startDate={startDate} setStartDate={setStartDate}/>
         <input
           className={styles.input}
           type="text"
