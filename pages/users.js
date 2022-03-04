@@ -98,6 +98,7 @@ export default function User() {
             <ul>
               <p>Blood type: {profile.blood_type} </p>
               <p>Allergies: {profile.allergies}</p>
+              <p>Emergency Contacts: {profile.emergency_contacts}</p>
             </ul>
           </div>
           <div className={styles.subInfo}>

@@ -37,7 +37,7 @@ const UserInput = ({ person, feed, setFeed }) => {
       document.querySelector(`.${styles.textinput}`).value = "";
       setText("")
     } catch (error) {
-      throw new Error(error);
+      // throw new Error(error);
     }
   }
 
