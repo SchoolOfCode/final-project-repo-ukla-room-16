@@ -26,11 +26,11 @@ export default class extends Component {
       nodeBinding: {
         field_0: "name",
         //field_1: 'born',
-        img_0: "photo",
+        img_0: "picture",
       },
       editForm: {
         titleBinding: "name",
-        photoBinding: "photo",
+        photoBinding: "picture",
         addMoreBtn: "Add element",
         addMore: "Add more elements",
         addMoreFieldName: "Element name",
@@ -49,7 +49,7 @@ export default class extends Component {
           {
             type: "textbox",
             label: "Photo Url",
-            binding: "photo",
+            binding: "picture",
             btn: "Upload",
           },
         ],
@@ -71,80 +71,43 @@ export default class extends Component {
   }
 }
 
-//ID, NAME, FID, MID, PIDS
-
-// export const ourData = [
-//   {
-//     id: 12,
-//     name: "great Annable",
-//   },
-//   {
-//     id: 2,
-//     pids: [3],
-//     fid: 12,
-//     name: "Hello Annable",
-//   },
-//   {
-//     id: 3,
-//     pids: [2],
-//     name: "Laura Shepherd",
-//   },
-//   { id: 4, pids: [5], name: "Rowan Annable" },
-//   { id: 5, pids: [4], name: "Lois Sowle" },
-//   {
-//     id: 6,
-//     mid: 2,
-//     fid: 3,
-//     pids: [7],
-//     name: "Tyler Heath",
-//   },
-//   {
-//     id: 7,
-//     pids: [6],
-//     mid: 5,
-//     fid: 4,
-//     name: "Samson Stokes",
-//   },
-//   {
-//     id: 8,
-//     pids: [9],
-//     mid: 7,
-//     fid: 6,
-//     name: "Celeste Castillo",
-//   },
-//   { id: 9, pids: [8], name: "john" },
-// ];
-
-//ID, NAME, FID, MID, PIDS
 
 export const ourData = [
     { id: 1,
-      name: "Crime and Punishment",
+      name: "Marinette avatar",
+      gender: "female",
       pids: [2],
     },
     { id: 2,
-        name: "Crime and Punishment",
+        name: "Anthony Avatar",
+        gender: "male",
         pids: [1],
       },
       { id: 4,
-        name: "Harry Potter",
+        name: "Rosemary Profil",
+        gender: "female",
         pids: [3],
         fid: 1,
         mid: 2,
       },
     { id: 3,
-      name: "Clean Bandit",
+      name: "Tim Profil",
+      gender: "male",
       pids: [4],
+      picture: 'https://i.ibb.co/SNKn7b8/f1.png',
     //   fid: 1,
     //   mid: 2,
     },
     { id: 5,
-      name: "Anna Marie",
+      name: "Marie Profil",
+      gender: "female",
+      picture: 'https://i.ibb.co/ccSq7Kq/g1.png',
       mid: 3,
       fid:4,
     },
     { id: 6,
-      name: "Rivers of London",
+      name: "Justin Profil",
+      gender: "male",
       mid: 3,
       fid: 4,
     },
@@ -157,3 +120,49 @@ export const ourData = [
 // { id: 8, pids: [9], mid: 7, fid: 6, gender: 'female', name: 'Celeste Castillo', born: '2021-02-01' },
 // { id: 9, pids: [8], gender: 'male', name: 'john', born: '2021-02-01' }
 //   ];
+
+  //ID, NAME, FID, MID, PIDS
+  
+  // export const ourData = [
+  //   {
+  //     id: 12,
+  //     name: "great Annable",
+  //   },
+  //   {
+  //     id: 2,
+  //     pids: [3],
+  //     fid: 12,
+  //     name: "Hello Annable",
+  //   },
+  //   {
+  //     id: 3,
+  //     pids: [2],
+  //     name: "Laura Shepherd",
+  //   },
+  //   { id: 4, pids: [5], name: "Rowan Annable" },
+  //   { id: 5, pids: [4], name: "Lois Sowle" },
+  //   {
+  //     id: 6,
+  //     mid: 2,
+  //     fid: 3,
+  //     pids: [7],
+  //     name: "Tyler Heath",
+  //   },
+  //   {
+  //     id: 7,
+  //     pids: [6],
+  //     mid: 5,
+  //     fid: 4,
+  //     name: "Samson Stokes",
+  //   },
+  //   {
+  //     id: 8,
+  //     pids: [9],
+  //     mid: 7,
+  //     fid: 6,
+  //     name: "Celeste Castillo",
+  //   },
+  //   { id: 9, pids: [8], name: "john" },
+  // ];
+  
+  //ID, NAME, FID, MID, PIDS
