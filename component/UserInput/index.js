@@ -53,9 +53,10 @@ const UserInput = ({ person, feed, setFeed }) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
-      <button className={styles.postbutton} onClick={() => onSubmit(text)}>
+
+      <div className={styles.postbutton} onClick={() => onSubmit(text)}>
         Post
-      </button>
+      </div>
     </div>
   );
 };

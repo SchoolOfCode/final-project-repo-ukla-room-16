@@ -73,7 +73,7 @@ export default function Dashboard() {
               className={styles.searchBar}
               placeholder="Search"
             />
-            <button className={styles.searchbutton}>submit</button>
+            <div className={styles.searchbutton}>submit</div>
           </div>
 
           <div className={styles.tree}>

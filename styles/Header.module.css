@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=PT+Sans+Narrow&display=swap');
+
 .header {
   width: 100vw;
   height: 10vh;
-  background: rgba(255, 232, 130, 0.4);
-  margin-bottom: 20px;
+  background: rgba(233, 241, 233, 1);
+ /*  margin-bottom: 20px; */
   display: flex;
   justify-content: space-between;
 }
 
 .userDisplay {
-  background-color: #cc1010;
+  /* background-color: #cc1010; */
   margin: 10px;
   border-radius: 5px;
   display: flex;
@@ -22,9 +25,18 @@
 
 .logout {
   font-size: 14px;
-  color: black;
+  color: white;
   font-weight: bold;
-  background-color: rgba(255, 232, 130);
+  background-color:#cc1010;
   padding: 6px;
   border-radius: 5px;
 }
+
+.profilePic{
+ 
+  border-radius: 50px;
+ 
+}
+
+.titleFamily{
+  font-family: 'Cormorant Upright', serif;}

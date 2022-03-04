@@ -27,7 +27,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
                 placeholder="Search posts"
                 name="s"
             />
-            <button type="submit">Search</button>
+            <div type="submit">Search</div>
         </form>
     );
 };
