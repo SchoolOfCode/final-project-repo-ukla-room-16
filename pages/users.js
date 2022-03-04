@@ -21,6 +21,7 @@ export default function User() {
 
   const [profile, setProfile] = useState({});
   const [error, setError] = useState("");
+ 
   const URL = process.env.NEXT_PUBLIC_URL;
 
   useEffect(() => {
