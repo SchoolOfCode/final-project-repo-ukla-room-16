@@ -106,7 +106,7 @@ function FamilyForm({ display, setDisplay, onClose, email, setHasFamilyID }) {
           {
             <form onSubmit={handleSubmit} className={styles.form}>
               <input
-                placeholder="Enter your existing family name"
+                placeholder="Enter your existing family"
                 onChange={handleChange}
                 value={text}
                 required

@@ -86,7 +86,9 @@ export default function createUserProfile() {
           }}
           placeholder="name"
         />
+        <div className={styles.dob}>
         <DateOfBirth startDate={startDate} setStartDate={setStartDate} />
+        </div>
         <input
           className={styles.input}
           type="text"

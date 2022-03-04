@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import NavBar from "../component/NavBar";
 import { useRouter } from "next/router";
 import FullPageLoader from "../component/FullpageLoader";
+import tree from "../images/tree.png"
 
 export default function Home() {
   const { user, error, isLoading, isAuthenticated } = useUser();
@@ -83,7 +84,7 @@ export default function Home() {
               <Image src={logofamilia} width="150px" height="150px" />
             </Link>
             <p>
-              <b>{user.family_name}</b>
+              {/* <b>{user.family_name}</b> */}
             </p>
 
             <Link href="/user">
@@ -99,11 +100,11 @@ export default function Home() {
             email={user.email}
             picture={user.picture}
           />
-
-          {/* here picking the full name of the user to display welcome message to */}
-          <h1>
+          <h1 className={styles.welcome}>
             <center> Welcome {user.given_name}!</center>
           </h1>
+<div className={styles.pagecontainer}>
+          {/* here picking the full name of the user to display welcome message to */}
 
           {/* <NavBar /> */}
 
@@ -111,19 +112,23 @@ export default function Home() {
             <div className={styles.leftcolumn}>
               <CreateTree email={user.email} setHasFamilyID={setHasFamilyID}/>
             </div>
+            <Image src={tree} width="400px" height="400px"/>
             <div className={styles.rightcolumn}>
               <JoinTree email={user.email} setHasFamilyID={setHasFamilyID}/>
             </div>
-          </div>
+            
+          
+</div>
 
+</div>
           {/* <Link href="/dashboard">Homepage</Link> */}
 
           {/* displaying a log out button under the welcome message */}
-          <center>
+          {/* <center>
             <a href="/api/auth/logout" className={styles.logout}>
               Logout
             </a>
-          </center>
+          </center> */}
 
           {/* displaying a log out button under the welcome message
           <a href="/api/auth/logout">Logout</a>
@@ -167,9 +172,9 @@ export default function Home() {
       <div className={styles.right}>
         {/* auth0 button to go to login/sign up box */}
 
-        <div className={styles.box}>
-          <a href="/api/auth/login" className={styles.login}>
-            Login - Sign Up
+        <div className={styles.registerbox}>
+          <a href="/api/auth/login" className={styles.register}>
+            Register
           </a>
         </div>
       </div>
