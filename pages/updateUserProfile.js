@@ -26,8 +26,7 @@ export default function createUserProfile() {
   const [shoeSize, setShoeSize] = useState("");
   const [gender, setGender] = useState("");
   const [emergencyContact, setEmergencyContact] = useState("");
-console.log(startDate.toString().slice(8,10) + startDate.toString().slice(3,7) + startDate.toString().slice(10,15))
-  console.log(startDate)
+  
   async function handleClick() {
     const updatesArray = [
       { profile_name: userName },
