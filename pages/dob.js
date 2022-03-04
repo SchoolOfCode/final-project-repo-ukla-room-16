@@ -1,9 +1,9 @@
-import dateOfBirth from "../component/DOB";
+import DateOfBirth from "../component/DOB";
 
 function date() {
     return (
         <div>
-        <dateOfBirth />
+        <DateOfBirth />
     </div>
     )
 }

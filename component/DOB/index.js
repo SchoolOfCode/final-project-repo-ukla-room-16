@@ -6,11 +6,16 @@ import "react-datepicker/dist/react-datepicker.css";
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-const dateOfBirth = () => {
-  const [startDate, setStartDate] = useState(new Date());
+const DateOfBirth = ({startDate, setStartDate}) => {
+    
   return (
-    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+    <DatePicker
+      dateFormat="dd/MM/yyyy"
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+    />
+
   );
 };
 
-export default dateOfBirth;
+export default DateOfBirth;
