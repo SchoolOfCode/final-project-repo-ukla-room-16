@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Header from "../component/Header";
 
 import styles from "../styles/Users.module.css"
 import meal from "../images/meal.png";
@@ -63,6 +64,7 @@ export default function User() {
 
   return (
     <div className={styles.container}>
+      <Header  user={user} person={person} />
       <div className={styles.subContainer}>
         <Link href="/dashboard">
           <a className={styles.goHome}>X</a>
