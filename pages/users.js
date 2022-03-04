@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-import styles from "../styles/Users.module.css";
+import styles from "../styles/Users.module.css"
 import meal from "../images/meal.png";
 import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
