@@ -64,7 +64,6 @@ export default function User() {
 
   return (
     <div className={styles.container}>
-      <Header  user={user} person={person} />
       <div className={styles.subContainer}>
         <Link href="/dashboard">
           <a className={styles.goHome}>X</a>
