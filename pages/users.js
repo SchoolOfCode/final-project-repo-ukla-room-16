@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-import styles from "../styles/users.module.css";
+import styles from "../styles/Users.module.css";
 import meal from "../images/meal.png";
 import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
-
 
 export default function User() {
   const router = useRouter();
@@ -21,7 +20,7 @@ export default function User() {
 
   const [profile, setProfile] = useState({});
   const [error, setError] = useState("");
- 
+
   const URL = process.env.NEXT_PUBLIC_URL;
 
   useEffect(() => {
@@ -75,7 +74,14 @@ export default function User() {
           height="200px"
         />
         <Link href={`/updateUserProfile?id=${person.id}`}>
-          <a style={{display: Number(person.id) === Number(id) ? "block" :"none"}} className={styles.createProfile}>Update Profile</a>
+          <a
+            style={{
+              display: Number(person.id) === Number(id) ? "block" : "none",
+            }}
+            className={styles.createProfile}
+          >
+            Update Profile
+          </a>
         </Link>
         <p>{profile.profile_name}</p>
         <p>{profile.mobile_number}</p>
@@ -93,21 +99,24 @@ export default function User() {
           </div>
           <div className={styles.subInfo}>
             <div>
-              <Image src={medical} width="80px" height="90px" />
+              <Image src={medical} width="80" height="90" />
             </div>
-
-            <ul>
-              <p>Blood type: {profile.blood_type} </p>
-              <p>Allergies: {profile.allergies}</p>
-              <p>Emergency Contacts: {profile.emergency_contacts}</p>
-            </ul>
+            <div style={{width: "20vw"}}>
+              <ul>
+                <p>Blood type: {profile.blood_type} </p>
+                <p>Allergies: {profile.allergies}</p>
+                <p>Emergency Contacts: {profile.emergency_contacts}</p>
+              </ul>
+            </div>
           </div>
           <div className={styles.subInfo}>
             <Image src={clothes} width="80px" height="90px" />
-            <ul>
-              <p>Upper-Body: {profile.clothes_size_upper}</p>
-              <p>Lower-Body: {profile.clothes_size_lower}</p>
-            </ul>
+            <div>
+              <ul>
+                <p>Upper-Body: {profile.clothes_size_upper}</p>
+                <p>Lower-Body: {profile.clothes_size_lower}</p>
+              </ul>
+            </div>
           </div>
           <div className={styles.subInfo}>
             <Image src={shoes} width="80px" height="90px" />
