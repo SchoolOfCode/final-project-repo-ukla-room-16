@@ -79,6 +79,7 @@ export default function Dashboard() {
           <div className={styles.tree}>
             {/* <Image src={familytree} /> */}
             <FamilyTree />
+            <button className={styles.view} onClick={()=> {router.push(`/tree`)}}>View More...</button>
           </div>
 
           <div className={styles.events}>
