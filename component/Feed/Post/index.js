@@ -45,9 +45,16 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
     console.log(data)
   }
 
+  async function deleteComment() {
+    await fetch(`${URL}/posts/${id}`, {
+      method: "DELETE",
+    });
+  }
+
 
   return (
     <div className={styles.container}>
+      
       <div className={styles.postinfo}>
         <Link href={`/users?id=${userID}`}>
           <a>
@@ -60,6 +67,7 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
         </Link>
         <p className={styles.username}>{username}</p>
         <p className={styles.timestamp}>{timeAgo}</p>
+        
       </div>
 
       <div className={styles.textbox}>
@@ -69,7 +77,9 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
       <Image src={like} onClick={() => {IncrementCount(count)}} width="30vh" height="30vh" />
       <div className={styles.like}>
       <Image src={heart} width="30vh" height="30vh" />
+      
       <p>{count}</p>
+      <button className={styles.delete} onClick={deleteComment}>Delete</button>
       </div>
       </div>
       </div>
