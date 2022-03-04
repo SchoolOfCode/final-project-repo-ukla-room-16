@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-import styles from "../styles/users.module.css";
+import styles from "../styles/Users.module.css";
 import meal from "../images/meal.png";
 import userProfile from "../images/userProfile.svg";
 import medical from "../images/medical.png";
@@ -20,6 +20,7 @@ export default function User() {
 
   const [profile, setProfile] = useState({});
   const [error, setError] = useState("");
+
   const URL = process.env.NEXT_PUBLIC_URL;
 
   useEffect(() => {
@@ -110,6 +111,7 @@ export default function User() {
                 {profile.allergies ? (
                   <p>Allergies: {profile.allergies}</p>
                 ) : null}
+                <p>Emergency Contacts: {profile.emergency_contacts}</p>
               </ul>
             </div>
           ) : null}

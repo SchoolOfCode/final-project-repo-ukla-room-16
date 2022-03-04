@@ -42,7 +42,7 @@ export default function createUserProfile() {
       { clothes_size_lower: lowerClothes },
       { shoe_size: shoeSize },
     ];
-    
+
     updatesArray.forEach(async (update) => {
       const response = await fetch(`${URL}/users/${router.query.id}`, {
         method: "PUT",
@@ -64,7 +64,7 @@ export default function createUserProfile() {
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <Link href={`/users?id=${router.query.id}`} >
+        <Link href={`/users?id=${router.query.id}`}>
           <a className={styles.goToUser}>X</a>
         </Link>
         <h3 style={{ color: "red" }}>
@@ -188,16 +188,41 @@ export default function createUserProfile() {
           </div>
           <div className={styles.subInfo}>
             <Image src={shoes} width="80px" height="90px" />
-            <ul>
-              <input
+            <div>
+              <ul>
+                <select
+                  value={shoeSize}
+                  onChange={(e) => {
+                    setShoeSize(e.target.value);
+                  }}
+                >
+                  <option value="uk 4">UK 4</option>
+                  <option value="uk 4.5">UK 4.5</option>
+                  <option value="uk 5">UK 5</option>
+                  <option value="uk 5.5">UK 5.5</option>
+                  <option value="uk 6">UK 6</option>
+                  <option value="uk 6.5">UK 6.5</option>
+                  <option value="uk 7">UK 7</option>
+                  <option value="uk 7.5">UK 7.5</option>
+                  <option value="uk 8">UK 8</option>
+                  <option value="uk 8.5">UK 8.5</option>
+                  <option value="uk 9">UK 9</option>
+                  <option value="uk 9.5">UK 9.5</option>
+                  <option value="uk 10">UK 10</option>
+                  <option value="uk 10.5">UK 10.5</option>
+                  <option value="uk 11">UK 11</option>
+
+                  {/* <input
                 className={styles.input}
                 type="number"
                 onChange={(e) => {
                   setShoeSize(e.target.value);
                 }}
                 placeholder="shoe size"
-              />
-            </ul>
+              /> */}
+                </select>
+              </ul>
+            </div>
           </div>
         </div>
         <button onClick={handleClick}>Submit</button>
