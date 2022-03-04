@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Header from "../component/Header";
 
 import styles from "../styles/Users.module.css"
 import meal from "../images/meal.png";
@@ -70,8 +71,10 @@ export default function User() {
 
         <Image
           src={profile.picture ? profile.picture : userProfile}
-          width="250px"
-          height="200px"
+          width="120px"
+          height="140px"
+          
+    
         />
         <Link href={`/updateUserProfile?id=${person.id}`}>
           <a

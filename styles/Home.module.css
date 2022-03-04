@@ -131,17 +131,18 @@
   background-color: orange;
 }
 
-.box {
-  padding: 25% 35% 25% 35%;
-  width: 100%;
+.registerbox {
+  padding: 20px;
   background: rgba(255, 0, 0, 0.603);
   border-radius: 10px;
   font-size: 20px;
   font-weight: bold;
   color: white;
+  text-align: center;
+  margin-right: 10vw;
 }
 
-.login:hover {
+.register:hover {
   color: white;
 }
 
@@ -220,22 +221,34 @@
   }
 }
 
-.containerbuttons {
+.pagecontainer {
 display: flex;
 flex-direction: row;
 justify-content: center;
+width: 98vw;
+}
+
+.welcome {
+display: flex;
+flex-direction: row;
+justify-content: center;
+
+}
+
+.containerbuttons {
+display: flex;
+flex-direction:  row;
+justify-content: center;
 align-items: center;
 width: 98vw;
-
+margin-top: 3%;
 
 }
 .leftcolumn {
-  display: flex;
-justify-content: center;
+  
 }
 
 .rightcolumn {
-  display: flex;
-justify-content: center;
+  
 
 }
