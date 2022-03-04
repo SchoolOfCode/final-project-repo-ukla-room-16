@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import DeleteUser from "../component/DeleteUser";
 
 import styles from "../styles/updateUserProfile.module.css";
 import meal from "../images/meal.png";
@@ -9,6 +10,7 @@ import medical from "../images/medical.png";
 import clothes from "../images/clothes.png";
 import shoes from "../images/shoes.png";
 import DateOfBirth from "../component/DOB";
+import bin from "../images/bin.png";
 
 export default function createUserProfile() {
   const router = useRouter();
@@ -26,13 +28,18 @@ export default function createUserProfile() {
   const [shoeSize, setShoeSize] = useState("");
   const [gender, setGender] = useState("");
   const [emergencyContact, setEmergencyContact] = useState("");
-  
+
   async function handleClick() {
     const updatesArray = [
       { profile_name: userName },
       { mobile_number: mobile },
       { address: address },
-      { dob: startDate.toString().slice(8,10) + startDate.toString().slice(3,7) + startDate.toString().slice(10,15) },
+      {
+        dob:
+          startDate.toString().slice(8, 10) +
+          startDate.toString().slice(3, 7) +
+          startDate.toString().slice(10, 15),
+      },
       { gender: gender },
       { fav_food: favFood },
       { blood_type: bloodType },
@@ -70,11 +77,7 @@ export default function createUserProfile() {
         <h3 style={{ color: "red" }}>
           Only update the fields you want to change
         </h3>
-        {/* <Image
-          src={user.picture ? user.picture : userProfile}
-          width="259px"
-          height="213px"
-        /> */}
+          <DeleteUser URL={URL} router={router} />
         <input
           className={styles.input}
           type="text"
@@ -83,15 +86,7 @@ export default function createUserProfile() {
           }}
           placeholder="name"
         />
-        {/* <input
-          className={styles.input}
-          type="text"
-          onChange={(e) => {
-            setDob(e.target.value);
-          }}
-          placeholder="DOB"
-        /> */}
-        <DateOfBirth startDate={startDate} setStartDate={setStartDate}/>
+        <DateOfBirth startDate={startDate} setStartDate={setStartDate} />
         <input
           className={styles.input}
           type="text"

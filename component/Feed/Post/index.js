@@ -1,16 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 import styles from "../../../styles/Post.module.css";
 import profilePic from "../../../images/user-icon.jpeg";
 import heart from "../../../images/heart.png"
 import like from "../../../images/like.png"
+import bin from "../../../images/bin.png"
 
+import { useUser } from "@auth0/nextjs-auth0";
 
 function Post({ username, postText, createdAt, picture, userID, id, likes, familyID, }) {
   const URL = process.env.NEXT_PUBLIC_URL;
-  const [count, setCount] = useState(likes )
+  const [count, setCount] = useState(likes)
+  const [person, setPerson] = useState("")
+  const { user } = useUser();
 
   let currentTime = Date.now();
   let timedistance = currentTime - createdAt;
@@ -51,6 +55,24 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
     });
   }
 
+  useEffect(() => {
+    async function getUsers(personLoggingIn) {
+      const res = await fetch(`${URL}/users`, {
+        method: "GET",
+      });
+      const data = await res.json();
+      const index = data.payload.findIndex((person) => {
+        return person.email === personLoggingIn.email;
+      });
+
+      setPerson(data.payload[index]);
+    }
+    if (user) {
+      getUsers(user);
+    }
+  }, [user]);
+
+
 
   return (
     <div className={styles.container}>
@@ -79,7 +101,7 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
       <Image src={heart} width="30vh" height="30vh" />
       
       <p>{count}</p>
-      <button className={styles.delete} onClick={deleteComment}>Delete</button>
+      {person.id === userID ? <Image src={bin} width="30vh" height="30vh" onClick={deleteComment}/> : null}
       </div>
       </div>
       </div>

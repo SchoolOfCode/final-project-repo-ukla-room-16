@@ -11,6 +11,7 @@ import Feed from "../component/Feed";
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
 import FamilyTree from "../component/FamilyTree/mytree.js"
+import { useRouter } from "next/router";
 
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -18,6 +19,7 @@ export default function Dashboard() {
   const [person, setPerson] = useState("");
   const [familyName, setFamilyName] = useState("");
   const [feed, setFeed] = useState([])
+  const router = useRouter()
   console.log("user", user);
   console.log("person", person);
 
@@ -48,7 +50,9 @@ export default function Dashboard() {
   if (isLoading) return <div>...loading</div>;
   //display error message in case of issue
   if (error) return <div>{error.message}</div>;
-
+  // if(!familyName) {
+  //   router.push(`/`)
+  // }
   return (
     <div>
       <Header user={user} person={person} familyName={familyName} />
