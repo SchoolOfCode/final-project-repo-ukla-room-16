@@ -99,7 +99,7 @@ export default function User() {
               </ul>
             </div>
           ) : null}
-          {profile.blood_type || profile.allergies ? (
+          {profile.blood_type || profile.allergies || profile.emergency_contacts ? (
             <div className={styles.subInfo}>
               <div>
                 <Image src={medical} width="80px" height="90px" />
@@ -111,7 +111,7 @@ export default function User() {
                 {profile.allergies ? (
                   <p>Allergies: {profile.allergies}</p>
                 ) : null}
-                <p>Emergency Contacts: {profile.emergency_contacts}</p>
+                {profile.emergency_contacts ? <p>Emergency Contacts: {profile.emergency_contacts}</p> : null}
               </ul>
             </div>
           ) : null}
