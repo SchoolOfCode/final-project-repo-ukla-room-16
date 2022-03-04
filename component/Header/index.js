@@ -9,7 +9,7 @@ export default function Header({ user, person, familyName }) {
   console.log(familyName)
   return (
     <header className={styles.header}>
-      <Image src={logo} width="200px" height="150px" />
+      <Image src={logo} width="150" height="150" />
       <h1>{familyName}</h1>
       <div className={styles.userDisplay}>
         <Link href={`/users?id=${person.id}`}>

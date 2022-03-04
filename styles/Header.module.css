@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
   height: 10vh;
-  background: rgb(255, 233, 110);
+  background: rgba(255, 232, 130, 0.4);
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -24,7 +24,7 @@
   font-size: 14px;
   color: black;
   font-weight: bold;
-  background-color: rgb(255, 233, 110);
+  background-color: rgba(255, 232, 130);
   padding: 6px;
   border-radius: 5px;
 }
