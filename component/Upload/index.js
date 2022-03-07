@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styles from  "../../styles/Upload.module.css"
 
-export default function Upload({imageSrc, setImageSrc}) {
+export default function Upload({imageSrc, setImageSrc, uploadData, setUploadData}) {
 
-  const [uploadData, setUploadData] = useState();
+  
   console.log(imageSrc, uploadData)
 
   

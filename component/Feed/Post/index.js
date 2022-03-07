@@ -73,6 +73,21 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
   }, [user]);
 
 
+function checkImage () {
+
+  if (image){
+
+    return ( <Image src={image}    
+    width="60vh"
+    height="60vh"/>)
+  }
+
+  }
+
+
+
+
+
 
   return (
     <div className={styles.container}>
@@ -97,8 +112,7 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
 
       </div>
       <div className={styles.images}>
-        <p><Image src={image}    width="60vh"
-              height="60vh"/></p>
+        <p>{checkImage()}</p>
       </div>
       <div className={styles.postbutton}>
       <Image src={like} onClick={() => {IncrementCount(count)}} width="30vh" height="30vh" />

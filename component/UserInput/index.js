@@ -6,6 +6,7 @@ const UserInput = ({ person, feed, setFeed }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
   const [imageSrc, setImageSrc] = useState();
+  const [uploadData, setUploadData] = useState();
 
   async function onSubmit(postText) {
     if(text ==="") {
@@ -31,6 +32,7 @@ const UserInput = ({ person, feed, setFeed }) => {
       });
       const data = await res.json();
 
+
       //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
       const newFeed =[data.payload[0], ...feed]
       setFeed(newFeed);
@@ -38,7 +40,7 @@ const UserInput = ({ person, feed, setFeed }) => {
 
 
       document.querySelector(`.${styles.textinput}`).value = "";
-      setText("")
+      setText(""), setImageSrc(), setUploadData()
     } catch (error) {
       // throw new Error(error);
     }
@@ -63,7 +65,7 @@ const UserInput = ({ person, feed, setFeed }) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
-      <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc}/>
+      <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc} uploadData={uploadData} setUploadData={setUploadData}  />
       <button className={styles.postbutton} onClick={() => onSubmit(text)}>
       
         Post
