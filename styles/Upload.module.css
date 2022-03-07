@@ -1,4 +1,4 @@
-.container {
+/* .container {
     display: grid;
     grid-template-rows: 1fr auto;
     max-width: 80rem;
@@ -25,5 +25,5 @@
       padding: 1em;
       border: solid 1px gray;
       border-radius: .5em;
-    }
+    } */
   

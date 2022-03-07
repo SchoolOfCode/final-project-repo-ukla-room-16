@@ -4,7 +4,9 @@ import styles from  "../../styles/Upload.module.css"
 export default function Upload() {
   const [imageSrc, setImageSrc] = useState();
   const [uploadData, setUploadData] = useState();
+  console.log(imageSrc, uploadData)
 
+  
   function handleOnChange(changeEvent) {
     const reader = new FileReader();
 

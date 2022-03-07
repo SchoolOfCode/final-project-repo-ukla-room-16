@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
-// import {useRouter} from "next/router";
+import Upload from "../Upload";
 
 const UserInput = ({ person, feed, setFeed }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -19,6 +19,7 @@ const UserInput = ({ person, feed, setFeed }) => {
       created_at: `${Date.now()}`,
       picture: person.picture,
       likes: Number(0),
+      IMAGE_url: "test"
     };
     try {
       const res = await fetch(`${URL}/posts`, {
@@ -53,6 +54,7 @@ const UserInput = ({ person, feed, setFeed }) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
+      <Upload />
       <button className={styles.postbutton} onClick={() => onSubmit(text)}>
         Post
       </button>
