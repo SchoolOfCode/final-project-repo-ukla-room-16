@@ -15,6 +15,7 @@ import NavBar from "../component/NavBar";
 import { useRouter } from "next/router";
 import FullPageLoader from "../component/FullpageLoader";
 import tree from "../images/tree.png"
+import { motion } from "framer-motion"
 
 export default function Home() {
   const { user, error, isLoading, isAuthenticated } = useUser();
@@ -172,11 +173,11 @@ export default function Home() {
       <div className={styles.right}>
         {/* auth0 button to go to login/sign up box */}
 
-        <div className={styles.registerbox}>
+        <motion.div whileHover={{ scale: 1.2 }} className={styles.registerbox}>
           <a href="/api/auth/login" className={styles.register}>
             Register
           </a>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -5,15 +5,16 @@ import gallery from "../../images/gallery.png";
 import calendar from "../../images/calendar.png";
 import contacts from "../../images/contacts.png";
 import Image from "next/image";
+import {motion} from 'framer-motion';
 
 function NavBar() {
     
   
     return (
    <div className={styles.navbar}>
-   <div className={styles.iconcircle}>
+   <motion.div  whileHover={{scale:1.1, }}className={styles.iconcircle}>
      <Image src={recipe} width="50%" height="50%" />
-   </div>
+   </motion.div>
    <div className={styles.iconcircle}>
      <Image src={contacts} width="50%" height="50%" />
    </div>

@@ -1,25 +1,24 @@
 .navbar {
-    /* border: 1px green solid; */
-    display: flex;
-    flex-direction: column;
-    margin-left: 20%;
-    align-items: flex-start;
-    height: 100%;
-    justify-content: space-evenly;
-  }
-  
-  .iconcircle {
-    background: rgba(255, 232, 130, 0.4);
-    width: 7vw;
-    height: 7vw;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  /* border: 1px green solid; */
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: space-evenly;
+}
 
-  .images {
-    width:4em;
-    height:4em;
-  }
-  
+.iconcircle {
+  background: rgba(233, 241, 233, 1);
+  width: 7vw;
+  height: 7vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images {
+  width: 4em;
+  height: 4em;
+}

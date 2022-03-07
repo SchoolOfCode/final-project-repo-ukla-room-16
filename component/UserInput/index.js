@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
+
 import Upload, {imageSrc } from "../Upload";
+
+import { motion } from "framer-motion"
+// import {useRouter} from "next/router";
+
 
 const UserInput = ({ person, feed, setFeed }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -65,11 +70,12 @@ const UserInput = ({ person, feed, setFeed }) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
+
       <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc} uploadData={uploadData} setUploadData={setUploadData}  />
-      <button className={styles.postbutton} onClick={() => onSubmit(text)}>
-      
+
+      <motion.div whileHover={{scale:1.1, textShadow:"0px 0px 8px rgb(255,255,255"}} className={styles.postbutton} onClick={() => onSubmit(text)}>
         Post
-      </button>
+      </motion.div>
     </div>
   );
 
