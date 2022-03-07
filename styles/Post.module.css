@@ -45,5 +45,16 @@
 
 .images {
   display: flex;
+  border: 1px black solid;
+  
 
+}
+
+.images:hover {
+  /* top:-25px;
+  left:-35px; */
+  width: 700px;
+  height:auto;
+  display:block;
+  z-index:999;
 }

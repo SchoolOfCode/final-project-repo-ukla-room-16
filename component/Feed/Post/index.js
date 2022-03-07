@@ -78,8 +78,9 @@ function checkImage () {
   if (image){
 
     return ( <Image src={image}    
-    width="60vh"
-    height="60vh"/>)
+    width="300px"
+    height="300px"/> 
+)
   }
 
   }
@@ -109,10 +110,10 @@ function checkImage () {
 
       <div className={styles.textbox}>
         <p>{postText}</p>
-
-      </div>
       <div className={styles.images}>
-        <p>{checkImage()}</p>
+        <a href = {image} target="_blank">{checkImage()}</a>
+      </div>
+
       </div>
       <div className={styles.postbutton}>
       <Image src={like} onClick={() => {IncrementCount(count)}} width="30vh" height="30vh" />
