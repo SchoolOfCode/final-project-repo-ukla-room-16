@@ -42,3 +42,8 @@
 .delete {
   background-color: black;
 }
+
+.images {
+  display: flex;
+
+}

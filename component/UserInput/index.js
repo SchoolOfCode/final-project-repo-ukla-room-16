@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
-import Upload from "../Upload";
+import Upload, {imageSrc } from "../Upload";
 
 const UserInput = ({ person, feed, setFeed }) => {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
+  const [imageSrc, setImageSrc] = useState();
 
   async function onSubmit(postText) {
     if(text ==="") {
@@ -19,8 +20,9 @@ const UserInput = ({ person, feed, setFeed }) => {
       created_at: `${Date.now()}`,
       picture: person.picture,
       likes: Number(0),
-      IMAGE_url: "test"
-    };
+     post_image: imageSrc
+    }
+
     try {
       const res = await fetch(`${URL}/posts`, {
         method: "POST",
@@ -45,6 +47,13 @@ const UserInput = ({ person, feed, setFeed }) => {
   function handleChange(e) {
     setText(e.target.value);
   }
+  console.log(imageSrc)
+
+
+
+
+
+
 
   return (
     <div className={styles.container}>
@@ -54,12 +63,14 @@ const UserInput = ({ person, feed, setFeed }) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
-      <Upload />
+      <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc}/>
       <button className={styles.postbutton} onClick={() => onSubmit(text)}>
+      
         Post
       </button>
     </div>
   );
+
 };
 
 export default UserInput;

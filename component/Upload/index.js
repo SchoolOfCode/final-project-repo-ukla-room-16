@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from  "../../styles/Upload.module.css"
 
-export default function Upload() {
-  const [imageSrc, setImageSrc] = useState();
+export default function Upload({imageSrc, setImageSrc}) {
+
   const [uploadData, setUploadData] = useState();
   console.log(imageSrc, uploadData)
 
@@ -58,9 +58,9 @@ export default function Upload() {
             </p>
           )}
 
-          {uploadData && (
+          {/* {uploadData && (
             <code><pre>{JSON.stringify(uploadData, null, 2)}</pre></code>
-          )}
+          )} */}
         </form>
       
 
