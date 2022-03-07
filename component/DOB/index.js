@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const DateOfBirth = ({startDate, setStartDate}) => {
     
   return (
-    <DatePicker
+    <DatePicker  
       dateFormat="dd/MM/yyyy"
       selected={startDate}
       onChange={(date) => setStartDate(date)}

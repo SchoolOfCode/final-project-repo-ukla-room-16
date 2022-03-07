@@ -10,7 +10,7 @@ import UserInput from "../component/UserInput";
 import Feed from "../component/Feed";
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
-import FamilyTree from "../component/FamilyTree/mytree.js"
+import FamilyTree from "../component/FamilyTree/mytree.js";
 import { useRouter } from "next/router";
 
 export default function Dashboard() {
@@ -18,8 +18,8 @@ export default function Dashboard() {
   const { user, isLoading, error } = useUser();
   const [person, setPerson] = useState("");
   const [familyName, setFamilyName] = useState("");
-  const [feed, setFeed] = useState([])
-  const router = useRouter()
+  const [feed, setFeed] = useState([]);
+  const router = useRouter();
   console.log("user", user);
   console.log("person", person);
 
@@ -62,8 +62,8 @@ export default function Dashboard() {
           <NavBar />
         </div>
         <div className={styles.middlecolumn}>
-          <UserInput person={person} feed={feed} setFeed={setFeed}/>
-          <Feed person={person} feed={feed} setFeed={setFeed}/>
+          <UserInput person={person} feed={feed} setFeed={setFeed} />
+          <Feed person={person} feed={feed} setFeed={setFeed} />
         </div>
 
         <div className={styles.rightcolumn}>
@@ -75,21 +75,27 @@ export default function Dashboard() {
             />
             <div className={styles.searchbutton}>submit</div>
           </div>
+          <div className={styles.events}>
+            <p>EVENTS</p>
+            <div className={styles.buttonEvent}>
+              <Image src={addIcon} width="30px" height="30px" />
+            </div>
+          </div>
 
+        </div>
+      </div>
           <div className={styles.tree}>
             {/* <Image src={familytree} /> */}
             <FamilyTree />
-            <button className={styles.view} onClick={()=> {router.push(`/tree`)}}>View More...</button>
+            <div
+              className={styles.view}
+              onClick={() => {
+                router.push(`/tree`);
+              }}
+            >
+              View More...
+            </div>
           </div>
-
-          <div className={styles.events}>
-            <button>
-              <Image src={addIcon} width="30px" height="30px" />
-            </button>
-            <p>EVENTS</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

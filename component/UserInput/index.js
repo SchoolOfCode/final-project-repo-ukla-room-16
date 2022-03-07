@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/UserInput.module.css";
+import { motion } from "framer-motion"
 // import {useRouter} from "next/router";
 
 const UserInput = ({ person, feed, setFeed }) => {
@@ -54,9 +55,9 @@ const UserInput = ({ person, feed, setFeed }) => {
         placeholder="Shout out to your loved ones:"
       />
 
-      <div className={styles.postbutton} onClick={() => onSubmit(text)}>
+      <motion.div whileHover={{scale:1.1, textShadow:"0px 0px 8px rgb(255,255,255"}} className={styles.postbutton} onClick={() => onSubmit(text)}>
         Post
-      </div>
+      </motion.div>
     </div>
   );
 };

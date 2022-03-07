@@ -7,6 +7,7 @@
   border: 1px solid #c9c7c7;
   box-sizing: border-box;
   border-radius: 10px;
+  background-color: white;
 }
 
 .textinput {
@@ -15,6 +16,7 @@
   width: 100%;
   border: none;
   outline: none;
+  
 }
 
 .postbutton {
@@ -26,5 +28,4 @@
   padding: 10px;
   border-radius: 15px;
   cursor: pointer;
-  
 }
