@@ -1,0 +1,29 @@
+/* .container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    max-width: 80rem;
+    min-height: 100vh;
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+  
+  
+  .title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+  }
+  
+  .description {
+    margin: 4rem 0;
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+  
+  .form {
+      font-size: 1em;
+      padding: 1em;
+      border: solid 1px gray;
+      border-radius: .5em;
+    } */
+  

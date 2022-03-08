@@ -10,7 +10,7 @@ import bin from "../../../images/bin.png"
 
 import { useUser } from "@auth0/nextjs-auth0";
 
-function Post({ username, postText, createdAt, picture, userID, id, likes, familyID, }) {
+function Post({ username, postText, createdAt, picture, userID, id, likes, familyID, image}) {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [count, setCount] = useState(likes)
   const [person, setPerson] = useState("")
@@ -73,6 +73,22 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
   }, [user]);
 
 
+function checkImage () {
+
+  if (image){
+
+    return ( <Image src={image}    
+    width="300px"
+    height="300px"/> 
+)
+  }
+
+  }
+
+
+
+
+
 
   return (
     <div className={styles.container}>
@@ -95,6 +111,10 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
 
       <div className={styles.textbox}>
         <p>{postText}</p>
+      <div className={styles.images}>
+        <a href = {image} target="_blank">{checkImage()}</a>
+      </div>
+
       </div>
       <div className={styles.postbutton}>
       <Image src={like} onClick={() => {IncrementCount(count)}} width="30vh" height="30vh" />
