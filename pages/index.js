@@ -120,13 +120,9 @@ export default function Home() {
     <div className={styles.home}>
       {/* logo of the app display */}
       <div className={styles.left}>
-<<<<<<< HEAD
         <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 1, duration: 1.5}}className={styles.title}>
           {/* Familia </h1> */}
 
-=======
-        <h1 className={styles.title}>
->>>>>>> 49fca9864524489976ff79c7e45bfa0ed3423165
           <Image
             src={logofamilia}
             alt="logo saying Familia, the name of our app"
