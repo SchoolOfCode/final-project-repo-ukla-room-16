@@ -3,7 +3,7 @@
 Familia is a family social media app. The app is designed to create a close-knit social media app for families who wish to share pictures videos and memories with loved ones and not to the entire world.
 
 ---
-## How to run the app
+## How to run the App
 
 1. You can either clone or fork the app and open the folder in the CLI
 2. Install all dependencies using the `npm install` or `npm i` command
@@ -11,7 +11,7 @@ Familia is a family social media app. The app is designed to create a close-knit
 4. Go to http://localhost:3000/ in your browser and register by creating an account to use the app
 
 ---
-## Quick Start Guide on how to use the Familia 
+## Quick start guide on how to use the Familia App
 
 1. Create an account on the homepage using either your personal email, Facebook, Twitter, or Google accounts.
  
@@ -39,7 +39,7 @@ Familia is a family social media app. The app is designed to create a close-knit
 
 ---
 
-## Familia App Features
+## Familia App features
 
 - Family Tree
   - users can create a family tree and this gets sent to the backend database 
@@ -82,7 +82,7 @@ add links to the low and high fidelity wireframes???
 ---
 ## What Familia App looks like
 
-add a screenshot of the app???????
+add a screenshot or gif of the app???????
 
 ---
 
