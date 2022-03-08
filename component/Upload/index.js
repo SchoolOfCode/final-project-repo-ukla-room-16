@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "../../styles/Upload.module.css";
 
 export default function Upload({
