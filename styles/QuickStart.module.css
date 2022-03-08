@@ -1,0 +1,39 @@
+.container {
+    display:grid;
+    grid-template-columns: 1fr 2fr 2fr 1f;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+    justify-content: center;
+    grid-template-areas: "header header" "sidebar content";
+}
+
+
+.logo {
+   
+   
+}
+
+.imageuseapp {
+
+
+}
+
+.title {
+   
+  font-weight: bold;
+  font-size: large;
+  align-items: center;
+
+}
+
+.video {
+    
+}
+
+.leftcolumn {
+    grid-area: sidebar;
+}
+
+.login {
+   
+}
