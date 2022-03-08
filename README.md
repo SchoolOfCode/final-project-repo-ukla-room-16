@@ -7,7 +7,7 @@ Familia is a family social media app. The app is designed to create a close-knit
 
 1. You can either clone or fork the app and open the folder in the CLI
 2. Install all dependencies using the `npm install` or `npm i` command
-3. Start the web-server using the npm run local command, `npm run dev`. The app will then be served at http://localhost:3000/
+3. Start the web-server using the `npm run local` command or `npm run dev`. The app will then be served at http://localhost:3000/
 4. Go to http://localhost:3000/ in your browser and register by creating an account to use the app
 
 ---
