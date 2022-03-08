@@ -68,6 +68,10 @@ Familia is a family social media app. The app is designed to create a close-knit
 
 ---
 
+## Ideation and Planning
+add link to digram.net???
+
+---
 ## Figma Wireframes 
 add links to the low and high fidelity wireframes???
 
