@@ -46,7 +46,7 @@ Familia is a family social media app. The app is designed to create a close-knit
   - users can join an exisiting family tree and this fetches data from the backend database 
 
 - Post
-  - posts in the form of comments, pictures and/or videos gets sent to the backend database and this gets         posted to all users on the same family tree
+  - posts in the form of comments, pictures and/or videos gets sent to the backend database and this gets posted to all users on the same family tree
   - posts gets validated so no empty posts are allowed
   - posts can be liked by all users on the same family tree
   - posts can be edited or deleted by the author
@@ -56,13 +56,20 @@ Familia is a family social media app. The app is designed to create a close-knit
   - posts can be liked by users and the likes get sent to the backend database and this gets posted to all users on the same family tree
 
 - Events/Calender
+
+
 - Recipes
+
+
 - Profile page
+
+
 - Update profile Page
 
 ---
 
-## Figma Wireframes ???
+## Figma Wireframes 
+add links to the low and high fidelity wireframes???
 
 ---
 
