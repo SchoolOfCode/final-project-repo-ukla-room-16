@@ -62,9 +62,11 @@ Familia is a family social media app. The app is designed to create a close-knit
 
 ---
 
+## Figma Wireframes ???
+
+---
+
 ## Future Features for the Familia App
-
-
 
 ---
 ## What Familia App looks like
@@ -100,6 +102,5 @@ add a screenshot of the app???????
 - HTML
 - CSS
 - JSON
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SchoolOfCode&langs_count=8&theme=algolia)](https://github.com/SchoolOfCode/final-project-repo-ukla-room-16)
+- Markup
 ---
