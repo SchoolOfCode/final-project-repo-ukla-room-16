@@ -244,11 +244,16 @@ width: 98vw;
 margin-top: 3%;
 
 }
-.leftcolumn {
+/* .leftcolumn {
   
 }
 
 .rightcolumn {
   
 
-}
+} */
+
+.profilePic {
+  
+    border-radius:50%
+  }

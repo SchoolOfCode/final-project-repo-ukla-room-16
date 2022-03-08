@@ -80,10 +80,11 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
       <div className={styles.postinfo}>
         <Link href={`/users?id=${userID}`}>
           <a>
-            <Image
+            <Image 
               src={picture ? picture : profilePic}
               width="60vh"
               height="60vh"
+              className={styles.userPic}
             />
           </a>
         </Link>

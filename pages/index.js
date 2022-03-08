@@ -90,7 +90,7 @@ export default function Home() {
 
             <Link href="/user">
               <a>
-                <Image src={user.picture} width="70px" height="70px" />
+                <Image className={styles.profilePic} src={user.picture} width="50" height="50"   />
               </a>
             </Link>
           </header>
