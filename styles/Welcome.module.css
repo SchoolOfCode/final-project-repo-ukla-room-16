@@ -1,0 +1,34 @@
+.familyimage {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    width: 98vw;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(250, 254, 246);
+    /* border: 3px green solid; */
+    padding-top: 1rem;
+
+}
+
+.leftcolumn {
+    width: 10vw;
+  }
+
+  .middlecolumn {
+    width: 55vw;
+  }
+  
+  .rightcolumn {
+    width: 20vw;
+  }
+
+
+
+.text{
+    align-items: center;
+}

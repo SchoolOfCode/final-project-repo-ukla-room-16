@@ -4,25 +4,34 @@ import Image from 'next/image';
 import tree from "../images/tree.png";
 import meal from "../images/meal.png";
 import frontimage from "../images/familia_frontpage_image.jpg";
+import styles from "../styles/Welcome.module.css"
 
-
-const welcomePage = () => {
+const WelcomePage = () => {
     return (
       <>
+      <div>
+        <div >
         <div>
-        <div>
-        <Image src={logofamilia} width="150px" height="150px" />
+        <Image src={logofamilia} width="100px" height="100px" />
         </div>
 
-        <div>
-            <h1>Bringing the Familia together under one app</h1>
+        <div className={styles.familyimage}>
+            <h1 >Bringing the Familia 
+            <br></br>together under one app</h1>
             <Image src={frontimage}
           alt="Picture of a family from grandparents, to children and grandchildren"
-          width="1000em"
-          height="450em"/>
+          width="150px"
+          height="75px"/>
           </div>
 
-            <div> Familia is your family app, where you have a safe and secure space to discuss and share information with your close family only.
+            
+            <div className={styles.container}>
+            <div className={styles.leftcolumn}></div> 
+            
+            <div className={styles.middlecolumn}>
+            <div className={styles.text}> Familia is your family app, where you have a safe and secure space to discuss and share information with your close family only.
+            </div>
+
             <br></br>
             <br></br>
             <p>
@@ -38,13 +47,14 @@ const welcomePage = () => {
             Familia will centralise these snippets of information for you and for your close family to know.
             </p>
             </div>
-           
+           </div>
            <div>
            {/* <Image insert image of posts or feed/> */}
            <p>
             The app also offers a secure place where you can exchange messages and pictures with all the family members. No need for various cloud platsform, exchanging pictures over Messenger and having to share that with people outside your family or inner circle.
-            </p>
+            </p></div>
             </div>
+            <div className={styles.rightcolumn}></div>
                         
             <div>
             <Image src={tree} width="400px" height="400px"/>
@@ -72,8 +82,9 @@ const welcomePage = () => {
            </div>
             </div>
             </div>
+            
       </>
     )
 }
 
-export default welcomePage
+export default WelcomePage
