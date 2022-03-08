@@ -12,7 +12,7 @@ import NavBar from "../component/NavBar";
 import Header from "../component/Header";
 import FamilyTree from "../component/FamilyTree/mytree.js";
 import { useRouter } from "next/router";
-
+import { motion } from "framer-motion";
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
   const { user, isLoading, error } = useUser();
@@ -73,7 +73,12 @@ export default function Dashboard() {
               className={styles.searchBar}
               placeholder="Search"
             />
-            <div className={styles.searchbutton}>submit</div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className={styles.searchbutton}
+            >
+              submit
+            </motion.div>
           </div>
           <div className={styles.events}>
             <p>EVENTS</p>
@@ -81,21 +86,20 @@ export default function Dashboard() {
               <Image src={addIcon} width="30px" height="30px" />
             </div>
           </div>
-
         </div>
       </div>
-          <div className={styles.tree}>
-            {/* <Image src={familytree} /> */}
-            <FamilyTree />
-            <div
-              className={styles.view}
-              onClick={() => {
-                router.push(`/tree`);
-              }}
-            >
-              View More...
-            </div>
-          </div>
+      <div className={styles.tree}>
+        {/* <Image src={familytree} /> */}
+        <FamilyTree />
+        <div
+          className={styles.view}
+          onClick={() => {
+            router.push(`/tree`);
+          }}
+        >
+          View More...
+        </div>
+      </div>
     </div>
   );
 }
