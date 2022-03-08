@@ -1,19 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 
 import styles from "../../../styles/Post.module.css";
 import profilePic from "../../../images/user-icon.jpeg";
-import heart from "../../../images/heart.png"
-import like from "../../../images/like.png"
-import bin from "../../../images/bin.png"
-
+import heart from "../../../images/heart.png";
+import like from "../../../images/like.png";
+import bin from "../../../images/bin.png";
+import { motion } from "framer-motion";
 import { useUser } from "@auth0/nextjs-auth0";
 
-function Post({ username, postText, createdAt, picture, userID, id, likes, familyID, image}) {
+function Post({
+  username,
+  postText,
+  createdAt,
+  picture,
+  userID,
+  id,
+  likes,
+  familyID,
+  image,
+}) {
   const URL = process.env.NEXT_PUBLIC_URL;
-  const [count, setCount] = useState(likes)
-  const [person, setPerson] = useState("")
+  const [count, setCount] = useState(likes);
+  const [person, setPerson] = useState("");
   const { user } = useUser();
 
   let currentTime = Date.now();
@@ -36,17 +46,17 @@ function Post({ username, postText, createdAt, picture, userID, id, likes, famil
   }
 
   async function IncrementCount(count) {
-    setCount(count+1)
-    console.log(`${URL}/posts/${id}`)
+    setCount(count + 1);
+    console.log(`${URL}/posts/${id}`);
     const res = await fetch(`${URL}/posts/${id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          likes: count+1
-        }),
-    })
-    const data = await res.json()
-    console.log(data)
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        likes: count + 1,
+      }),
+    });
+    const data = await res.json();
+    console.log(data);
   }
 
   async function deleteComment() {
@@ -85,18 +95,12 @@ function checkImage () {
 
   }
 
-
-
-
-
-
   return (
     <div className={styles.container}>
-      
       <div className={styles.postinfo}>
         <Link href={`/users?id=${userID}`}>
           <a>
-            <Image 
+            <Image
               src={picture ? picture : profilePic}
               width="60"
               height="60"
@@ -106,26 +110,44 @@ function checkImage () {
         </Link>
         <p className={styles.username}>{username}</p>
         <p className={styles.timestamp}>{timeAgo}</p>
-        
       </div>
 
       <div className={styles.textbox}>
         <p>{postText}</p>
-      <div className={styles.images}>
-        <a href = {image} target="_blank">{checkImage()}</a>
-      </div>
-
+        <div className={styles.images}>
+          <a href={image} target="_blank">
+            {checkImage()}
+          </a>
+        </div>
       </div>
       <div className={styles.postbutton}>
-      <Image src={like} onClick={() => {IncrementCount(count)}} width="30" height="30" />
-      <div className={styles.like}>
-      <Image src={heart} width="30" height="30" />
-      
-      <p>{count}</p>
-      {person.id === userID ? <Image src={bin} width="30" height="30" onClick={deleteComment}/> : null}
+        <motion.div whileTap={{ scale: 1.2 }}>
+          <Image
+            src={like}
+            onClick={() => {
+              IncrementCount(count);
+            }}
+            width="30"
+            height="30"
+          />
+        </motion.div>
+        <div className={styles.like}>
+          <Image src={heart} width="30" height="30" />
+
+          <p>{count}</p>
+          <motion.div whileTap={{ rotate: 360 }}>
+            {person.id === userID ? (
+              <Image
+                src={bin}
+                width="30vh"
+                height="30vh"
+                onClick={deleteComment}
+              />
+            ) : null}
+          </motion.div>
+        </div>
       </div>
-      </div>
-      </div>
+    </div>
   );
 }
 
