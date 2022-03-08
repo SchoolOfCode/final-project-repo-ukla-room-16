@@ -3,7 +3,7 @@
 Familia is a family social media app. The app is designed to create a close-knit social media app for families who wish to share pictures videos and memories with loved ones and not to the entire world.
 
 ---
-### How to run the app
+## How to run the app
 
 1. You can either clone or fork the app and open the folder in the CLI
 2. Install all dependencies using the `npm install` or `npm i` command
@@ -11,24 +11,24 @@ Familia is a family social media app. The app is designed to create a close-knit
 4. Go to http://localhost:3000/ in your browser and register by creating an account to use the app
 
 ---
-### Quick Start Guide on how to use the Familia App
+## Quick Start Guide on how to use the Familia 
 
 1. Create an account on the homepage using either your personal email, Facebook, Twitter, or Google accounts.
  
-3. You will be redirected to a landing page that prompts you to either join a family tree or create a family tree. It is as simple as that.
+2. You will be redirected to a landing page that prompts you to either join a family tree or create a family tree. It is as simple as that.
  
-5. After joining or creating a family tree, you will be redirected to a dashboard page where you can view most of the features of the app on it.
+3. After joining or creating a family tree, you will be redirected to a dashboard page where you can view most of the features of the app on it.
  
-7. On the Dashboard page, you can post feeds and pictures, view posts from other members of your family who are on your family tree, like their posts, view upcoming events and so much more. This is fun as you get to read messages from loved ones and keep up to date with birthdays, graduations, and anniversaries.
+4. On the Dashboard page, you can post feeds and pictures, view posts from other members of your family who are on your family tree, like their posts, view upcoming events and so much more. This is fun as you get to read messages from loved ones and keep up to date with birthdays, graduations, and anniversaries.
  
-9. With the family tree in Familia, you can add family members to your tree and when they create an account on the app, all they have to do is join the family and they get to view all posts, pictures, videos, and share memories with you.
+5. With the family tree in Familia, you can add family members to your tree and when they create an account on the app, all they have to do is join the family and they get to view all posts, pictures, videos, and share memories with you.
  
-11. At the top left-hand corner of the page, you have a profile picture which when clicked would take you to your own profile page where you can view and update information like address, favourite food, clothes and shoe size. The fun doesn't stop there as you can also click on the profile pictures of family members and you too can view their profile; however, you can not update their page.
+6. At the top left-hand corner of the page, you have a profile picture which when clicked would take you to your own profile page where you can view and update information like address, favourite food, clothes and shoe size. The fun doesn't stop there as you can also click on the profile pictures of family members and you too can view their profile; however, you can not update their page.
  
-13. If you no longer want to be a part of the family, you can always delete your profile and join a different family if you wish to do so.
+7. If you no longer want to be a part of the family, you can always delete your profile and join a different family if you wish to do so.
 
 ---
-### User stories
+## User stories
 - A user can post comments on their thoughts
 - A user can post pictures and videos 
 - A user can edit or delete their comments if they wish to
@@ -39,7 +39,7 @@ Familia is a family social media app. The app is designed to create a close-knit
 
 ---
 
-### Familia App Features
+## Familia App Features
 
 - Family Tree
   - users can create a family tree and this gets sent to the backend database 
@@ -62,8 +62,14 @@ Familia is a family social media app. The app is designed to create a close-knit
 
 ---
 
-### Future Features for the Familia App
+## Future Features for the Familia App
 
+
+
+---
+## What Familia App looks like
+
+add a screenshot of the app???????
 
 ---
 
@@ -79,7 +85,7 @@ Familia is a family social media app. The app is designed to create a close-knit
 - Jest CSS Modules
 - Netlify
 
-### Backend Development
+#### Backend Development
 - Node JS
 - Express
 - Supertest
@@ -87,44 +93,11 @@ Familia is a family social media app. The app is designed to create a close-knit
 - Dotenv
 - PostGres
 - Heroku
-
 ---
-## What Familia App looks like
 
-add a screenshot of the app???????
-
+## Languages used in development
+- JavaScript
+- HTML
+- CSS
+- JSON
 ---
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
