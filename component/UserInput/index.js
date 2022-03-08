@@ -1,21 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+import Upload from "../Upload";
 import styles from "../../styles/UserInput.module.css";
 
-import Upload, {imageSrc } from "../Upload";
-
-import { motion } from "framer-motion"
-// import {useRouter} from "next/router";
-
-
-const UserInput = ({ person, feed, setFeed }) => {
+export default function UserInput({ person, feed, setFeed }) {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
   const [imageSrc, setImageSrc] = useState();
   const [uploadData, setUploadData] = useState();
 
   async function onSubmit(postText) {
-    if(text ==="") {
-      alert("cannot post an empty text")
+    if (text === "") {
+      alert("cannot post an empty text");
       return;
     }
     const postObj = {
@@ -26,8 +23,8 @@ const UserInput = ({ person, feed, setFeed }) => {
       created_at: `${Date.now()}`,
       picture: person.picture,
       likes: Number(0),
-     post_image: imageSrc
-    }
+      post_image: imageSrc,
+    };
 
     try {
       const res = await fetch(`${URL}/posts`, {
@@ -37,15 +34,12 @@ const UserInput = ({ person, feed, setFeed }) => {
       });
       const data = await res.json();
 
-
       //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
-      const newFeed =[data.payload[0], ...feed]
+      const newFeed = [data.payload[0], ...feed];
       setFeed(newFeed);
-      console.log("feed", feed);
-
 
       document.querySelector(`.${styles.textinput}`).value = "";
-      setText(""), setImageSrc(), setUploadData()
+      setText(""), setImageSrc(), setUploadData();
     } catch (error) {
       // throw new Error(error);
     }
@@ -54,13 +48,6 @@ const UserInput = ({ person, feed, setFeed }) => {
   function handleChange(e) {
     setText(e.target.value);
   }
-  console.log(imageSrc)
-
-
-
-
-
-
 
   return (
     <div className={styles.container}>
@@ -70,15 +57,22 @@ const UserInput = ({ person, feed, setFeed }) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
+      <div className={styles.bottomrow}>
+        <Upload
+          imageSrc={imageSrc}
+          setImageSrc={setImageSrc}
+          uploadData={uploadData}
+          setUploadData={setUploadData}
+        />
 
-      <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc} uploadData={uploadData} setUploadData={setUploadData}  />
-
-      <motion.div whileHover={{scale:1.1, textShadow:"0px 0px 8px rgb(255,255,255"}} className={styles.postbutton} onClick={() => onSubmit(text)}>
-        Post
-      </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.1, textShadow: "0px 0px 8px rgb(255,255,255" }}
+          className={styles.postbutton}
+          onClick={() => onSubmit(text)}
+        >
+          Post
+        </motion.div>
+      </div>
     </div>
   );
-
-};
-
-export default UserInput;
+}
