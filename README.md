@@ -1,3 +1,5 @@
+# Familia App
+
 Familia is a family social media app. The app is designed to create a close-knit social media app for families who wish to share pictures videos and memories with loved ones and not to the entire world.
 
 ---
@@ -48,6 +50,7 @@ Familia is a family social media app. The app is designed to create a close-knit
   - posts gets validated so no empty posts are allowed
   - posts can be liked by all users on the same family tree
   - posts can be edited or deleted by the author
+  - each post has a timestamp
 
 - liking a post
   - posts can be liked by users and the likes get sent to the backend database and this gets posted to all users on the same family tree
@@ -59,12 +62,38 @@ Familia is a family social media app. The app is designed to create a close-knit
 
 ---
 
+### Future Features for the Familia App
 
 
+---
 
+## Dependencies and Packages used
 
+#### Front End development 
+- Auth0
+- Balkangraph Familytree.js
+- Next JS
+- Framer motion
+- React date picker
+- Jest
+- Jest CSS Modules
+- Netlify
 
+### Backend Development
+- Node JS
+- Express
+- Supertest
+- Nodemon
+- Dotenv
+- PostGres
+- Heroku
 
+---
+## What Familia App looks like
+
+add a screenshot of the app???????
+
+---
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
