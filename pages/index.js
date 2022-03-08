@@ -14,7 +14,8 @@ import { useEffect, useState } from "react";
 import NavBar from "../component/NavBar";
 import { useRouter } from "next/router";
 import FullPageLoader from "../component/FullpageLoader";
-import tree from "../images/tree.png"
+import tree from "../images/tree.png";
+import HomePageNav from "../component/HomePageNav/HomePageNav";
 
 export default function Home() {
   const { user, error, isLoading, isAuthenticated } = useUser();
@@ -161,6 +162,7 @@ export default function Home() {
             className={styles.logo}
           />
         </h1>
+        <HomePageNav />
         {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
         <Image
           src={frontimage}
