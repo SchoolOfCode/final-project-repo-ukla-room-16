@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "../../styles/Upload.module.css";
-
+import Image from "next/image";
+import camera from "../../images/camera.png";
+import { motion } from "framer-motion";
 export default function Upload({
   imageSrc,
   setImageSrc,
@@ -56,7 +58,22 @@ export default function Upload({
         onChange={handleOnChange}
         onSubmit={handleOnSubmit}
       >
-        <input type="file" name="file" />
+        <motion.div
+          whileHover={{
+            scale: 1.3,
+          }}
+          onClick={() => {
+            document.querySelector("#postPic").click();
+          }}
+        >
+          <Image src={camera} width="30" height="30" />
+        </motion.div>
+        <input
+          id="postPic"
+          type="file"
+          name="file"
+          style={{ display: "none" }}
+        />
 
         {imageSrc && <img src={imageSrc} />}
 

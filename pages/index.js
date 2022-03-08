@@ -153,7 +153,7 @@ export default function Home() {
     <div className={styles.home}>
       {/* logo of the app display */}
       <div className={styles.left}>
-        <h1 className={styles.title}>
+        <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 1, duration: 1.5}}className={styles.title}>
           {/* Familia </h1> */}
 
           <Image
@@ -161,7 +161,7 @@ export default function Home() {
             alt="logo saying Familia, the name of our app"
             className={styles.logo}
           />
-        </h1>
+        </motion.h1>
         {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
         <Image
           src={frontimage}

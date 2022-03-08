@@ -91,14 +91,15 @@ export default function Dashboard() {
       <div className={styles.tree}>
         {/* <Image src={familytree} /> */}
         <FamilyTree />
-        <div
+        <motion.div
+        whileHover={{ scale: 1.1}}
           className={styles.view}
           onClick={() => {
             router.push(`/tree`);
           }}
         >
           View More...
-        </div>
+        </motion.div>
       </div>
     </div>
   );

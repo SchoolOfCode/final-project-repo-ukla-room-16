@@ -82,17 +82,10 @@ function Post({
     }
   }, [user]);
 
-
-function checkImage () {
-
-  if (image){
-
-    return ( <Image src={image}    
-    width="200"
-    height="200"/> 
-)
-  }
-
+  function checkImage() {
+    if (image) {
+      return <Image src={image} width="200" height="200" />;
+    }
   }
 
   return (
