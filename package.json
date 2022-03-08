@@ -12,7 +12,7 @@
     "@auth0/nextjs-auth0": "^1.7.0",
     "@balkangraph/familytree.js": "^1.2.16",
     "framer-motion": "^6.2.8",
-    "next": "^12.1.0",
+    "next": "12.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",

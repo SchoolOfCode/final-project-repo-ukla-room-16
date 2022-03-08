@@ -169,6 +169,7 @@ export default function Home() {
           width="1000em"
           height="450em"
         />
+      test
       </div>
       <div className={styles.right}>
         {/* auth0 button to go to login/sign up box */}
