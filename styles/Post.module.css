@@ -1,5 +1,5 @@
 .container {
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 .username {
@@ -22,10 +22,8 @@
 
 .textbox {
   background:rgba(233, 241, 233, 1);
-  padding: 10px;
+  padding: 10px 30px;
   width: 90%;
-  /* height: 215px; */
-
   border-radius: 20px;
 }
 

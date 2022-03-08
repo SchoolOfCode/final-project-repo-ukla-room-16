@@ -4,14 +4,13 @@
 .header {
   width: 100vw;
   height: 10vh;
-  background: rgba(233, 241, 233, 1);
- /*  margin-bottom: 20px; */
+  background: rgb(255, 255, 255);
+  border-bottom: 1px rgb(211, 211, 211) solid;
   display: flex;
   justify-content: space-between;
 }
 
 .userDisplay {
-  /* background-color: #cc1010; */
   margin: 10px;
   border-radius: 5px;
   display: flex;

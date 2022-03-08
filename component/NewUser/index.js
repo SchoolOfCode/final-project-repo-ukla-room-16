@@ -9,6 +9,7 @@ const NewUsers = ({ name, email, picture }) => {
        console.log("On login running")
       const postObj = {
         full_name: nameOfUser,
+        profile_name: nameOfUser,
         email: emailOfUser,
         picture: pictureOfUser,
       };

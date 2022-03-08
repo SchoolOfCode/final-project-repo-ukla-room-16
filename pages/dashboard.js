@@ -70,7 +70,7 @@ export default function Dashboard() {
           <div className={styles.searchcontainer}>
             <input
               type="text"
-              className={styles.searchBar}
+              className={styles.searchinput}
               placeholder="Search"
             />
             <div className={styles.searchbutton}>submit</div>

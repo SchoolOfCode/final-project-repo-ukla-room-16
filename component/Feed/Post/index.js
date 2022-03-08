@@ -78,8 +78,8 @@ function checkImage () {
   if (image){
 
     return ( <Image src={image}    
-    width="300px"
-    height="300px"/> 
+    width="200"
+    height="200"/> 
 )
   }
 
@@ -98,8 +98,8 @@ function checkImage () {
           <a>
             <Image 
               src={picture ? picture : profilePic}
-              width="60vh"
-              height="60vh"
+              width="60"
+              height="60"
               className={styles.userPic}
             />
           </a>
@@ -117,12 +117,12 @@ function checkImage () {
 
       </div>
       <div className={styles.postbutton}>
-      <Image src={like} onClick={() => {IncrementCount(count)}} width="30vh" height="30vh" />
+      <Image src={like} onClick={() => {IncrementCount(count)}} width="30" height="30" />
       <div className={styles.like}>
-      <Image src={heart} width="30vh" height="30vh" />
+      <Image src={heart} width="30" height="30" />
       
       <p>{count}</p>
-      {person.id === userID ? <Image src={bin} width="30vh" height="30vh" onClick={deleteComment}/> : null}
+      {person.id === userID ? <Image src={bin} width="30" height="30" onClick={deleteComment}/> : null}
       </div>
       </div>
       </div>

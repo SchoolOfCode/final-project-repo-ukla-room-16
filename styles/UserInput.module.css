@@ -1,31 +1,35 @@
 .container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
+  flex-direction: column; 
+  width: 100%;
   border: 1px solid #c9c7c7;
   box-sizing: border-box;
   border-radius: 10px;
   background-color: white;
+  margin-bottom: 20px;
 }
 
 .textinput {
-  margin: 0 10px;
+  margin: 20px;
   font-size: 30px;
-  width: 100%;
   border: none;
   outline: none;
-  
+}
+
+.bottomrow {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .postbutton {
-  margin: 0.3em 0.3em 0.3em 0;
   font-size: 18px;
   color: white;
   font-weight: bold;
   background-color: #cc1010;
-  padding: 10px;
-  border-radius: 15px;
+  padding: 15px 20px;
+  border-radius: 100px;
   cursor: pointer;
 }

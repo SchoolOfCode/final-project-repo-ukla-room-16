@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion"
+
+import Upload from "../Upload";
 import styles from "../../styles/UserInput.module.css";
 
-import Upload, {imageSrc } from "../Upload";
-
-import { motion } from "framer-motion"
-// import {useRouter} from "next/router";
-
-
-const UserInput = ({ person, feed, setFeed }) => {
+export default function UserInput({ person, feed, setFeed }) {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [text, setText] = useState("");
   const [imageSrc, setImageSrc] = useState();
@@ -37,12 +34,9 @@ const UserInput = ({ person, feed, setFeed }) => {
       });
       const data = await res.json();
 
-
       //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
       const newFeed =[data.payload[0], ...feed]
       setFeed(newFeed);
-      console.log("feed", feed);
-
 
       document.querySelector(`.${styles.textinput}`).value = "";
       setText(""), setImageSrc(), setUploadData()
@@ -54,13 +48,6 @@ const UserInput = ({ person, feed, setFeed }) => {
   function handleChange(e) {
     setText(e.target.value);
   }
-  console.log(imageSrc)
-
-
-
-
-
-
 
   return (
     <div className={styles.container}>
@@ -70,15 +57,15 @@ const UserInput = ({ person, feed, setFeed }) => {
         onChange={handleChange}
         placeholder="Shout out to your loved ones:"
       />
-
-      <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc} uploadData={uploadData} setUploadData={setUploadData}  />
+      <div className={styles.bottomrow}>
+        <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc} uploadData={uploadData} setUploadData={setUploadData}  />
 
       <motion.div whileHover={{scale:1.1, textShadow:"0px 0px 8px rgb(255,255,255"}} className={styles.postbutton} onClick={() => onSubmit(text)}>
         Post
       </motion.div>
+      </div>
+      
     </div>
   );
 
 };
-
-export default UserInput;
