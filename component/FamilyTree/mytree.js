@@ -57,20 +57,6 @@ export default class extends Component {
               ],
             },
         });
-    //     family.on("added")= async() => {
-    //       const URL = process.env.NEXT_PUBLIC_URL;
-    //       const postObj = {
-    //         family_id: 1,
-    //         profile_name: "hello",
-    //         full_name: "hello",
-    //         picture: "pic",
-    //       }
-    //         const res = await fetch(`${URL}/users`, {
-    //           method: "POST",
-    //           headers: { "Content-Type": "application/json" },
-    //           body: JSON.stringify(postObj),
-    //         });   
-    // }
   }
 
     render() {

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import FamilyTree from "../component/FamilyTree/mytree.js";
+import FamilyTree from "../component/FamilyTree/mytree.js"
 import { useRouter } from "next/router";
 import styles from "../styles/Dashboard.module.css";
+import AddRelationship from "../component/AddRelationship/"
 
-// const data = [
+
+// const data = 
+
+// [
 
 //   { id: 1,
 //     name: "Marinette avatar",
@@ -44,38 +48,36 @@ import styles from "../styles/Dashboard.module.css";
 //     fid: 4,
 //   },
 // ]
-
 export default function Tree() {
   const URL = process.env.NEXT_PUBLIC_URL;
   let familyID = 1;
   const [ourData, setOurData] = useState([]);
+
   useEffect(() => {
-    async function getFamily(familyID) {
-      // FETCHING THE POSTS
+    async function getFamily() {
+      console.log("get family is running")
+      // FETCHING THE USERS
       const res = await fetch(`${URL}/users?familyID=${familyID}`);
       const data = await res.json();
-      data.payload.forEach((object) => {
-        // object.name = object.full_name
-        // object.full_name = null
-        // object.family_id = null
-        // object.profile_name = null
-        object.gender = null
+      data.payload.forEach(object => {
+        object.pids = [object.id+1]
       })
-      console.log(data.payload)
       setOurData(data.payload);
     }
 
-    if (familyID) {
-      getFamily(familyID);
-    }
-  }, [familyID]);
+    getFamily()
+    console.log("useEffect is running")
+  }, []);
 
+  console.log(ourData)
   // here we are displaying the tree developped in the component folder under FamilyTree/mytree.js
   const router = useRouter();
   return ourData.length > 0 ? (
     <div style={{ height: "100%" }}>
-      {/* <button onClick={addRelationship}>+</button> */}
-      <FamilyTree nodes={ourData} ourData={ourData} />
+      <AddRelationship />
+      <FamilyTree nodes={
+ourData
+      } />
       <button
         className={styles.view}
         onClick={() => {
