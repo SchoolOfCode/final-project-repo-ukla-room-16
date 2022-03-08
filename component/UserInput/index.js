@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 import Upload from "../Upload";
 import styles from "../../styles/UserInput.module.css";
@@ -11,8 +11,8 @@ export default function UserInput({ person, feed, setFeed }) {
   const [uploadData, setUploadData] = useState();
 
   async function onSubmit(postText) {
-    if(text ==="") {
-      alert("cannot post an empty text")
+    if (text === "") {
+      alert("cannot post an empty text");
       return;
     }
     const postObj = {
@@ -23,8 +23,8 @@ export default function UserInput({ person, feed, setFeed }) {
       created_at: `${Date.now()}`,
       picture: person.picture,
       likes: Number(0),
-     post_image: imageSrc
-    }
+      post_image: imageSrc,
+    };
 
     try {
       const res = await fetch(`${URL}/posts`, {
@@ -35,11 +35,11 @@ export default function UserInput({ person, feed, setFeed }) {
       const data = await res.json();
 
       //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
-      const newFeed =[data.payload[0], ...feed]
+      const newFeed = [data.payload[0], ...feed];
       setFeed(newFeed);
 
       document.querySelector(`.${styles.textinput}`).value = "";
-      setText(""), setImageSrc(), setUploadData()
+      setText(""), setImageSrc(), setUploadData();
     } catch (error) {
       // throw new Error(error);
     }
@@ -58,14 +58,21 @@ export default function UserInput({ person, feed, setFeed }) {
         placeholder="Shout out to your loved ones:"
       />
       <div className={styles.bottomrow}>
-        <Upload imageSrc={imageSrc} setImageSrc={ setImageSrc} uploadData={uploadData} setUploadData={setUploadData}  />
+        <Upload
+          imageSrc={imageSrc}
+          setImageSrc={setImageSrc}
+          uploadData={uploadData}
+          setUploadData={setUploadData}
+        />
 
-      <motion.div whileHover={{scale:1.1, textShadow:"0px 0px 8px rgb(255,255,255"}} className={styles.postbutton} onClick={() => onSubmit(text)}>
-        Post
-      </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.1, textShadow: "0px 0px 8px rgb(255,255,255" }}
+          className={styles.postbutton}
+          onClick={() => onSubmit(text)}
+        >
+          Post
+        </motion.div>
       </div>
-      
     </div>
   );
-
-};
+}

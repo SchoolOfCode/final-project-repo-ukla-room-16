@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "../../styles/Upload.module.css";
 import Image from "next/image";
 import camera from "../../images/camera.png";
