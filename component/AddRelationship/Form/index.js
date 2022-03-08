@@ -39,34 +39,65 @@ function Form({ display, setDisplay, onClose, familyID }) {
   }, []);
 
   async function onSubmit() {
-    console.log("onsubmit function is running");
-    console.log("A, B, rel", personA, personB, relationship);
-    if (relationship === "parent") {
+    console.log("submit is running")
+    if (relationship === "parent 1") {
       async function fetchfamilies() {
-        console.log("fetch families is running");
-
-        console.log(`${URL}/users/${personB}`);
-        console.log(Number(personA), "Number")
         const res = await fetch(`${URL}/users/${personB}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            fid: Number(personA)
+            fid: Number(personA),
           }),
         });
-        const data = await res.json();
-        console.log("HARRY", data);
-        const partnerres = await fetch(`${URL}/users/${personA}`, {
+        // const data = await res.json();
+        // let partnerID = data.payload[0].mid;
+        // console.log("HARRY", data);
+        // const partnerres = await fetch(`${URL}/users/${personA}`, {
+        //   method: "PUT",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify({
+        //     pids: partnerID,
+        //   }),
+        // });
+      }
+
+      fetchfamilies();
+    }
+    if (relationship === "parent 2") {
+      async function fetchfamilies() {
+        const res = await fetch(`${URL}/users/${personB}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            pids: 3
+            mid: Number(personA),
+          }),
+        });
+        const data = await res.json();
+        // console.log(data)
+        // let partnerID = data.payload[0].fid
+        // console.log("partner ID", partnerID)
+        // console.log("HARRY", data);
+        // const partnerres = await fetch(`${URL}/users/${personA}`, {
+        //   method: "PUT",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify({
+        //     pids: partnerID,
+        //   }),
+        // });
+        // const data = await
+      }
+      fetchfamilies();
+    } else if (relationship === "child") {
+      async function fetchfamilies() {
+        const res = await fetch(`${URL}/users/${personA}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            mid: Number(personB),
           }),
         });
       }
       fetchfamilies();
-    } else if (relationship === "child") {
-      console.log("successfully entered child value");
     } else {
       console.log("something is going wrong");
     }
@@ -81,8 +112,6 @@ function Form({ display, setDisplay, onClose, familyID }) {
   function handleChangeRelationship(e) {
     setRelationship(e.target.value);
   }
-
-  console.log(family, "family");
   const modalContent = display ? (
     <div className={styles.overlay}>
       <div className={styles.modal}>
@@ -125,7 +154,8 @@ function Form({ display, setDisplay, onClose, familyID }) {
                 onChange={handleChangeRelationship}
               >
                 <option value="default">Default</option>
-                <option value="parent">Parent</option>
+                <option value="parent 1">Parent 1</option>
+                <option value="parent 2">Parent 2</option>
                 <option value="child">Child</option>
               </select>
               <button onClick={() => onSubmit()} className={styles.submit}>
