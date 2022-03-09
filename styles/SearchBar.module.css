@@ -1,0 +1,19 @@
+
+.searchcontainer {
+    display: flex;
+    border: 1px solid #c9c7c7;
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .searchcontainer > * {
+    margin: 5px 10px;
+  }
+  
+  .searchinput {
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+  }
+  
