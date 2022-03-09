@@ -1,23 +1,25 @@
-import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import { useUser } from "@auth0/nextjs-auth0";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { useRouter } from "next/router";
+
 import styles from "../styles/Home.module.css";
 import frontimage from "../images/familia_frontpage_image.jpg";
-import Link from "next/link";
 import logofamilia from "../images/Familia9.png";
-import { useUser } from "@auth0/nextjs-auth0";
+import tree from "../images/tree.png";
+import Header from "../component/Header";
 import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
-import css from "../styles/Dashboard.module.css";
-import userProfilePicture from "../images/user-icon.jpeg";
 import JoinTree from "../component/JoinTree";
-import { useEffect, useState } from "react";
-import NavBar from "../component/NavBar";
-import { useRouter } from "next/router";
 import FullPageLoader from "../component/FullpageLoader";
 import tree from "../images/tree.png";
 
+
 export default function Home() {
   const { user, error, isLoading, isAuthenticated } = useUser();
+  const [person, setPerson] = useState();
 
   const URL = process.env.NEXT_PUBLIC_URL;
   const [hasFamilyID, setHasFamilyID] = useState(false);
@@ -58,6 +60,8 @@ export default function Home() {
         return person.email === personLoggingIn.email;
       });
 
+      // setPerson(data.payload[index])
+
       //IF THAT USER DOES EXISTS, CHECK IF THEY HAVE A FAMILY ID.
       if (index !== -1 && data.payload[index].family_id) {
         familyID = data.payload[index].family_id;
@@ -71,28 +75,16 @@ export default function Home() {
     getUsers(user);
 
     //ONCE THE USER LOGS IN, AND THEY ALSO HAVE A FAMILY ID, DIRECT THEM TO THIS PAGE
-      if (hasFamilyID) {
-        router.push("/dashboard");
+    if (hasFamilyID) {
+      router.push("/dashboard");
     }
 
     //ONCE THE USER LOGS IN, AND THEY DON'T HAVE A FAMILY ID, DIRECT THEM TO THIS PAGE
     if (hasFamilyID === false) {
+      // console.log({ user }, { person });
       return (
         <>
-          <header className={css.header}>
-            <Link href="/dashboard">
-              <Image src={logofamilia} width="150px" height="150px" />
-            </Link>
-            <p>
-              {/* <b>{user.family_name}</b> */}
-            </p>
-
-            <Link href="/user">
-              <a>
-                <Image src={user.picture} width="70px" height="70px" />
-              </a>
-            </Link>
-          </header>
+          <Header user={user} />
 
           {/* here we are passing down the name and email of the user as a prop */}
           <NewUsers
@@ -103,46 +95,24 @@ export default function Home() {
           <h1 className={styles.welcome}>
             <center> Welcome {user.given_name}!</center>
           </h1>
-<div className={styles.pagecontainer}>
-          {/* here picking the full name of the user to display welcome message to */}
-
-          {/* <NavBar /> */}
-
-          <div className={styles.containerbuttons}>
-            <div className={styles.leftcolumn}>
-              <CreateTree email={user.email} setHasFamilyID={setHasFamilyID}/>
+          <div className={styles.pagecontainer}>
+            <div className={styles.containerbuttons}>
+              <div className={styles.leftcolumn}>
+                <CreateTree
+                  email={user.email}
+                  setHasFamilyID={setHasFamilyID}
+                />
+              </div>
+              <Image src={tree} width="400" height="400" />
+              <div className={styles.rightcolumn}>
+                <JoinTree email={user.email} setHasFamilyID={setHasFamilyID} />
+              </div>
             </div>
-            <Image src={tree} width="400px" height="400px"/>
-            <div className={styles.rightcolumn}>
-              <JoinTree email={user.email} setHasFamilyID={setHasFamilyID}/>
-            </div>
-            
-          
-</div>
-
-</div>
-          {/* <Link href="/dashboard">Homepage</Link> */}
-
-          {/* displaying a log out button under the welcome message */}
-          {/* <center>
-            <a href="/api/auth/logout" className={styles.logout}>
-              Logout
-            </a>
-          </center> */}
-
-          {/* displaying a log out button under the welcome message
-          <a href="/api/auth/logout">Logout</a>
-          <center>
-            <CreateTree email={user.email} />
-            <JoinTree email={user.email} />
-          </center>
-          <Link href="/dashboard">Homepage</Link> */}
+          </div>
         </>
       );
     } else if (!isAuthenticated) {
-      return (
-      <FullPageLoader />
-      )
+      return <FullPageLoader />;
     }
   }
 
@@ -153,7 +123,7 @@ export default function Home() {
     <div className={styles.home}>
       {/* logo of the app display */}
       <div className={styles.left}>
-        <h1 className={styles.title}>
+        <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 1, duration: 1.5}}className={styles.title}>
           {/* Familia </h1> */}
 
           <Image
@@ -161,12 +131,14 @@ export default function Home() {
             alt="logo saying Familia, the name of our app"
             className={styles.logo}
           />
-        </h1>
+      
        
+        </motion.h1>
         {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
         <Image
           src={frontimage}
           alt="Picture of a family from grandparents, to children and grandchildren"
+
           width="1000em"
           height="400em"
         />
@@ -174,11 +146,12 @@ export default function Home() {
       <div className={styles.right}>
         {/* auth0 button to go to login/sign up box */}
 
-        <div className={styles.registerbox}>
+        <motion.div whileHover={{ scale: 1.2 }} className={styles.registerbox}>
           <a href="/api/auth/login" className={styles.register}>
             Register
           </a>
-        </div>
+
+        </motion.div>
 
       </div>
     </div>

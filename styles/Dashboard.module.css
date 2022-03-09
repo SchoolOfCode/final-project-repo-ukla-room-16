@@ -1,35 +1,31 @@
-.header {
-  width: 99vw;
-  height: 10vh;
-  background: rgba(255, 232, 130, 0.4);
-  border-radius: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
 .container {
   display: flex;
   width: 98vw;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(250, 254, 246);
-  /* border: 3px green solid; */
-  padding-top: 1rem;
-}
-
-.container > * {
-  /* border: 1px green solid; */
+  background-color: rgb(254, 254, 254);
 }
 
 .leftcolumn {
   width: 10vw;
 }
 
+.middlecolumn {
+  width: 45vw;
+}
+
+.middlecolumn > *,
+.rightcolumn > * {
+  margin: 20px 0;
+}
+
+.rightcolumn {
+  width: 25vw;
+}
+
 .navbar {
-  /* border: 1px green solid; */
   display: flex;
   flex-direction: column;
-  margin-left: 20%;
   align-items: flex-start;
   height: 100%;
   justify-content: space-evenly;
@@ -45,57 +41,54 @@
   justify-content: center;
 }
 
-.middlecolumn {
-  width: 55vw;
-}
-
-.rightcolumn {
-  width: 20vw;
-}
-
 .searchcontainer {
   display: flex;
   border: 1px solid #c9c7c7;
-  box-sizing: border-box;
   border-radius: 10px;
-  background-color: rgb(250, 254, 246);
+  background-color: white;
 }
 
-.searchBar {
+.searchcontainer > * {
+  margin: 5px 10px;
+}
+
+.searchinput {
   width: 100%;
   font-size: 20px;
   border: none;
-  box-sizing: border-box;
-  border-radius: 10px;
+  outline: none;
 }
 
-.searchbutton {
-  margin: 0.3em 0.3em 0.3em 0;
-  font-size: 18px;
-  color: white;
-  font-weight: bold;
+.buttonEvent {
   background-color: #cc1010;
-  padding: 10px;
+  padding: 5px;
   border-radius: 15px;
   cursor: pointer;
+  width: 40px;
+  height: 8%;
 }
 
 .tree {
   border: 2px solid black;
-  width: 100%;
+  width: 98vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  margin-top: 10px;
-
+  margin-top: 0;
+  margin-left: 1vh;
+  height: 60vh;
 }
 
 .events {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  height: 406px;
-  background: rgba(15, 163, 177, 0.15);
-  box-shadow: 0px 4px 4px rgba(83, 79, 79, 0.25);
+  height: 500px;
+  background: rgb(243, 248, 248);
   border-radius: 15px;
-  margin-top: 10px;
+  padding: 10px;
+}
+
+.eventheading {
+  margin: 0 auto;
 }
 
 .view {
@@ -107,4 +100,5 @@
   padding: 10px;
   border-radius: 15px;
   cursor: pointer;
+  width: 12%;
 }

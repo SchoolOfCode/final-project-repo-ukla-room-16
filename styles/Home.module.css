@@ -1,7 +1,5 @@
-
 .container {
   padding: 0 2rem;
- 
 }
 
 .main {
@@ -165,26 +163,25 @@
 
 
 .tree {
-    display: flex;
-    flex-direction:column;
-    height:100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .user {
-  display:flex;
+  display: flex;
   justify-content: center;
   justify-content: space-around;
   margin-bottom: 30vh;
   margin-top: 3vh;
 }
 
-.treebutton {
-  display:flex;
+/* .treebutton {
+  display: flex;
   justify-content: space-around;
   margin-left: 15%;
   margin-right: 15%;
-  
-}
+} */
 
 .userimage {
   width: 15vh;
@@ -195,7 +192,7 @@
   flex-direction: column;
 }
 
-.logoutbutton {
+/* .logoutbutton {
   padding: 5%;
   width: 100%;
   background: grey;
@@ -203,14 +200,14 @@
   font-size: 3vh;
   font-weight: bold;
   color: white;
-}
+} */
 
 .welcome {
   color: black;
   font-size: 5vh;
 }
 
-.logout  {
+/* .logout {
   display: inline-block;
   padding: 20px 30px;
   margin: 0 0.3em 0.3em 0;
@@ -237,43 +234,42 @@
     display: block;
     margin: 0.4em auto;
   }
-}
+} */
 
 .pagecontainer {
-display: flex;
-flex-direction: row;
-justify-content: center;
-width: 98vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 98vw;
 }
 
 .welcome {
-display: flex;
-flex-direction: row;
-justify-content: center;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .containerbuttons {
-display: flex;
-flex-direction:  row;
-justify-content: center;
-align-items: center;
-width: 98vw;
-margin-top: 3%;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 98vw;
+  margin-top: 3%;
 }
-.leftcolumn {
-  
-}
-
+.leftcolumn,
 .rightcolumn {
-  
-
+  margin: 20px;
 }
+
 
 .rowbottom {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 2em;
+}
+
+.profilePic {
+  border-radius: 50%;
 }

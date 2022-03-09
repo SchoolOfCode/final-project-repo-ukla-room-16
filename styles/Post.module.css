@@ -1,5 +1,6 @@
 .container {
-  margin: 40px 0;
+  margin: 20px 0;
+  border-bottom: 1px rgb(211, 211, 211) solid;
 }
 
 .username {
@@ -21,11 +22,10 @@
 }
 
 .textbox {
-  background:rgba(233, 241, 233, 1);
-  padding: 10px;
+  font-size: 18px;
+  background:rgb(243, 248, 248);
+  padding: 5px 30px;
   width: 90%;
-  /* height: 215px; */
-
   border-radius: 20px;
 }
 
@@ -41,4 +41,8 @@
 
 .delete {
   background-color: black;
+}
+
+.userPic{
+  border-radius:50%
 }

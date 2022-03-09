@@ -48,6 +48,7 @@ function Feed({ person, feed, setFeed }) {
             userID={item.user_id}
             likes={item.likes}
             familyID={familyID}
+            image={item.post_image}
           />
         );
       })}
