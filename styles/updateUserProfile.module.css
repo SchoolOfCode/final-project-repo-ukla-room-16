@@ -13,7 +13,7 @@
   min-width: 400px;
   background-color: white;
   margin: 0 auto;
- /*  height: 100%; */
+  /*  height: 100%; */
   padding: 10px;
 }
 .goToUser {
@@ -38,7 +38,7 @@
   font-size: 20px;
   line-height: 2;
   text-align: center;
-  color:rgba(0, 0, 0, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   border-radius: 3px;
   margin: 12px;
   border-radius: 10px;
@@ -67,7 +67,7 @@
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  color:rgba(0, 0, 0, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   border-radius: 10px;
   margin: 10px;
   line-height: 2;
@@ -78,7 +78,7 @@
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  color: black;
+  color: rgba(0, 0, 0, 0.55);
   border-radius: 10px;
   margin: 10px;
   line-height: 2;
@@ -100,7 +100,7 @@
   text-align: center;
   font-size: 12px;
   font-weight: bold;
-  color: black;
+  color: rgba(0, 0, 0, 0.55);
   border-radius: 10px;
   margin: 2px;
   line-height: 2;
@@ -118,17 +118,27 @@
   cursor: pointer;
 }
 
+.shoeSizePicker {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 10px;
+  width: 10rem;
+  height: 2rem;
+}
+
 /* -----------COMING FROM DOB-------------- */
 .datePicker input {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  color: rgb(71, 46, 46);
+  color: rgba(0, 0, 0, 0.55);
   border-radius: 10px;
   margin: 10px;
   line-height: 2;
 }
-
 
 /* -----------COMING FROM DELETE USER-------------- */
 .deleteProfileBtn {

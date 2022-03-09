@@ -195,8 +195,10 @@ export default function createUserProfile() {
           <div className={styles.subInfo}>
             <Image src={shoes} width="80px" height="90px" />
             <div>
+            
               <ul>
                 <select
+                  className={styles.shoeSizePicker}
                   value={shoeSize}
                   onChange={(e) => {
                     setShoeSize(e.target.value);
