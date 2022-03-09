@@ -149,6 +149,7 @@ export default function Home() {
   //IF THE USER IS NOT LOGGED IN, DIRECT THEM TO THIS PAGE
 
   return (
+    <>
     <div className={styles.home}>
       {/* logo of the app display */}
       <div className={styles.left}>
@@ -167,7 +168,7 @@ export default function Home() {
           src={frontimage}
           alt="Picture of a family from grandparents, to children and grandchildren"
           width="1000em"
-          height="450em"
+          height="400em"
         />
       </div>
       <div className={styles.right}>
@@ -178,7 +179,22 @@ export default function Home() {
             Register
           </a>
         </div>
+
       </div>
     </div>
+<div className={styles.rowbottom}>
+        <div className={styles.infobox}>
+          <a href="/quickstart" className={styles.info}>
+             Quickstart
+          </a>
+        </div>
+        <div className={styles.infobox}>
+          <a href="/welcome" className={styles.info}>
+             Welcome
+          </a>
+        </div>
+</div>
+
+</>
   );
 }

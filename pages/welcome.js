@@ -1,5 +1,6 @@
 import logofamilia from "../images/Familia9.png";
 import Image from 'next/image';
+import Link from "next/link";
 import tree from "../images/tree.png";
 import meal from "../images/meal.png";
 import frontimage from "../images/familia_frontpage_image.jpg";
@@ -14,22 +15,37 @@ const WelcomePage = () => {
       <div>
         <div>
         <div>
-        <Image src={logofamilia} width="100px" height="100px" />
+        <Link href="/"><a><Image
+          src={logofamilia}
+          alt="logo saying Familia, the name of our app"
+          className={styles.logo} />
+          </a></Link>
         </div>
 
         <div className={styles.familyimage}>
             <h1 >Bringing the Family 
-            <br></br>together in one app</h1>
-            <Image src={frontimage}
+            together in one app </h1>
+            {/* <Image src={frontimage}
           alt="Picture of a family from grandparents, to children and grandchildren"
           width="150px"
-          height="75px" />
+          height="75px" /> */}
           </div>
 <br></br>
 <br></br>
             <div className={styles.container}>
-            <div className={styles.leftcolumn}></div> 
-            
+            <div className={styles.leftcolumn}>
+
+            <div className={styles.video}>
+         <video controls src={"/familia-an-app-for-the-family.mp4"} 
+         style={{ width: "400px", height:"400px" }} />
+          </div>
+
+
+
+            </div> 
+        
+
+
             <div className={styles.middlecolumn}>
             <div className={styles.text}> <p>Familia is your family app, where you have a safe and secure space to discuss and share information with your close family only.
             
@@ -61,7 +77,7 @@ const WelcomePage = () => {
             
             <div className={styles.tree}>
             
-            <Image src={tree} width="400px" height="400px" />
+            <Image src={tree} width="200px" height="200px" />
             
             <p>When we think about family trees... we also offer you the opportunity to visualise your family and grow your family tree with our innovative family tree display.</p>
             </div>

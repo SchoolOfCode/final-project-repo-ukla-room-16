@@ -124,6 +124,7 @@
 
 .right {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -133,7 +134,7 @@
 
 .registerbox {
   padding: 20px;
-  background: rgba(255, 0, 0, 0.603);
+  background: #cc1010;
   border-radius: 10px;
   font-size: 20px;
   font-weight: bold;
@@ -145,6 +146,23 @@
 .register:hover {
   color: white;
 }
+
+.infobox {
+  padding: 10px;
+  background: #cc1010;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-right: 10vw;
+}
+
+.info:hover {
+  color: white;
+}
+
+
 
 .tree {
     display: flex;
@@ -251,4 +269,11 @@ margin-top: 3%;
 .rightcolumn {
   
 
+}
+
+.rowbottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
 }
