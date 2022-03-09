@@ -21,25 +21,26 @@ const quickStart = () => {
           alt="logo saying Familia, the name of our app"
           className={styles.logo} />
 
+      <div className={styles.title}>How to use the Familia app</div>
         <Image src={useapp}
         alt="image of a handclick"
         className={styles.imageuseapp}
         width="50px"        
         height="50px" 
+        alignContent="center"
         />
 
       <div className={styles.container}>
 
     <div></div>
 
-      <div className={styles.title}>How to use the Familia app</div>
 
      <div className={styles.video}>
       {/* <video autoPlay loop style={{ width: '500px', height: '500px' }}>
          <source src="../images/familia_video.mp4" />
       </video> */}
         {/* //<ReactPlayer src={familiaVideo} /> </div> */}
-        <video controls src={"/familia_video.mp4"} style={{ width: "400px", height:"400px" }} />
+        <video controls src={"/familia-an-app-for-the-family.mp4"} style={{ width: "400px", height:"400px" }} />
 
         </div>
       
@@ -51,20 +52,17 @@ const quickStart = () => {
 
 <div className={styles.middlecolumn}>   
 
-
       <div className={styles.login}>
-        Create an account on the homepage using either your personal email,
-        Facebook, Twitter, or Google accounts.
-      </div>
-      
-
-      
-      <div className={styles.createtree}>   
+        Create an account on the homepage using either your personal email or your Google accounts. 
       You will be redirected to a landing page that prompts you to either join a
-      family tree or create a family tree. It is as simple as that. After
-      joining or creating a family tree, you will be redirected to a dashboard
+      family tree or create a family tree. It is as simple as that. 
+      <br></br>
+      After joining or creating a family tree, you will be redirected to a dashboard
       page where you can view most of the features of the app on it.
       </div>
+
+      <Image src={createtree} width="200px" height="200px"/>
+      <Image src={enterfamilyname} width="200px" height="200px"/>
 
        <div className={styles.dashboard}>   
        On the
@@ -74,6 +72,7 @@ const quickStart = () => {
       from loved ones and keep up to date with birthdays, graduations, and
       anniversaries. 
       </div>
+      <Image src={dashboard} width="200px" height="200px"/>
       
       <div className={styles.familytree}>   
       With the family tree in Familia, you can add family members
@@ -81,6 +80,7 @@ const quickStart = () => {
       do is join the family and they get to view all posts, pictures, videos,
       and share memories with you. 
       </div>
+      <Image src={familytree} width="200px" height="200px" />
 
       <div className={styles.user}>  
       At the top right-hand corner of the page, you
@@ -88,6 +88,7 @@ const quickStart = () => {
       profile page where you can view and update information like address,
       favourite food, clothes and shoe size. 
       </div>
+      <Image src={userupdate} width="200px" height="200px"/>
 
       <div className={styles.otheruser}>  
       The fun doesn't stop there as you
@@ -104,11 +105,6 @@ const quickStart = () => {
 </div>
       <div className={styles.rightcolumn}>  
       
-      <Image src={createtree} />
-      <Image src={enterfamilyname} />
-      <Image src={dashboard} />
-      <Image src={userupdate} />
-      <Image src={familytree} />
       
       
       

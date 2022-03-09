@@ -1,10 +1,10 @@
 .container {
-    display:grid;
-    grid-template-columns: 1fr 2fr 2fr 1f;
-    grid-auto-rows: minmax(100px, auto);
-    grid-gap: 1em;
-    justify-content: center;
-    grid-template-areas: "header header" "sidebar content";
+    display:flex;
+    flex-direction: column;
+    font-size: medium;
+    text-align: center;
+    
+    
 }
 
 
@@ -14,15 +14,16 @@
 }
 
 .imageuseapp {
-
+display: flex;
+align-content: center;
 
 }
 
 .title {
-   
+   display: flex;
   font-weight: bold;
   font-size: large;
-  align-items: center;
+  align-content: center;
 
 }
 
@@ -31,9 +32,21 @@
 }
 
 .leftcolumn {
-    grid-area: sidebar;
+ background-color: brown;
+}
+.middlecolumn {
+background-color: chartreuse;
+
+}
+.rightcolumn {
+  background-color: pink;
 }
 
 .login {
-   
+   padding-bottom: 10px;
+   padding-top: 20px;
+   background-color: aquamarine;
+
 }
+
+
