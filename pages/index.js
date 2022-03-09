@@ -14,7 +14,7 @@ import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
 import JoinTree from "../component/JoinTree";
 import FullPageLoader from "../component/FullpageLoader";
-import tree from "../images/tree.png";
+
 
 
 export default function Home() {
