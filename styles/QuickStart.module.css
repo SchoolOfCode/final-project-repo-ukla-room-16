@@ -69,6 +69,13 @@ width:71%;
  
 }
 
+.column3  {
+  width:50%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+
+}
+
 .login {
    padding-bottom: 10px;
    padding-top: 20px;
@@ -77,8 +84,7 @@ width:71%;
 }
 
 .images {
-width: 200px;
-height: 200px;
+
 border-radius: 50%;
 
 }
@@ -102,4 +108,15 @@ border-radius: 50%;
 
 .register:hover {
   color: white;
+}
+
+.intro {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  text-align: left;
+ 
+}
+
+.teamtext {
+  text-align: justify;
 }

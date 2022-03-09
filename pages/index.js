@@ -190,7 +190,7 @@ export default function Home() {
         </div> */}
         <div className={styles.infobox}>
           <a href="/welcome" className={styles.info}>
-             Welcome
+             About Us
           </a>
         </div>
 </div>
