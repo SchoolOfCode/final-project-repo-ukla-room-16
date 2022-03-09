@@ -1,5 +1,6 @@
 .container {
-  margin: 40px 0;
+  margin: 20px 0;
+  border-bottom: 1px rgb(211, 211, 211) solid;
 }
 
 .username {
@@ -21,11 +22,10 @@
 }
 
 .textbox {
-  background:rgba(233, 241, 233, 1);
-  padding: 10px;
+  font-size: 18px;
+  background:rgb(243, 248, 248);
+  padding: 5px 30px;
   width: 90%;
-  /* height: 215px; */
-
   border-radius: 20px;
 }
 
@@ -43,17 +43,6 @@
   background-color: black;
 }
 
-.images {
-  display: flex;
-  
-
-}
-
-.images:hover {
-  /* top:-25px;
-  left:-35px; */
-  width: 700px;
-  height:auto;
-  display:block;
-  z-index:999;
+.userPic{
+  border-radius:50%
 }
