@@ -13,7 +13,9 @@ export default function Header({ user, person, familyName }) {
       transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
       className={styles.header}
     >
+      <Link href={`/dashboard`} className={styles.logo}>
       <Image src={logo} width="150" height="150" />
+      </Link>
       {familyName && (
         <h1 className={styles.familytext}>
           the <span className={styles.familyname}>{familyName}</span> family

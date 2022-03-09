@@ -42,3 +42,7 @@
   font-size: 40px;
   line-height: 1.6;  /* moves text down the page a bit */
 }
+
+.logo >*:hover {
+  background-color: pink;
+}
