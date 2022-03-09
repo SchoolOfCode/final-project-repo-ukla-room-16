@@ -1,0 +1,149 @@
+.entire {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.familyimage {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    /* align-self: stretch; */
+    /* text-align: center; */
+    height: 100px;
+    /* width: 100vw; */
+    justify-content: center;
+    
+}
+
+.container{
+    display: flex;
+    width: 98vw;
+    flex-direction: row;
+    text-align: justify;
+    justify-content: space-between;
+    /* background-color: rgb(250, 254, 246); */
+    padding-top: 1rem;
+
+}
+
+.leftcolumn {
+    width: 30vw;
+  }
+
+  .middlecolumn {
+    width: 60vw;
+  }
+  
+  .rightcolumn {
+    width: 10vw;
+}
+.video {
+margin-left: 5vw;
+
+}
+
+.text{
+    align-items: center;
+    text-align: justify;
+    font-family: 'Abel', sans-serif;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background:rgb(250, 254, 246);
+}
+
+.secure{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-family: 'Abel', sans-serif;
+    width: 95%;  
+    border-radius: 25px;
+    padding: 20px;
+    height: 100%;
+}
+
+.tree{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    text-align: justify;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    font-family: 'Abel', sans-serif;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: rgb(250, 254, 246);
+}
+
+.famytree{
+    min-height: 100px;
+    flex-grow: 2;
+
+}
+
+.treetext{
+    min-height: 200px;
+    flex-shrink: 0;
+
+}
+
+.more{
+    display:grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 20px;
+    grid-template-areas: 'recipe events others';
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Abel', sans-serif;
+    
+}
+
+.recipe{
+    grid-area: recipe;
+    align-self: center;
+}
+
+.events{
+    grid-area: events;
+    
+}
+
+.others{
+    grid-area: others;
+    
+}
+
+.rowtop {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: flex-start;
+
+}
+.infobox {
+    padding: 10px;
+    background: #cc1010;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-right: 10vw;
+    margin-top: 2vw;
+  }
+  
+  .info:hover {
+    color: white;
+  }
+  
+  

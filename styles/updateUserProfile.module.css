@@ -1,65 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Hubballi&family=PT+Sans+Narrow&display=swap");
+
 .container {
-    background-color: #f1f6ed;
-    height: 100%;
-  }
+  background-color: #f1f6ed;
+  /* height: 100%; */
+}
 
-  .subContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-    min-width: 400px;
-    background-color: white;
-    margin: 0 auto;
-    height: 100%;
-    padding: 40px;
-  }
+.subContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  min-width: 400px;
+  background-color: white;
+  margin: 0 auto;
+  /*  height: 100%; */
+  padding: 10px;
+}
+.goToUser {
+  display: flex;
+  align-self: flex-end;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
+}
+.profileH3 {
+  font-family: "Hubballi", cursive;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: underline;
+}
 
-  .input {
-      margin: 8px;
-  }
-  
-  .createProfile {
-    align-self: flex-end;
-    border-radius: 20px;
-   padding: 10px;
-   margin: 10px;
-   background-color: aqua;
-  }
-  
-  .goHome {
-    align-self: flex-end;
-    border-radius: 20px;
-   padding: 10px;
-   margin: 10px;
-   background-color: aqua;
-  }
-  
-  .info {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.5rem;
-  }
-  
-  .subInfo {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1.5rem;
-  }
+.inputName,
+.inputName::-webkit-input-placeholder {
+  font-size: 20px;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 3px;
+  margin: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
 
-  .goToUser {
-    display: flex;
-    align-self: flex-end;
-    border-radius: 20px;
-   padding: 10px;
-   margin: 10px;
-   color: white;
-   font-weight: bold;
-   background-color: #cc1010;
+.dobPicker {
+  height: 8px;
+}
+.inputGender,
+.inputGender::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 10px;
+  line-height: 2;
+}
+.thirdInput {
+  display: flex;
+}
 
-  }
+.inputMobilephone,
+.inputMobilephone::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 10px;
+  line-height: 2;
+}
 
-  .dob {
+.inputHomeAddress,
+.inputHomeAddress::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 10px;
+  line-height: 2;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
 
-    align-items: center;
-  }
+.subInfo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
+}
+
+.subInput,
+.subInput::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 2px;
+  line-height: 2;
+}
+
+.updateBtn {
+  align-self: center;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #cc1010;
+  cursor: pointer;
+}
+
+.shoeSizePicker {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 10px;
+  width: 10rem;
+  height: 2rem;
+}
+
+/* -----------COMING FROM DOB-------------- */
+.datePicker input {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 10px;
+  line-height: 2;
+}
+
+/* -----------COMING FROM DELETE USER-------------- */
+.deleteProfileBtn {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
+  cursor: pointer;
+}
+
+/* ------ CLASSES COMING FROM users.js-------- */
+.createProfile {
+  align-self: flex-end;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  background-color: aqua;
+}
+
+.goHome {
+  align-self: flex-end;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  background-color: aqua;
+}

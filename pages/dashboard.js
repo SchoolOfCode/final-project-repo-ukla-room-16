@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 import styles from "../styles/Dashboard.module.css";
 import addIcon from "../images/icons8-add-100.png";
@@ -10,16 +12,18 @@ import UserInput from "../component/UserInput";
 import Feed from "../component/Feed";
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
-import FamilyTree from "../component/FamilyTree/mytree.js"
-import { useRouter } from "next/router";
+import FamilyTree from "../component/FamilyTree/mytree.js";
+import Events from "../component/Events";
+import SearchBar from "../component/SearchBar";
+
 
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
   const { user, isLoading, error } = useUser();
   const [person, setPerson] = useState("");
   const [familyName, setFamilyName] = useState("");
-  const [feed, setFeed] = useState([])
-  const router = useRouter()
+  const [feed, setFeed] = useState([]);
+  const router = useRouter();
   console.log("user", user);
   console.log("person", person);
 
@@ -62,33 +66,32 @@ export default function Dashboard() {
           <NavBar />
         </div>
         <div className={styles.middlecolumn}>
-          <UserInput person={person} feed={feed} setFeed={setFeed}/>
-          <Feed person={person} feed={feed} setFeed={setFeed}/>
+          <UserInput person={person} feed={feed} setFeed={setFeed} />
+          <Feed person={person} feed={feed} setFeed={setFeed} />
         </div>
 
         <div className={styles.rightcolumn}>
-          <div className={styles.searchcontainer}>
-            <input
-              type="text"
-              className={styles.searchBar}
-              placeholder="Search"
-            />
-            <div className={styles.searchbutton}>submit</div>
-          </div>
-
-          <div className={styles.tree}>
-            {/* <Image src={familytree} /> */}
-            <FamilyTree />
-            <button className={styles.view} onClick={()=> {router.push(`/tree`)}}>View More...</button>
-          </div>
-
+          <SearchBar feed={feed} setFeed={setFeed} />
           <div className={styles.events}>
-            <button>
+            {/* <h2 className={styles.eventheading}>EVENTS</h2>
+            <div className={styles.buttonEvent}>
               <Image src={addIcon} width="30px" height="30px" />
-            </button>
-            <p>EVENTS</p>
+            </div> */}
+            <Events person={person}/>
           </div>
         </div>
+      </div>
+      <div className={styles.tree}>
+        <FamilyTree />
+        <motion.div
+        whileHover={{ scale: 1.1}}
+          className={styles.viewmore}
+          onClick={() => {
+            router.push(`/tree`);
+          }}
+        >
+          View More...
+        </motion.div>
       </div>
     </div>
   );

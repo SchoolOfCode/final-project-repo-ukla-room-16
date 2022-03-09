@@ -21,57 +21,63 @@
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);   
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .createtreebutton {
-    display: inline-block;
-    padding: 30px 50px;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.5em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #cc1010;
-    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
-      inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
-      inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
-    text-align: center;
-    position: relative;
+  display: inline-block;
+  padding: 30px 50px;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #cc1010;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+}
+.createtreebutton:active {
+  box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+}
+@media all and (max-width: 30em) {
+  .createtreebutton {
+    display: block;
+    margin: 0.4em auto;
   }
-  .createtreebutton:active {
-    box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15),
-      inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
-  }
-  @media all and (max-width: 30em) {
-    .createtreebutton {
-      display: block;
-      margin: 0.4em auto;
-    }
-  }
-  
-.submit {
-color: #770505;
-background-color: rgb(245, 240, 240);
-font-weight: bold;
-font-family: Arial, Helvetica, sans-serif;
-
 }
 
-.x {
-color: black;
-font-weight: bold;
+.input {
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 22px;
+}
+
+.submit {
+  padding: 5px;
+  font-size: 22px;
+  border-radius: 10px;
+  color: #770505;
+  background-color: rgb(245, 240, 240);
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
 }
 
@@ -86,3 +92,10 @@ font-weight: bold;
   border-radius: 15px;
   cursor: pointer;
 }
+
+.x {
+  color: black;
+  font-weight: bold;
+  margin: 15px;
+}
+

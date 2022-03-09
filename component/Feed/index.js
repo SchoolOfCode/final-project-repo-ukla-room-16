@@ -12,13 +12,13 @@ function Feed({ person, feed, setFeed }) {
       //FETCHING THE POSTS
       const res = await fetch(`${URL}/posts?familyID=${familyID}`);
       const data = await res.json();
-      console.log(data)
+      console.log(data);
       setFeed(
         data.payload.sort((a, b) => {
           return b.created_at - a.created_at;
         })
       );
-      console.log(feed)
+      console.log(feed);
     }
 
     if (familyID) {
@@ -35,7 +35,6 @@ function Feed({ person, feed, setFeed }) {
   }
   return (
     <div className={styles.feed}>
-
       {feed.map((item) => {
         return (
           <Post
@@ -48,6 +47,9 @@ function Feed({ person, feed, setFeed }) {
             userID={item.user_id}
             likes={item.likes}
             familyID={familyID}
+            image={item.post_image}
+            feed={feed}
+            setFeed={setFeed}
           />
         );
       })}

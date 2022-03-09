@@ -11,13 +11,18 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.7.0",
     "@balkangraph/familytree.js": "^1.2.16",
-    "next": "^12.1.0",
+    "@cloudinary/react": "^1.1.0",
+    "@cloudinary/url-gen": "^1.6.0",
+    "cloudinary": "^1.28.1",
+    "framer-motion": "^6.2.8",
+    "next": "12.0.1",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
     "react-datepicker": "^4.7.0",
     "react-dom": "17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-player": "^2.9.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.2",

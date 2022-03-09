@@ -3,12 +3,12 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import DeleteUser from "../component/DeleteUser";
-
+import {motion} from 'framer-motion'
 import styles from "../styles/updateUserProfile.module.css";
-import meal from "../images/meal.png";
-import medical from "../images/medical.png";
-import clothes from "../images/clothes.png";
-import shoes from "../images/shoes.png";
+import meal from "../images/cuttlery.jpg";
+import medical from "../images/health.jpg";
+import clothes from "../images/clothes.jpg";
+import shoes from "../images/shoes.jpg";
 import DateOfBirth from "../component/DOB";
 import bin from "../images/bin.png";
 
@@ -74,52 +74,61 @@ export default function createUserProfile() {
         <Link href={`/users?id=${router.query.id}`}>
           <a className={styles.goToUser}>X</a>
         </Link>
-        <h3 style={{ color: "red" }}>
+        <h3 className={styles.profileH3}>
           Only update the fields you want to change
         </h3>
-          <DeleteUser URL={URL} router={router} />
+        <DeleteUser URL={URL} router={router} />
         <input
-          className={styles.input}
+          className={styles.inputName}
           type="text"
           onChange={(e) => {
             setUserName(e.target.value);
           }}
-          placeholder="name"
+          placeholder="Name"
         />
         <div className={styles.dob}>
-        <DateOfBirth startDate={startDate} setStartDate={setStartDate} />
+          <DateOfBirth
+            class={{ height: "8px" }}
+            startDate={startDate}
+            setStartDate={setStartDate}
+          />
         </div>
+
         <input
-          className={styles.input}
+          className={styles.inputGender}
           type="text"
           onChange={(e) => {
             setGender(e.target.value);
           }}
-          placeholder="gender"
-        />
-        <input
-          className={styles.input}
-          type="text"
-          onChange={(e) => {
-            setMobile(e.target.value);
-          }}
-          placeholder="mobile number"
-        />
-        <input
-          className={styles.input}
-          type="text"
-          onChange={(e) => {
-            setAddress(e.target.value);
-          }}
-          placeholder="home address"
+          placeholder="Gender"
         />
 
+        <div className={styles.thirdInput}>
+          <div>
+            <input
+              className={styles.inputMobilephone}
+              type="text"
+              onChange={(e) => {
+                setMobile(e.target.value);
+              }}
+              placeholder="Mobile Number"
+            />
+            <input
+              className={styles.inputHomeAddress}
+              type="text"
+              onChange={(e) => {
+                setAddress(e.target.value);
+              }}
+              placeholder="Home Address"
+            />
+          </div>
+        </div>
         <div className={styles.info}>
           <div className={styles.subInfo}>
             <Image src={meal} width="85px" height="90px" />
             <ul>
               <input
-                className={styles.input}
+                className={styles.subInput}
                 type="text"
                 onChange={(e) => {
                   setFavFood(e.target.value);
@@ -132,32 +141,32 @@ export default function createUserProfile() {
             <div>
               <Image src={medical} width="80px" height="90px" />
             </div>
-            <ul>
+            <ul style={{marginTop: "0"}}>
               <input
-                className={styles.input}
+                className={styles.subInput}
                 type="text"
                 onChange={(e) => {
                   setBloodType(e.target.value);
                 }}
-                placeholder="blood type"
+                placeholder="Blood Type"
               />
               <br></br>
               <input
-                className={styles.input}
+                className={styles.subInput}
                 type="text"
                 onChange={(e) => {
                   setAllergies(e.target.value);
                 }}
-                placeholder="allergies"
+                placeholder="Allergies"
               />
               <br></br>
               <input
-                className={styles.input}
+                className={styles.subInput}
                 type="text"
                 onChange={(e) => {
                   setEmergencyContact(e.target.value);
                 }}
-                placeholder="emergency contact"
+                placeholder="Emergency Contact"
               />
             </ul>
           </div>
@@ -165,29 +174,31 @@ export default function createUserProfile() {
             <Image src={clothes} width="80px" height="90px" />
             <ul>
               <input
-                className={styles.input}
+                className={styles.subInput}
                 type="text"
                 onChange={(e) => {
                   setUpperClothes(e.target.value);
                 }}
-                placeholder="clothes size upper"
+                placeholder="Clothes size upper"
               />
               <br></br>
               <input
-                className={styles.input}
+                className={styles.subInput}
                 type="text"
                 onChange={(e) => {
                   setLowerClothes(e.target.value);
                 }}
-                placeholder="clothes size lower"
+                placeholder="Clothes size lower"
               />
             </ul>
           </div>
           <div className={styles.subInfo}>
             <Image src={shoes} width="80px" height="90px" />
             <div>
+            
               <ul>
                 <select
+                  className={styles.shoeSizePicker}
                   value={shoeSize}
                   onChange={(e) => {
                     setShoeSize(e.target.value);
@@ -222,7 +233,9 @@ export default function createUserProfile() {
             </div>
           </div>
         </div>
-        <button onClick={handleClick}>Submit</button>
+ 
+          <motion.div whileHover={{ scale: 1.1 }}className={styles.updateBtn} onClick={handleClick}>SUBMIT</motion.div>
+ 
       </div>
     </div>
   );

@@ -1,4 +1,26 @@
 .feed {
   overflow:scroll;
+  overflow-x: hidden;
   height: 80vh;
+  padding: 0 20px;
+  border-left: 1px rgb(211, 211, 211) solid;
+}
+
+.feed::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.feed::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.feed::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.feed::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
