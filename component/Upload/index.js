@@ -8,7 +8,6 @@ export default function Upload({
   uploadData,
   setUploadData,
 }) {
-  console.log(imageSrc, uploadData);
 
   function handleOnChange(changeEvent) {
     const reader = new FileReader();

@@ -8,12 +8,12 @@ import { useRouter } from "next/router";
 import styles from "../styles/Dashboard.module.css";
 import addIcon from "../images/icons8-add-100.png";
 import familytree from "../images/familytree.jpg";
-import searchIcon from "../images/search-icon.svg"
 import UserInput from "../component/UserInput";
 import Feed from "../component/Feed";
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
 import FamilyTree from "../component/FamilyTree/mytree.js";
+import SearchBar from "../component/SearchBar";
 
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -69,17 +69,7 @@ export default function Dashboard() {
         </div>
 
         <div className={styles.rightcolumn}>
-          <div className={styles.searchcontainer}>
-            <input
-              type="text"
-              className={styles.searchinput}
-              placeholder="Search"
-            />
-            <div>
-              <Image src={searchIcon} width="30" height="30" />
-            </div>
-            
-          </div>
+          <SearchBar feed={feed} setFeed={setFeed} />
           <div className={styles.events}>
             <h2 className={styles.eventheading}>EVENTS</h2>
             <div className={styles.buttonEvent}>
@@ -89,11 +79,10 @@ export default function Dashboard() {
         </div>
       </div>
       <div className={styles.tree}>
-        {/* <Image src={familytree} /> */}
         <FamilyTree />
         <motion.div
         whileHover={{ scale: 1.1}}
-          className={styles.view}
+          className={styles.viewmore}
           onClick={() => {
             router.push(`/tree`);
           }}

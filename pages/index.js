@@ -14,6 +14,8 @@ import NewUsers from "../component/NewUser";
 import CreateTree from "../component/CreateTree";
 import JoinTree from "../component/JoinTree";
 import FullPageLoader from "../component/FullpageLoader";
+import tree from "../images/tree.png";
+
 
 export default function Home() {
   const { user, error, isLoading, isAuthenticated } = useUser();
@@ -117,6 +119,7 @@ export default function Home() {
   //IF THE USER IS NOT LOGGED IN, DIRECT THEM TO THIS PAGE
 
   return (
+    <>
     <div className={styles.home}>
       {/* logo of the app display */}
       <div className={styles.left}>
@@ -128,13 +131,16 @@ export default function Home() {
             alt="logo saying Familia, the name of our app"
             className={styles.logo}
           />
+      
+       
         </motion.h1>
         {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
         <Image
           src={frontimage}
           alt="Picture of a family from grandparents, to children and grandchildren"
-          width="1000"
-          height="450"
+
+          width="1000em"
+          height="400em"
         />
       test
       </div>
@@ -145,8 +151,24 @@ export default function Home() {
           <a href="/api/auth/login" className={styles.register}>
             Register
           </a>
+
         </motion.div>
+
       </div>
     </div>
+<div className={styles.rowbottom}>
+        {/* <div className={styles.infobox}>
+          <a href="/quickstart" className={styles.info}>
+             Quickstart
+          </a>
+        </div> */}
+        <div className={styles.infobox}>
+          <a href="/welcome" className={styles.info}>
+             About Us
+          </a>
+        </div>
+</div>
+
+</>
   );
 }

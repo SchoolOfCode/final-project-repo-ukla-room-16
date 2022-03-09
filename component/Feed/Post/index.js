@@ -20,29 +20,34 @@ function Post({
   likes,
   familyID,
   image,
+  feed,
+  setFeed,
 }) {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [count, setCount] = useState(likes);
   const [person, setPerson] = useState("");
   const { user } = useUser();
-
   let currentTime = Date.now();
-  let timedistance = currentTime - createdAt;
-  let timeAgo;
-  if (timedistance < 60000) {
-    timeAgo = `${Math.floor(timedistance / 1000)} seconds ago`;
-  } else if (timedistance < 3.6e6) {
-    timeAgo = `${Math.floor(timedistance / 60000)} minutes ago`;
-  } else if (timedistance < 8.64e7) {
-    timeAgo = `${Math.floor(timedistance / 3.6e6)} hours ago`;
-  } else if (timedistance < 6.048e8) {
-    timeAgo = `${Math.floor(timedistance / 8.64e7)} days ago`;
-  } else if (timedistance < 2.628e9) {
-    timeAgo = `${Math.floor(timedistance / 6.048e8)} weeks ago`;
-  } else if (timedistance < 3.154e10) {
-    timeAgo = `${Math.floor(timedistance / 2.628e9)} months ago`;
-  } else {
-    timeAgo = `${Math.floor(timedistance / 3.154e10)} years ago`;
+
+  function calculateTimeAgo() {
+    let timedistance = currentTime - createdAt;
+    let timeAgo;
+    if (timedistance < 60000) {
+      timeAgo = `${Math.floor(timedistance / 1000)} seconds ago`;
+    } else if (timedistance < 3.6e6) {
+      timeAgo = `${Math.floor(timedistance / 60000)} minutes ago`;
+    } else if (timedistance < 8.64e7) {
+      timeAgo = `${Math.floor(timedistance / 3.6e6)} hours ago`;
+    } else if (timedistance < 6.048e8) {
+      timeAgo = `${Math.floor(timedistance / 8.64e7)} days ago`;
+    } else if (timedistance < 2.628e9) {
+      timeAgo = `${Math.floor(timedistance / 6.048e8)} weeks ago`;
+    } else if (timedistance < 3.154e10) {
+      timeAgo = `${Math.floor(timedistance / 2.628e9)} months ago`;
+    } else {
+      timeAgo = `${Math.floor(timedistance / 3.154e10)} years ago`;
+    }
+    return timeAgo;
   }
 
   async function IncrementCount(count) {
@@ -60,9 +65,11 @@ function Post({
   }
 
   async function deleteComment() {
-    await fetch(`${URL}/posts/${id}`, {
+    const res = await fetch(`${URL}/posts/${id}`, {
       method: "DELETE",
     });
+    const data = await res.json();
+    setFeed(feed.filter((post) => post.id != data.payload[0].id));
   }
 
   useEffect(() => {
@@ -102,7 +109,7 @@ function Post({
           </a>
         </Link>
         <p className={styles.username}>{username}</p>
-        <p className={styles.timestamp}>{timeAgo}</p>
+        <p className={styles.timestamp}>{calculateTimeAgo()}</p>
       </div>
 
       <div className={styles.textbox}>
@@ -113,32 +120,43 @@ function Post({
           </a>
         </div>
       </div>
-      <div className={styles.postbutton}>
-        <motion.div whileTap={{ scale: 1.2 }}>
-          <Image
-            src={like}
-            onClick={() => {
-              IncrementCount(count);
-            }}
-            width="30"
-            height="30"
-          />
-        </motion.div>
-        <div className={styles.like}>
-          <Image src={heart} width="30" height="30" />
-
-          <p>{count}</p>
-          <motion.div whileTap={{ rotate: 360 }}>
-            {person.id === userID ? (
-              <Image
-                src={bin}
-                width="30vh"
-                height="30vh"
-                onClick={deleteComment}
-              />
-            ) : null}
+      <div className={styles.postbuttons}>
+        <div className={styles.likecontainer}>
+          <motion.div whileTap={{ scale: 1.2 }}>
+            <Image
+              src={like}
+              onClick={() => {
+                IncrementCount(count);
+              }}
+              width="30"
+              height="30"
+            />
           </motion.div>
+          <div className={styles.like}>
+            <motion.div whileTap={{ scale: 1.2 }}>
+              <Image
+                src={heart}
+                onClick={() => {
+                  IncrementCount(count);
+                }}
+                width="30"
+                height="30"
+              />
+            </motion.div>
+
+            <p style={{ fontWeight: "bold" }}>{count}</p>
+          </div>
         </div>
+        <motion.div whileTap={{ rotate: 360 }}>
+          {person.id === userID ? (
+            <Image
+              src={bin}
+              width="30vh"
+              height="30vh"
+              onClick={deleteComment}
+            />
+          ) : null}
+        </motion.div>
       </div>
     </div>
   );

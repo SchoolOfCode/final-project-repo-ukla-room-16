@@ -5,7 +5,6 @@ import styles from "../../styles/Header.module.css";
 import logo from "../../images/Familia9.png";
 
 export default function Header({ user, person, familyName }) {
-  console.log(familyName);
   return (
     <motion.header
       initial={{ y: -250 }}
@@ -13,13 +12,22 @@ export default function Header({ user, person, familyName }) {
       transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
       className={styles.header}
     >
+ 
       <Link href={`/dashboard`} className={styles.logo}>
       <Image src={logo} width="150" height="150" />
       </Link>
+
+      <div className={styles.logo}>
+        <Image src={logo} layout="fill" objectFit="contain" />
+      </div>
+
+
       {familyName && (
-        <h1 className={styles.familytext}>
-          the <span className={styles.familyname}>{familyName}</span> family
-        </h1>
+        <div>
+          <h1 className={styles.familytext}>
+            the <span className={styles.familyname}>{familyName}</span> family
+          </h1>
+        </div>
       )}
 
       <div className={styles.userDisplay}>
