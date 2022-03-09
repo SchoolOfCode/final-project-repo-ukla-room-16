@@ -74,3 +74,12 @@ color: black;
 font-weight: bold;
 
 }
+
+.addrelationshipbutton {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color:#cc1010;
+  padding: 6px;
+  border-radius: 5px;
+}
