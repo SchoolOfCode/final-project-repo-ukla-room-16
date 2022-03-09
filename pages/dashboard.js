@@ -86,7 +86,7 @@ export default function Dashboard() {
             <div className={styles.buttonEvent}>
               <Image src={addIcon} width="30px" height="30px" />
             </div> */}
-            <Events />
+            <Events person={person}/>
           </div>
         </div>
       </div>

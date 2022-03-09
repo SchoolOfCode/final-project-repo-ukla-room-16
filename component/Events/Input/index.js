@@ -25,6 +25,9 @@ function Input({ addToList }) {
   }
 
   function handleClick() {
+    if(text === "") {
+      alert("unknown event")
+    }
     addToList(text);
     setText("");
   }

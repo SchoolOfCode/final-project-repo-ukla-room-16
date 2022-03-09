@@ -24,10 +24,34 @@
 .list {
   list-style: none;
   width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 50vh;
+  padding-bottom: 5%;
+}
+
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.list::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .container {
   display: flex;
+  justify-content: center;
 }
 
 .input {
@@ -54,20 +78,23 @@
 }
 
 .App {
+    display: flex;
+    justify-content: center;
   font-family: "Spartan";
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(200, 200, 200, 0.703), ghostwhite);
-  width: 100%;
+  width: 100vw;
 }
+
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .inputPadding {
@@ -81,10 +108,18 @@
 }
 
 .name {
-    margin-left: 2vh;
+  margin-left: 2vh;
 }
 
-.eventsdisplay { 
-    display: flex;
-    justify-content: space-aroundl
+.eventsdisplay {
+  display: flex;
+  justify-content: space-aroundl;
+}
+
+.inputs {
+    justify-content: center;
+}
+
+.inputs > * {
+    padding-bottom: 2vh;
 }
