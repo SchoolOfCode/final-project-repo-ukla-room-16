@@ -110,8 +110,8 @@ export default function User() {
           profile.allergies ||
           profile.emergency_contacts ? (
             <div className={styles.subInfo}>
-              <div>
-                <Image src={medical} width="80px" height="90px" />
+              <div className={styles.medicIcon}>
+                <Image src={medical} width="80px" height="80px"   />
               </div>
               <ul>
                 {profile.blood_type ? (

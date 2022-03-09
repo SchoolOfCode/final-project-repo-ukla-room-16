@@ -1,6 +1,6 @@
 .container {
-  height: 100vh;
-  width: 100%;
+/*  height: 100vh; */
+  width: 100%; 
   background-color: #f1f6ed;
 }
 
@@ -11,7 +11,7 @@
   align-items: center;
   width: 40%;
   min-width: 400px;
-  margin: auto;
+  margin: auto; 
 }
 
 .userpic {
@@ -49,4 +49,9 @@
   display: flex;
   flex-direction: row;
   margin-top: 1.5rem;
+}
+
+.medicIcon{
+display: flex;
+align-items: center;
 }
