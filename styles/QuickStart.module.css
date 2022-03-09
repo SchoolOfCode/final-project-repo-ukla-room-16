@@ -1,7 +1,9 @@
 .container {
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 99%;
     font-size: medium;
+    flex-wrap: wrap;
     text-align: center;
     
     
@@ -33,13 +35,29 @@ align-content: center;
 
 .leftcolumn {
  background-color: brown;
+ width: 10%;
 }
 .middlecolumn {
 background-color: chartreuse;
+width:75%;
 
 }
 .rightcolumn {
   background-color: pink;
+  width: 14%;
+}
+.firstrow {
+  display: flex;
+  flex-direction: row;
+  width: 99%;
+}
+
+.column1 {
+  width:75%;
+}
+.column2 {
+
+  width:24%;
 }
 
 .login {

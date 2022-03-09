@@ -15,24 +15,23 @@ import styles from "../styles/QuickStart.module.css";
 const quickStart = () => {
     return (
         <>
-       
         <Image
           src={logofamilia}
           alt="logo saying Familia, the name of our app"
           className={styles.logo} />
 
+        <header>
       <div className={styles.title}>How to use the Familia app</div>
+
         <Image src={useapp}
         alt="image of a handclick"
         className={styles.imageuseapp}
         width="50px"        
         height="50px" 
-        alignContent="center"
+       
         />
+        </header>
 
-      <div className={styles.container}>
-
-    <div></div>
 
 
      <div className={styles.video}>
@@ -46,12 +45,14 @@ const quickStart = () => {
       
         
 
+      <div className={styles.container}>
   
-<div className={styles.leftcolumn}>   </div>
+<div className={styles.leftcolumn}>  
+ </div>
 
-
-<div className={styles.middlecolumn}>   
-
+<div className={styles.middlecolumn}>  
+<div className={styles.firstrow}>
+<div className={styles.column1}>
       <div className={styles.login}>
         Create an account on the homepage using either your personal email or your Google accounts. 
       You will be redirected to a landing page that prompts you to either join a
@@ -60,10 +61,13 @@ const quickStart = () => {
       After joining or creating a family tree, you will be redirected to a dashboard
       page where you can view most of the features of the app on it.
       </div>
+      </div>
+      <div className={styles.column2}> 
 
       <Image src={createtree} width="200px" height="200px"/>
       <Image src={enterfamilyname} width="200px" height="200px"/>
-
+</div>
+</div> 
        <div className={styles.dashboard}>   
        On the
       Dashboard page, you can post feeds and pictures, view posts from other
