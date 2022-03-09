@@ -12,9 +12,15 @@ export default function Header({ user, person, familyName }) {
       transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
       className={styles.header}
     >
+ 
+      <Link href={`/dashboard`} className={styles.logo}>
+      <Image src={logo} width="150" height="150" />
+      </Link>
+
       <div className={styles.logo}>
         <Image src={logo} layout="fill" objectFit="contain" />
       </div>
+
 
       {familyName && (
         <div>
