@@ -19,7 +19,7 @@ export default function Gallery({images}) {
         <div className={styles.middlecolumn}>
       <Head>
         <title>My Images</title>
-        <meta name="description" content="All of my cool images." />
+        <meta name="description" content="All my images." />
       </Head>
 
       
