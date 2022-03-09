@@ -10,23 +10,20 @@ export default function Gallery({images}) {
   return (
     <>  
       
+          <NavBar />
      <div className={styles.container}>
      
           
         <div className={styles.leftcolumn}>
-          <NavBar />
         </div>
         <div className={styles.middlecolumn}>
       <Head>
         <title>My Images</title>
         <meta name="description" content="All my images." />
       </Head>
-
       
         <h1>My Images</h1>
-
         <h2 className={styles.header}>Images</h2>
-
         <ul className={styles.images}>
           {images.map(image => {
             return (
