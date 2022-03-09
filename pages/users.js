@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Header from "../component/Header";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 import styles from "../styles/Users.module.css";
 import meal from "../images/meal.png";
 import userProfile from "../images/userProfile.svg";
@@ -69,29 +69,14 @@ export default function User() {
           <a className={styles.x}>X</a>
         </Link>
 
-          <><Image
+        {profile && (
+          <Image
+            src={profile.picture ? profile.picture : userProfile}
             className={styles.userpic}
-            src={profile.picture}
             width="120px"
-            height="140px" /><Link href={`/updateUserProfile?id=${person.id}`}>
-              <motion.a
-                whileHover={{ scale: 1.1 }}
-                style={{
-                  display: Number(person.id) === Number(id) ? "block" : "none",
-                }}
-                className={styles.createProfile}
-              >
-                Update Profile
-              </motion.a>
-            </Link></>
-          {profile.profile ? <p>Name: {profile.profile_name}</p> : null}
-          {profile.mobile_number ? (
-            <p>Mobile Number: {profile.mobile_number}</p>
-          ) : null}
-          {profile.dob ? <h4>DOB: {profile.dob}</h4> : null}
-          {profile.address ? <p>Address: {profile.address}</p> : null}
-          {profile.email ? <p> Email: {profile.email}</p> : null}
-          {profile.gender ? <p>Gender: {profile.gender}</p> : null}
+            height="140px"
+          />
+        )}
 
         <Link href={`/updateUserProfile?id=${person.id}`}>
           <a
