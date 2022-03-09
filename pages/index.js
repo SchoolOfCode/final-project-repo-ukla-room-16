@@ -183,11 +183,11 @@ export default function Home() {
       </div>
     </div>
 <div className={styles.rowbottom}>
-        <div className={styles.infobox}>
+        {/* <div className={styles.infobox}>
           <a href="/quickstart" className={styles.info}>
              Quickstart
           </a>
-        </div>
+        </div> */}
         <div className={styles.infobox}>
           <a href="/welcome" className={styles.info}>
              Welcome

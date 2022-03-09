@@ -122,3 +122,28 @@ margin-left: 5vw;
     grid-area: others;
     
 }
+
+.rowtop {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: flex-start;
+
+}
+.infobox {
+    padding: 10px;
+    background: #cc1010;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-right: 10vw;
+    margin-top: 2vw;
+  }
+  
+  .info:hover {
+    color: white;
+  }
+  
+  

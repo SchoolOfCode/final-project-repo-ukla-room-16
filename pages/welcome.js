@@ -14,13 +14,31 @@ const WelcomePage = () => {
       <div className={styles.entire}>
       <div>
         <div>
-        <div>
+        <div className={styles.rowtop}>
         <Link href="/"><a><Image
           src={logofamilia}
           alt="logo saying Familia, the name of our app"
           className={styles.logo} />
           </a></Link>
+        <div className={styles.infobox}>
+          <Link href="/" className={styles.info}>
+             Home
+          </Link>
         </div>
+        <div className={styles.infobox}>
+          <Link href="/quickstart" className={styles.info}>
+             Quickstart
+          </Link>
+        </div>
+        <div className={styles.infobox}>
+          <Link href="#first-section" className={styles.info}><a>Security</a>
+             
+          </Link>
+        </div>
+</div>
+        
+       
+        
 
         <div className={styles.familyimage}>
             <h1 >Bringing the Family 
@@ -103,9 +121,13 @@ const WelcomePage = () => {
            </div>
             </div>
             </div>
+            <div id="first-seciton">SECTION 1</div>
             </div>            
+
+
       
     )
 }
 
 export default WelcomePage
+
