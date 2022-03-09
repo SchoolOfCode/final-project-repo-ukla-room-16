@@ -6,11 +6,13 @@ import calendar from "../../images/calendar.png";
 import contacts from "../../images/contacts.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 function NavBar() {
   const variants = {
     whileHover: { scale: 1.1 },
   };
+  const router = useRouter()
 
   return (
     <div className={styles.navbar}>
@@ -25,7 +27,7 @@ function NavBar() {
         <Image src={contacts} width="50%" height="50%" />
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} className={styles.iconcircle}>
-        <Image src={gallery} width="50%" height="50%" />
+        <Image src={gallery} width="50%" height="50%" onClick={()=>{router.push(`/gallery`)}}/>
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} className={styles.iconcircle}>
         <Image src={calendar} width="50%" height="50%" />

@@ -1,5 +1,5 @@
 .container {
-  margin: 20px 0;
+  margin-bottom: 15px;
   border-bottom: 1px rgb(211, 211, 211) solid;
 }
 
@@ -14,16 +14,16 @@
 }
 
 .postinfo > * {
-    margin: 5px;
+  margin: 5px;
 }
 
 .timestamp {
-    color: grey;
+  color: grey;
 }
 
 .textbox {
   font-size: 18px;
-  background:rgb(243, 248, 248);
+  background: rgb(243, 248, 248);
   padding: 5px 30px;
   width: 90%;
   border-radius: 20px;
@@ -34,15 +34,21 @@
   align-items: center;
 }
 
-.postbutton {
-  display:flex;
+.postbuttons {
+  display: flex;
   align-items: center;
+}
+
+.likecontainer {
+  display: flex;
+  align-items: center;
+  margin: 0 40px 0 20px;
 }
 
 .delete {
   background-color: black;
 }
 
-.userPic{
-  border-radius:50%
+.userPic {
+  border-radius: 50%;
 }
