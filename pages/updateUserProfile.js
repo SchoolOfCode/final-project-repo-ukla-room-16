@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import DeleteUser from "../component/DeleteUser";
-
+import {motion} from 'framer-motion'
 import styles from "../styles/updateUserProfile.module.css";
 import meal from "../images/cuttlery.jpg";
 import medical from "../images/health.jpg";
@@ -195,8 +195,10 @@ export default function createUserProfile() {
           <div className={styles.subInfo}>
             <Image src={shoes} width="80px" height="90px" />
             <div>
+            
               <ul>
                 <select
+                  className={styles.shoeSizePicker}
                   value={shoeSize}
                   onChange={(e) => {
                     setShoeSize(e.target.value);
@@ -232,7 +234,7 @@ export default function createUserProfile() {
           </div>
         </div>
  
-          <button className={styles.updateBtn} onClick={handleClick}>SUBMIT</button>
+          <motion.div whileHover={{ scale: 1.1 }}className={styles.updateBtn} onClick={handleClick}>SUBMIT</motion.div>
  
       </div>
     </div>

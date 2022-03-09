@@ -1,6 +1,6 @@
 .container {
-  height: 100%;
-  width: 100%;
+/*  height: 100vh; */
+  width: 100%; 
   background-color: #f1f6ed;
 }
 
@@ -11,27 +11,34 @@
   align-items: center;
   width: 40%;
   min-width: 400px;
-  margin: auto;
+  margin: auto; 
 }
 
+.userpic {
+  border-radius: 200px;
+}
+.usersData{
+  
+}
 .createProfile {
   align-self: center;
   border-radius: 20px;
- padding: 10px;
- margin: 10px;
- color: white;
- font-weight: bold;
- background-color: #cc1010;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
+  cursor: pointer;
 }
 
-.goHome {
+.x {
   align-self: flex-end;
   border-radius: 20px;
- padding: 10px;
- margin: 10px;
- color: white;
- font-weight: bold;
- background-color: #cc1010;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
 }
 
 .info {
@@ -44,4 +51,9 @@
   display: flex;
   flex-direction: row;
   margin-top: 1.5rem;
+}
+
+.medicIcon{
+display: flex;
+align-items: center;
 }
