@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Spartan&display=swap");
+/* *:focus {
+    outline: 0;
+    box-shadow: 0px 0px 4px 5px greenyellow;
+  } */
+
+.listItem {
+  font-family: "Indie Flower";
+  font-size: 1.5em;
+  padding-left: 1em;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+
+.listItem::before {
+  content: "";
+  position: absolute;
+  left: -1em;
+  background-size: contain;
+  height: 1em;
+}
+
+.list {
+  list-style: none;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+}
+
+.input {
+  font-family: "Indie Flower";
+  padding-left: 0.5em;
+  outline: 0;
+}
+
+.button {
+  border-width: 2px;
+}
+
+.button:hover {
+  border: 2px solid var(--hover-color);
+  cursor: pointer;
+}
+
+.delete {
+  width: 2em;
+  height: 2em;
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.App {
+  font-family: "Spartan";
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(200, 200, 200, 0.703), ghostwhite);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputPadding {
+  padding: 0.2em;
+  font-size: 2em;
+  border-radius: 1em;
+}
+
+.eventheading {
+  margin: 0 auto;
+}
+
+.name {
+    margin-left: 2vh;
+}
+
+.eventsdisplay { 
+    display: flex;
+    justify-content: space-aroundl
+}
