@@ -13,7 +13,9 @@ import Feed from "../component/Feed";
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
 import FamilyTree from "../component/FamilyTree/mytree.js";
+import Events from "../component/Events";
 import SearchBar from "../component/SearchBar";
+
 
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
@@ -71,10 +73,11 @@ export default function Dashboard() {
         <div className={styles.rightcolumn}>
           <SearchBar feed={feed} setFeed={setFeed} />
           <div className={styles.events}>
-            <h2 className={styles.eventheading}>EVENTS</h2>
+            {/* <h2 className={styles.eventheading}>EVENTS</h2>
             <div className={styles.buttonEvent}>
               <Image src={addIcon} width="30px" height="30px" />
-            </div>
+            </div> */}
+            <Events person={person}/>
           </div>
         </div>
       </div>
