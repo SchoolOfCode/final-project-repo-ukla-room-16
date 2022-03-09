@@ -8,13 +8,13 @@ import styles from "../../../styles/Events.module.css"
 function List({ list, toggleCompleted, startDate}) {
   return (
     <ul className={styles.list}>
-      {list.map((item,index) => (
+      {list.map((item) => (
         <ListItem
-        startDate={startDate}
+        startDate={item.date}
           text={item.event_text}
           completed={item.completed}
-          toggleCompleted={() => toggleCompleted(index)}
-          key={item.id}
+          toggleCompleted={() => toggleCompleted(item.id)}
+          key={`${item.id}`}
           user={item.picture}
         />
       ))}

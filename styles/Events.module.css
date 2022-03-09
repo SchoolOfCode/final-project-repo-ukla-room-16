@@ -123,3 +123,12 @@
 .inputs > * {
     padding-bottom: 2vh;
 }
+
+.image {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
