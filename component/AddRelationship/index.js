@@ -8,9 +8,9 @@ function AddRelationship({familyID}) {
 
   return (
     <div>
-      <button onClick={() => setDisplay(true)} className={styles.addrelationshipbutton}>
-      Add Relationship
-    </button>
+<button onClick={() => setDisplay(true)} className={styles.addrelationshipbutton}>
+Add Relationship
+</button> 
 
       <Form onClose={() => setDisplay(false)}
           display={display} setDisplay={setDisplay} familyID={familyID}/>
@@ -19,5 +19,3 @@ function AddRelationship({familyID}) {
 }
 
 export default AddRelationship;
-
-
