@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Header from "../component/Header";
-
+import {motion} from "framer-motion"
 import styles from "../styles/Users.module.css";
 import meal from "../images/meal.png";
 import userProfile from "../images/userProfile.svg";
@@ -76,14 +76,15 @@ export default function User() {
             height="140px"
           />
           <Link href={`/updateUserProfile?id=${person.id}`}>
-            <a
+            <motion.a
+              whileHover={{ scale: 1.1}}
               style={{
                 display: Number(person.id) === Number(id) ? "block" : "none",
               }}
               className={styles.createProfile}
             >
               Update Profile
-            </a>
+            </motion.a>
           </Link>
           {profile.profile ? <p>Name: {profile.profile_name}</p> : null}
           {profile.mobile_number ? (

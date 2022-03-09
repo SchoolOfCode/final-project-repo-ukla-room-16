@@ -1,5 +1,5 @@
 .container {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: #f1f6ed;
 }
@@ -17,21 +17,22 @@
 .createProfile {
   align-self: center;
   border-radius: 20px;
- padding: 10px;
- margin: 10px;
- color: white;
- font-weight: bold;
- background-color: #cc1010;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
+  cursor: pointer;
 }
 
 .goHome {
   align-self: flex-end;
   border-radius: 20px;
- padding: 10px;
- margin: 10px;
- color: white;
- font-weight: bold;
- background-color: #cc1010;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
 }
 
 .info {
