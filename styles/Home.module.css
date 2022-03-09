@@ -122,6 +122,7 @@
 
 .right {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -143,6 +144,23 @@
 .register:hover {
   color: white;
 }
+
+.infobox {
+  padding: 10px;
+  background: #cc1010;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-right: 25vw;
+}
+
+.info:hover {
+  color: white;
+}
+
+
 
 .tree {
   display: flex;
@@ -242,6 +260,14 @@
 .leftcolumn,
 .rightcolumn {
   margin: 20px;
+}
+
+
+.rowbottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
 }
 
 .profilePic {

@@ -1,0 +1,122 @@
+.container {
+    display:flex;
+    flex-direction: row;
+    width: 99%;
+    font-size: medium;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-bottom: 5%;
+    
+    
+}
+
+
+
+.imageuseapp {
+display: flex;
+align-content: center;
+
+}
+
+.title {
+   display: flex;
+  font-weight: bold;
+  font-size:xx-large;
+  margin-left: 8em;
+  margin-bottom: 3em;
+  
+
+}
+
+
+
+.leftcolumn {
+ 
+ width: 14%;
+}
+.middlecolumn {
+margin-top: 2em;
+width:71%;
+
+}
+.rightcolumn {
+ 
+  width: 14%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 99%;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+
+.column1 {
+ 
+  width:60%;
+  padding-top: 1%;
+  margin-right: 2%;
+  text-align: justify;
+ 
+
+}
+.column2 {
+
+  width:39%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+ 
+}
+
+.column3  {
+  width:50%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+
+}
+
+.login {
+   padding-bottom: 10px;
+   padding-top: 20px;
+  align-items: center;
+
+}
+
+.images {
+
+border-radius: 50%;
+
+}
+
+
+.delete {
+  text-align: justify;
+}
+
+.registerbox {
+  padding: 10px;
+  background: #cc1010;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-right: 10vw;
+  margin-top: 10px;
+}
+
+.register:hover {
+  color: white;
+}
+
+.intro {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  text-align: left;
+ 
+}
+
+.teamtext {
+  text-align: justify;
+}
