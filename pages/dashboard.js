@@ -93,7 +93,7 @@ export default function Dashboard() {
         <FamilyTree />
         <motion.div
         whileHover={{ scale: 1.1}}
-          className={styles.view}
+          className={styles.viewmore}
           onClick={() => {
             router.push(`/tree`);
           }}
