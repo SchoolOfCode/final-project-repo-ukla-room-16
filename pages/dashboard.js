@@ -1,13 +1,10 @@
-import Link from "next/link";
-import Image from "next/image";
 import { useUser } from "@auth0/nextjs-auth0";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 import styles from "../styles/Dashboard.module.css";
-import addIcon from "../images/icons8-add-100.png";
-import familytree from "../images/familytree.jpg";
+
 import UserInput from "../component/UserInput";
 import Feed from "../component/Feed";
 import NavBar from "../component/NavBar";
@@ -24,8 +21,7 @@ export default function Dashboard() {
   const [familyName, setFamilyName] = useState("");
   const [feed, setFeed] = useState([]);
   const router = useRouter();
-  console.log("user", user);
-  console.log("person", person);
+
 
   useEffect(() => {
     async function getUsers(personLoggingIn) {
@@ -73,10 +69,7 @@ export default function Dashboard() {
         <div className={styles.rightcolumn}>
           <SearchBar feed={feed} setFeed={setFeed} />
           <div className={styles.events}>
-            {/* <h2 className={styles.eventheading}>EVENTS</h2>
-            <div className={styles.buttonEvent}>
-              <Image src={addIcon} width="30px" height="30px" />
-            </div> */}
+           
             <Events person={person}/>
           </div>
         </div>

@@ -1,26 +1,34 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import { useRouter } from "next/router";
 
+import Header from "../component/Header";
+import NewUsers from "../component/NewUser";
+
+// Styles
 import styles from "../styles/Home.module.css";
+
+// Images imports
+import Image from "next/image";
 import frontimage from "../images/familia_frontpage_image.jpg";
 import logofamilia from "../images/Familia9.png";
 import tree from "../images/tree.png";
-import Header from "../component/Header";
-import NewUsers from "../component/NewUser";
+
+// Tree imports
 import CreateTree from "../component/CreateTree";
 import JoinTree from "../component/JoinTree";
 import FullPageLoader from "../component/FullpageLoader";
 
+// Hamburger imports
 import { ThemeProvider } from "styled-components";
 import { useOnClickOutside } from "../Hook/useOnClickOutside";
 import { GlobalStyles } from "../hamburger/global";
 import { theme } from "../hamburger/theme";
 import { Burger, Menu } from "../hamburger";
 import FocusLock from "react-focus-lock";
+
+
 
 export default function Home() {
   const { user, error, isLoading, isAuthenticated } = useUser();
@@ -140,7 +148,7 @@ export default function Home() {
             transition={{ delay: 1, duration: 1.5 }}
             className={styles.title}
           >
-            {/* Familia </h1> */}
+            
 
             <Image
               src={logofamilia}
@@ -165,22 +173,12 @@ export default function Home() {
             className={styles.registerbox}
           >
             <a href="/api/auth/login" className={styles.register}>
-              Register
+              Sign Up / Login
             </a>
           </motion.div>
         </div>
       </div>
       <div className={styles.rowbottom}>
-        {/* <div className={styles.infobox}>
-          <a href="/quickstart" className={styles.info}>
-             Quickstart
-          </a>
-        </div> */}
-        {/* <div className={styles.infobox}>
-          <a href="/welcome" className={styles.info}>
-             About Us
-          </a>
-        </div> */}
       </div>
 
       <ThemeProvider theme={theme}>

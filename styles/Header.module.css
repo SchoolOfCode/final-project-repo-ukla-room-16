@@ -14,7 +14,7 @@
 .logo {
   position: relative;
   width: 200px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .userDisplay {

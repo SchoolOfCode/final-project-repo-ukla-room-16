@@ -19,14 +19,16 @@ function ListItem({ text, completed, toggleCompleted, startDate, user}) {
       onClick={toggleCompleted}
       style={completed===true ? { textDecoration: `line-through` } : {textDecoration: `` }}
     >
-      <div className={styles.eventsdisplay}>
+      <div className={styles.eventsdisplay}></div>
         {date}
+      
+   
         <div className={styles.name}>{text}</div>
-      </div>
-      <div className={styles.by}>
-      <p>By:</p>
+      <div className={styles.eventAuthor}>
+      <p style={{marginRight:"15px"}}>By:</p>
       <img src={user} className={styles.image}></img>
       </div>
+      <br />
     </li>
   );
 }
