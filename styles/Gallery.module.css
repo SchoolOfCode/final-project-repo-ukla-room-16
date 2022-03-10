@@ -52,7 +52,7 @@
 .images > * {
   width: 40%;
   height: 75%;
-  background-color: rgb(211, 211, 211);
+  /* background-color: rgb(211, 211, 211) */;
   margin-right: 8rem;
   border-radius: 10%;
   transition: all 0.2s ease;
