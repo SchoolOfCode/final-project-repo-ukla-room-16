@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import FamilyTree from "../component/FamilyTree/mytree.js";
 import { useRouter } from "next/router";
+
 import styles from "../styles/Dashboard.module.css";
-import AddRelationship from "../component/AddRelationship/";
+
+import FamilyTree from "../component/FamilyTree/mytree.js"
+import AddRelationship from "../component/AddRelationship/"
+
+   
 
 
 // const data = 
@@ -83,6 +87,7 @@ export default function Tree() {
 
   console.log(ourData);
   // here we are displaying the tree developped in the component folder under FamilyTree/mytree.js
+
   const router = useRouter();
   return ourData.length > 0 ? (
     <div style={{ height: "100%" }}>

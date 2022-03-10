@@ -1,9 +1,11 @@
-import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import DeleteUser from "../component/DeleteUser";
 import {motion} from 'framer-motion'
+import Link from "next/link";
+
+import DeleteUser from "../component/DeleteUser";
+
+import Image from "next/image";
 import styles from "../styles/updateUserProfile.module.css";
 import meal from "../images/cuttlery.jpg";
 import medical from "../images/health.jpg";
@@ -125,7 +127,7 @@ export default function createUserProfile() {
         </div>
         <div className={styles.info}>
           <div className={styles.subInfo}>
-            <Image src={meal} width="85px" height="90px" />
+            <Image src={meal} alt="meal icon before favourite food" width="85px" height="90px" />
             <ul>
               <input
                 className={styles.subInput}
@@ -139,7 +141,7 @@ export default function createUserProfile() {
           </div>
           <div className={styles.subInfo}>
             <div>
-              <Image src={medical} width="80px" height="90px" />
+              <Image src={medical} alt="health icon" width="80px" height="90px" />
             </div>
             <ul style={{marginTop: "0"}}>
               <input
@@ -171,7 +173,7 @@ export default function createUserProfile() {
             </ul>
           </div>
           <div className={styles.subInfo}>
-            <Image src={clothes} width="80px" height="90px" />
+            <Image src={clothes} alt="clothes size icon" width="80px" height="90px" />
             <ul>
               <input
                 className={styles.subInput}
@@ -193,7 +195,7 @@ export default function createUserProfile() {
             </ul>
           </div>
           <div className={styles.subInfo}>
-            <Image src={shoes} width="80px" height="90px" />
+            <Image src={shoes} alt="shoes size icon" width="80px" height="90px" />
             <div>
             
               <ul>
@@ -220,14 +222,7 @@ export default function createUserProfile() {
                   <option value="uk 10.5">UK 10.5</option>
                   <option value="uk 11">UK 11</option>
 
-                  {/* <input
-                className={styles.input}
-                type="number"
-                onChange={(e) => {
-                  setShoeSize(e.target.value);
-                }}
-                placeholder="shoe size"
-              /> */}
+                
                 </select>
               </ul>
             </div>

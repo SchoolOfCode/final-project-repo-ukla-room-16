@@ -1,17 +1,14 @@
-import logofamilia from "../images/Familia9.png";
 import Image from 'next/image';
 import Link from "next/link";
-import tree from "../images/tree.png";
-import meal from "../images/meal.png";
-import frontimage from "../images/familia_frontpage_image.jpg";
+
 import styles from "../styles/Welcome.module.css";
+import style from "../styles/QuickStart.module.css";
+
+import logofamilia from "../images/Familia9.png";
+import tree from "../images/tree.png";
 import eventplanner from "../images/eventplanner.jpeg";
 import peace from "../images/peace.jpeg";
 import famrep from "../images/famrep.jpeg";
-
-
-
-import style from "../styles/QuickStart.module.css";
 import useapp from "../images/useapp.png";
 import createtree from "../images/createtree.png";
 import userupdate from  "../images/userupdate.png";
@@ -23,9 +20,7 @@ import teamukla from "../images/teamukla.png";
 
 
 
-
-
-const WelcomePage = () => {
+function WelcomePage () {
     return (
       <div className={styles.entire}>
       <div>
@@ -65,10 +60,7 @@ const WelcomePage = () => {
         <div className={styles.familyimage}>
             <h1 >Bringing the Family 
             together in one app </h1>
-            {/* <Image src={frontimage}
-          alt="Picture of a family from grandparents, to children and grandchildren"
-          width="150px"
-          height="75px" /> */}
+          
           </div>
 <br></br>
 <br></br>
@@ -77,7 +69,7 @@ const WelcomePage = () => {
 
             <div className={styles.video}>
          <video controls src={"/familia-an-app-for-the-family.mp4"} 
-         style={{ width: "400px", height:"400px" }} />
+         style={{ width: "30vw", height:"400px" }} />
           </div>
 
 
@@ -277,13 +269,11 @@ const WelcomePage = () => {
 
 
 
-{/* /////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////// */}
 
 
 
-{/* <div id="first-section">SECTION 1</div> */}
+
+
 
 
 
