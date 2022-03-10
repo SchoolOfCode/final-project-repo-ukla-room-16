@@ -21,7 +21,7 @@ module.exports = withPlugins([withTM], nextConfig);
 
 
 // module.exports = {
-//   // append this at the bottom of your next.config.js file
+//   append this at the bottom of your next.config.js file
 //   async headers() {
 //     return [
 //       {

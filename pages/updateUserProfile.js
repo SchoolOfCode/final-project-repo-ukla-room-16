@@ -1,9 +1,11 @@
-import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import DeleteUser from "../component/DeleteUser";
 import {motion} from 'framer-motion'
+import Link from "next/link";
+
+import DeleteUser from "../component/DeleteUser";
+
+import Image from "next/image";
 import styles from "../styles/updateUserProfile.module.css";
 import meal from "../images/cuttlery.jpg";
 import medical from "../images/health.jpg";

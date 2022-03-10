@@ -1,10 +1,13 @@
+import { useUser } from "@auth0/nextjs-auth0";
+import {useState, useEffect} from 'react';
+
 import Head from "next/head";
 import Image from "next/image";
+
 import styles from "../styles/Gallery.module.css";
+
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
-import { useUser } from "@auth0/nextjs-auth0";
-import {useState, useEffect} from 'react'
 
 
 export default function Gallery({ images }) {
@@ -40,16 +43,17 @@ export default function Gallery({ images }) {
   if (error) return <div>{error.message}</div>;
   return (
     <>
+          <Head>
+            <title>{familyName}'s Images</title>
+            <meta name="description" content="All my images." />
+          </Head>
+
       <Header user={user} person={person} familyName={familyName} />
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
       <NavBar />
       </div>
         <div className={styles.middlecolumn}>
-          <Head>
-            <title>{familyName}'s Images</title>
-            <meta name="description" content="All my images." />
-          </Head>
 
           <h1 className={styles.familyname}>The {familyName} family's Gallery</h1>
           <div className={styles.images}>
@@ -65,9 +69,7 @@ export default function Gallery({ images }) {
                         alt=""
                       />
                     </div>
-                    {/* <h3 className={styles.imageTitle}>
-                    { image.title }
-                  </h3> */}
+                    
                   </a>
                 </div>
               );
