@@ -59,29 +59,40 @@ export default function Tree() {
 
   useEffect(() => {
     async function getFamily() {
-      console.log("get family is running")
+      console.log("get family is running");
       // FETCHING THE USERS
-      const res = await fetch(`${URL}/users?familyID=${familyID}`);
-      const data = await res.json();
-      data.payload.forEach(object => {
-        object.pids = [object.id+1]
-      })
-      setOurData(data.payload);
+      const userRes = await fetch(`${URL}/users?familyID=${familyID}`);
+      const userData = await userRes.json();
+      userData.payload.forEach(async(person) => {
+        const res = await fetch(`${URL}/pid/${person.id}`);
+        const data = await res.json()
+        if(data.payload[1].length===0) {
+          person.pid = null
+        } else {
+          let array = []
+          data.payload[1].forEach((person)=>{
+            array.push(person.id)
+          })
+          person.pid = array
+          person.name = person.full_name
+        }
+        })
+        setOurData(userData.payload)
+  
     }
 
-    getFamily()
-    console.log("useEffect is running")
+    getFamily();
+    console.log("useEffect is running");
   }, []);
 
-  console.log(ourData)
-  // here we are displaying the tree developed in the component folder under FamilyTree/mytree.js
+  console.log(ourData);
+  // here we are displaying the tree developped in the component folder under FamilyTree/mytree.js
+
   const router = useRouter();
   return ourData.length > 0 ? (
     <div style={{ height: "100%" }}>
       <AddRelationship />
-      <FamilyTree nodes={
-ourData
-      } />
+      <FamilyTree nodes={ourData}/>
       <button
         className={styles.viewmore}
         onClick={() => {

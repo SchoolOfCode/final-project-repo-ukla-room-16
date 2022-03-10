@@ -42,6 +42,10 @@ function Form({ display, setDisplay, onClose, familyID }) {
     console.log("submit is running")
     if (relationship === "parent 1") {
       async function fetchfamilies() {
+<<<<<<< HEAD
+        try{
+=======
+>>>>>>> 1a22040b117b232637b40dd678584fe1f7729839
         const res = await fetch(`${URL}/users/${personB}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -49,6 +53,12 @@ function Form({ display, setDisplay, onClose, familyID }) {
             fid: Number(personA),
           }),
         });
+<<<<<<< HEAD
+      } catch (error) {
+        throw new Error(error);
+      }
+=======
+>>>>>>> 1a22040b117b232637b40dd678584fe1f7729839
         // const data = await res.json();
         // let partnerID = data.payload[0].mid;
         // console.log("HARRY", data);
@@ -65,6 +75,10 @@ function Form({ display, setDisplay, onClose, familyID }) {
     }
     if (relationship === "parent 2") {
       async function fetchfamilies() {
+<<<<<<< HEAD
+        try {
+=======
+>>>>>>> 1a22040b117b232637b40dd678584fe1f7729839
         const res = await fetch(`${URL}/users/${personB}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -73,6 +87,12 @@ function Form({ display, setDisplay, onClose, familyID }) {
           }),
         });
         const data = await res.json();
+<<<<<<< HEAD
+      } catch (error) {
+        throw new Error(error);
+      }
+=======
+>>>>>>> 1a22040b117b232637b40dd678584fe1f7729839
         // console.log(data)
         // let partnerID = data.payload[0].fid
         // console.log("partner ID", partnerID)
@@ -89,6 +109,20 @@ function Form({ display, setDisplay, onClose, familyID }) {
       fetchfamilies();
     } else if (relationship === "child") {
       async function fetchfamilies() {
+<<<<<<< HEAD
+        try {
+          const res = await fetch(`${URL}/users/${personA}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              mid: Number(personB),
+            }),
+          });
+
+        } catch (error) {
+          throw new Error(error);
+        }
+=======
         const res = await fetch(`${URL}/users/${personA}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -96,6 +130,7 @@ function Form({ display, setDisplay, onClose, familyID }) {
             mid: Number(personB),
           }),
         });
+>>>>>>> 1a22040b117b232637b40dd678584fe1f7729839
       }
       fetchfamilies();
     } else {
@@ -178,4 +213,8 @@ function Form({ display, setDisplay, onClose, familyID }) {
   }
 }
 
+<<<<<<< HEAD
 export default Form;
+=======
+export default Form;
+>>>>>>> 1a22040b117b232637b40dd678584fe1f7729839

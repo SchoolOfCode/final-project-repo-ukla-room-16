@@ -13,7 +13,6 @@ import FamilyTree from "../component/FamilyTree/mytree.js";
 import Events from "../component/Events";
 import SearchBar from "../component/SearchBar";
 
-
 export default function Dashboard() {
   const URL = process.env.NEXT_PUBLIC_URL;
   const { user, isLoading, error } = useUser();
@@ -69,6 +68,7 @@ export default function Dashboard() {
         <div className={styles.rightcolumn}>
           <SearchBar feed={feed} setFeed={setFeed} />
           <div className={styles.events}>
+
            
             <Events person={person}/>
           </div>
@@ -77,7 +77,7 @@ export default function Dashboard() {
       <div className={styles.tree}>
         <FamilyTree />
         <motion.div
-        whileHover={{ scale: 1.1}}
+          whileHover={{ scale: 1.1 }}
           className={styles.viewmore}
           onClick={() => {
             router.push(`/tree`);
