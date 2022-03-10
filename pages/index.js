@@ -15,13 +15,12 @@ import CreateTree from "../component/CreateTree";
 import JoinTree from "../component/JoinTree";
 import FullPageLoader from "../component/FullpageLoader";
 
-import { ThemeProvider } from 'styled-components';
-import { useOnClickOutside } from '../Hook/useOnClickOutside';
-import { GlobalStyles } from '../hamburger/global';
-import { theme } from '../hamburger/theme';
-import { Burger, Menu } from '../hamburger';
-import FocusLock from 'react-focus-lock';
-
+import { ThemeProvider } from "styled-components";
+import { useOnClickOutside } from "../Hook/useOnClickOutside";
+import { GlobalStyles } from "../hamburger/global";
+import { theme } from "../hamburger/theme";
+import { Burger, Menu } from "../hamburger";
+import FocusLock from "react-focus-lock";
 
 export default function Home() {
   const { user, error, isLoading, isAuthenticated } = useUser();
@@ -30,7 +29,6 @@ export default function Home() {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [hasFamilyID, setHasFamilyID] = useState(false);
   const router = useRouter();
-
 
   const [open, setOpen] = useState(false);
   const node = useRef();
@@ -133,43 +131,46 @@ export default function Home() {
 
   return (
     <>
-    <div className={styles.home}>
-      {/* logo of the app display */}
-      <div className={styles.left}>
-        <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 1, duration: 1.5}}className={styles.title}>
-          {/* Familia </h1> */}
+      <div className={styles.home}>
+        {/* logo of the app display */}
+        <div className={styles.left}>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1.5 }}
+            className={styles.title}
+          >
+            {/* Familia </h1> */}
+
+            <Image
+              src={logofamilia}
+              alt="logo saying Familia, the name of our app"
+              className={styles.logo}
+            />
+          </motion.h1>
+          {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
 
           <Image
-            src={logofamilia}
-            alt="logo saying Familia, the name of our app"
-            className={styles.logo}
+            src={frontimage}
+            alt="Picture of a family from grandparents, to children and grandchildren"
+            width="1000"
+            height="400"
           />
-      
-       
-        </motion.h1>
-        {/* displaying the family picture drawing on landing page, dynamic image depending on screen size with em */}
-        <Image
-          src={frontimage}
-          alt="Picture of a family from grandparents, to children and grandchildren"
+        </div>
+        <div className={styles.right}>
+          {/* auth0 button to go to login/sign up box */}
 
-          width="1000em"
-          height="400em"
-        />
-      
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            className={styles.registerbox}
+          >
+            <a href="/api/auth/login" className={styles.register}>
+              Register
+            </a>
+          </motion.div>
+        </div>
       </div>
-      <div className={styles.right}>
-        {/* auth0 button to go to login/sign up box */}
-
-        <motion.div whileHover={{ scale: 1.2 }} className={styles.registerbox}>
-          <a href="/api/auth/login" className={styles.register}>
-            Signup/Login
-          </a>
-
-        </motion.div>
-
-      </div>
-    </div>
-<div className={styles.rowbottom}>
+      <div className={styles.rowbottom}>
         {/* <div className={styles.infobox}>
           <a href="/quickstart" className={styles.info}>
              Quickstart
@@ -180,10 +181,9 @@ export default function Home() {
              About Us
           </a>
         </div> */}
-</div>
+      </div>
 
-{/* <ThemeProvider theme={theme}> */}
-    
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <div ref={node}>
           <FocusLock disabled={!open}>
@@ -191,11 +191,7 @@ export default function Home() {
             <Menu open={open} setOpen={setOpen} id={menuId} />
           </FocusLock>
         </div>
-        
-        
-      
-    {/* </ThemeProvider> */}
-
-</>
+      </ThemeProvider>
+    </>
   );
 }
