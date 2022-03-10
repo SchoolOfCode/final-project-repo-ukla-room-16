@@ -23,8 +23,10 @@ function ListItem({ text, completed, toggleCompleted, startDate, user}) {
         {date}
         <div className={styles.name}>{text}</div>
       </div>
+      <div className={styles.by}>
       <p>By:</p>
       <img src={user} className={styles.image}></img>
+      </div>
     </li>
   );
 }

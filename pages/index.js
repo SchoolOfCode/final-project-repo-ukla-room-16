@@ -149,7 +149,7 @@ export default function Home() {
 
         <motion.div whileHover={{ scale: 1.2 }} className={styles.registerbox}>
           <a href="/api/auth/login" className={styles.register}>
-            Register
+            Signup/Login
           </a>
 
         </motion.div>

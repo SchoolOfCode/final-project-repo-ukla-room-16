@@ -90,8 +90,11 @@ function Post({
   }, [user]);
 
   function checkImage() {
+    if(image === "NULL" || image === null || image === "Null" ) {
+      return;
+    }
     if (image) {
-      return <Image src={image} width="200" height="200" />;
+      return <Image src={image} width="100" height="100" />;
     }
   }
 

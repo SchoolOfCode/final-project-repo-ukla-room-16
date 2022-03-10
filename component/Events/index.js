@@ -88,7 +88,26 @@ function Events({ person }) {
   function clearList() {
     console.log("clearlist is running");
     const newList = list.filter(x => x.completed === true);
-    setList(newList);
+    newList.map(async(i)=> {
+      try {
+        const index = list.findIndex(l => i === l);
+        console.log("index", index)
+        const id = list[index].id
+        const res = await fetch(`${URL}/events/${id}`, {
+          method: "DELETE",
+        });
+        const data = await res.json();
+        const newList = [
+          ...list.slice(0, index),
+          data.payload[0],
+          ...list.slice(index + 1),
+        ];
+        setList(newList);
+      } catch (error) {
+        //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
+        throw new Error(error);
+      }
+    })
   }
 
   console.log("list", list);
@@ -109,7 +128,7 @@ function Events({ person }) {
           toggleCompleted={toggleCompleted}
           startDate={startDate}
         ></List>
-        <Button onClick={clearList} type="delete" hoverColor="red"></Button>
+        {/* <Button onClick={clearList} type="delete" hoverColor="red"></Button> */}
       </div>
     </div>
   );

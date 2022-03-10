@@ -77,11 +77,13 @@ export const ourData = [
       name: "Marinette avatar",
       gender: "female",
       pids: [2],
+      picture: "https://i.ibb.co/Xkq20hk/gm1.png"
     },
     { id: 2,
         name: "Anthony Avatar",
         gender: "male",
         pids: [1],
+        picture: "https://i.ibb.co/HpVr5Zj/gp1.png"
       },
       { id: 4,
         name: "Rosemary Profil",
@@ -89,6 +91,7 @@ export const ourData = [
         pids: [3],
         fid: 1,
         mid: 2,
+        picture: "https://i.ibb.co/njSvtN8/m1.png"
       },
     { id: 3,
       name: "Tim Profil",
@@ -110,6 +113,7 @@ export const ourData = [
       gender: "male",
       mid: 3,
       fid: 4,
+      picture: "https://i.ibb.co/p2wdFvt/b1.png"
     },
 ]
 
