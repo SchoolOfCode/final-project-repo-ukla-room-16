@@ -96,7 +96,7 @@ function Events({ person }) {
           method: "DELETE",
         });
         const afterDelete = [
-          ...newList.slice(0, index),
+          ...list.slice(0, index),
           ...list.slice(index + 1),
         ];
         setList(afterDelete);
@@ -143,8 +143,7 @@ function Events({ person }) {
           toggleCompleted={toggleCompleted}
           startDate={startDate}
         ></List>
-        <Button onClick={clearCompletedList} type="delete" hoverColor="red"></Button>
-        <Button onClick={clearList} type="delete" hoverColor="red"></Button>
+        <Button onClickDelete={clearCompletedList} onClickDeleteAll={clearList} type="delete" hoverColor="red"></Button>
       </div>
     </div>
   );
