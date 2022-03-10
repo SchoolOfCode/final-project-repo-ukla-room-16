@@ -173,7 +173,7 @@ export default function Home() {
             className={styles.registerbox}
           >
             <a href="/api/auth/login" className={styles.register}>
-              SignUp / LogIn
+              Sign Up / Login
             </a>
           </motion.div>
         </div>

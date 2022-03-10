@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "../styles/Gallery.module.css";
 
@@ -58,19 +59,24 @@ export default function Gallery({ images }) {
           <h1 className={styles.familyname}>The {familyName} family's Gallery</h1>
           <div className={styles.images}>
             {images.map((image) => {
+                      console.log(image)
               return (
                 <div key={image.id}>
-                  <a href={image.link} rel="noreferrer">
+                  {/* <a href={image.link} rel="noreferrer"> */}
                     <div className={styles.imageImage}>
+                     <Link href={image.image}><a target="_blank">
                       <Image
                         width={image.width}
                         height={image.height}
                         src={image.image}
                         alt=""
+                  
                       />
+                       </a></Link> 
+
                     </div>
                     
-                  </a>
+                  {/* </a> */}
                 </div>
               );
             })}

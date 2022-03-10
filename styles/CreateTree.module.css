@@ -14,8 +14,10 @@
 
 .modal {
   background: #cc1010;
+  min-width: 200px;
   width: 50vh;
-  height: 25vh;
+  min-height: 200px;
+  height: 35vh;
   border-radius: 15px;
   padding: 15px;
 }

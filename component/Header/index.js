@@ -12,11 +12,11 @@ export default function Header({ user, person, familyName }) {
       transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
       className={styles.header}
     >
-      <Link href={`/dashboard`} className={styles.logo}>
+      {/* <Link href={`/dashboard`} className={styles.logo}> */}
         <div className={styles.logo}>
           <Image src={logo} layout="fill" objectFit="contain" />
         </div>
-      </Link>
+      {/* </Link> */}
 
       {familyName && (
         <div>

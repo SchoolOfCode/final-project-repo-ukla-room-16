@@ -1,11 +1,13 @@
-import { useUser } from "@auth0/nextjs-auth0";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Header from "../component/Header";
+import { useUser } from "@auth0/nextjs-auth0";
 import { motion } from "framer-motion";
+
+import Link from "next/link";
+import Image from "next/image";
+
 import styles from "../styles/Users.module.css";
+
 import meal from "../images/cuttlery.jpg";
 import userProfile from "../images/userProfile.svg";
 import medical from "../images/health.jpg";
@@ -91,10 +93,10 @@ export default function User() {
         </Link>
         <div>
           <div>
-        {profile.profile_name? <p className={styles.usersData}>Name:{profile.profile_name}</p> : null}
+        {profile.profile_name? <p className={styles.usersData}>Name: {profile.profile_name}</p> : null}
         </div>
         {profile.mobile_number ? (
-         <p className={styles.usersData}>Mobile Number:{profile.mobile_number}</p> 
+         <p className={styles.usersData}>Mobile Number: {profile.mobile_number}</p> 
         ): null}
         {profile.dob ? <p className={styles.usersData}>DOB: {profile.dob}</p> : null}
         {profile.address ? <p className={styles.usersData}>Address: {profile.address}</p> : null}
@@ -104,7 +106,7 @@ export default function User() {
         <div className={styles.info}>
           {profile.fav_food ? (
             <div className={styles.subInfo}>
-              <Image src={meal} width="85px" height="90px" />
+              <Image src={meal} alt="meal icon before favourite food" width="85px" height="90px" />
               <ul>
                 <p>Favourite foods: {profile.fav_food}</p>
               </ul>
@@ -115,7 +117,7 @@ export default function User() {
           profile.emergency_contacts ? (
             <div className={styles.subInfo}>
               <div className={styles.medicIcon}>
-                <Image src={medical} width="80px" height="80px" />
+                <Image src={medical} alt="health icon" width="80px" height="80px" />
               </div>
               <ul>
                 {profile.blood_type ? (
@@ -132,7 +134,7 @@ export default function User() {
           ) : null}
           {profile.clothes_size_upper || profile.clothes_size_lower ? (
             <div className={styles.subInfo}>
-              <Image src={clothes} width="80px" height="90px" />
+              <Image src={clothes} alt="clothe size icon" width="80px" height="90px" />
               <ul>
                 {profile.clothes_size_upper ? (
                   <p>Upper-Body: {profile.clothes_size_upper}</p>
@@ -145,7 +147,7 @@ export default function User() {
           ) : null}
           {profile.shoe_size ? (
             <div className={styles.subInfo}>
-              <Image src={shoes} width="80px" height="90px" />
+              <Image src={shoes} alt="shoe size icon" width="80px" height="90px" />
               <ul>
                 <p>Shoe size: {profile.shoe_size}</p>
               </ul>
