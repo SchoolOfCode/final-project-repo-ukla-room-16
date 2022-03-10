@@ -19,9 +19,9 @@ function ListItem({ text, completed, toggleCompleted, startDate, user}) {
       onClick={toggleCompleted}
       style={completed===true ? { textDecoration: `line-through` } : {textDecoration: `` }}
     >
-      <div className={styles.eventsdisplay}>
+      <div className={styles.eventsdisplay}></div>
         {date}
-      </div>
+      
    
         <div className={styles.name}>{text}</div>
       <div className={styles.eventAuthor}>
