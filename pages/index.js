@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/router";
 
 import styles from "../styles/Home.module.css";
@@ -15,6 +15,12 @@ import CreateTree from "../component/CreateTree";
 import JoinTree from "../component/JoinTree";
 import FullPageLoader from "../component/FullpageLoader";
 
+import { ThemeProvider } from 'styled-components';
+import { useOnClickOutside } from '../Hook/useOnClickOutside';
+import { GlobalStyles } from '../hamburger/global';
+import { theme } from '../hamburger/theme';
+import { Burger, Menu } from '../hamburger';
+import FocusLock from 'react-focus-lock';
 
 
 export default function Home() {
@@ -24,6 +30,13 @@ export default function Home() {
   const URL = process.env.NEXT_PUBLIC_URL;
   const [hasFamilyID, setHasFamilyID] = useState(false);
   const router = useRouter();
+
+
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+
+  useOnClickOutside(node, () => setOpen(false));
 
   // waiting message on loading between pages
   if (isLoading) return <div>...loading</div>;
@@ -162,12 +175,26 @@ export default function Home() {
              Quickstart
           </a>
         </div> */}
-        <div className={styles.infobox}>
+        {/* <div className={styles.infobox}>
           <a href="/welcome" className={styles.info}>
              About Us
           </a>
-        </div>
+        </div> */}
 </div>
+
+{/* <ThemeProvider theme={theme}> */}
+    
+        <GlobalStyles />
+        <div ref={node}>
+          <FocusLock disabled={!open}>
+            <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+            <Menu open={open} setOpen={setOpen} id={menuId} />
+          </FocusLock>
+        </div>
+        
+        
+      
+    {/* </ThemeProvider> */}
 
 </>
   );
