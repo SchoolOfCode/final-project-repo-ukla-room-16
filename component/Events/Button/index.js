@@ -1,27 +1,29 @@
 import React from "react";
 
-import styles from "../../../styles/Events.module.css"
+import styles from "../../../styles/Events.module.css";
 
-function Button({ onClick, children, hoverColor = "slategray", type}) {
+function Button({ onClick, children, /*  hoverColor = "slategray" */ type }) {
   switch (type) {
     case "delete":
       return (
         <button
           className={`${styles.button} ${styles.delete}`}
           onClick={onClick}
-          style={{
+          /*   style={{
             "--hover-color": hoverColor
-          }}
-        ></button>
+          }} */
+        >
+          Delete List
+        </button>
       );
     default:
       return (
         <button
-          className={styles.button}
+          className={`${styles.button} ${styles.delete}`}
           onClick={onClick}
-          style={{
+          /*   style={{
             "--hover-color": hoverColor
-          }}
+          }} */
         >
           {children}
         </button>

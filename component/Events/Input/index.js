@@ -34,6 +34,7 @@ function Input({ addToList }) {
   return (
     <div className={styles.container}>
       <input
+        placeholder="Insert your Event"
         type="text"
         value={text}
         onChange={handleChange}

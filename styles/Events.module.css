@@ -52,6 +52,7 @@
 .container {
   display: flex;
   justify-content: center;
+  width:5rem;
 }
 
 .input {
@@ -62,6 +63,7 @@
 
 .button {
   border-width: 2px;
+  margin-top: 4rem;
 }
 
 .button:hover {
@@ -70,11 +72,15 @@
 }
 
 .delete {
-  width: 2em;
-  height: 2em;
-  background-size: 80% 80%;
-  background-position: center;
-  background-repeat: no-repeat;
+  width: 8em;
+  height: 2.5em;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
+  padding: 10px 20px;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 .App {
@@ -132,3 +138,19 @@
     align-items: center;
     justify-content: center;
   }
+
+  .h1Title{
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+/* --------DATEPICKER-------- */
+.datePicker input {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  margin: 10px;
+  line-height: 2;
+}

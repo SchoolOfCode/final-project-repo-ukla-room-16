@@ -95,7 +95,7 @@ function Events({ person }) {
   return (
     <div className={styles.App}>
       <div className={styles.container}>
-        <h1>Events</h1>
+        <h1 className={styles.h1Title}>Events</h1>
         <div className={styles.inputs}>
           <EventDate
             class={{ height: "8px" }}
@@ -109,7 +109,7 @@ function Events({ person }) {
           toggleCompleted={toggleCompleted}
           startDate={startDate}
         ></List>
-        <Button onClick={clearList} type="delete" hoverColor="red"></Button>
+        <Button  onClick={clearList} type="delete" /* hoverColor="red" */></Button>
       </div>
     </div>
   );
