@@ -1,60 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useUser } from "@auth0/nextjs-auth0";
 
 import styles from "../styles/Dashboard.module.css";
 
 import FamilyTree from "../component/FamilyTree/mytree.js"
 import AddRelationship from "../component/AddRelationship/"
 
-   
-
-
-// const data = 
-
-// [
-
-//   { id: 1,
-//     name: "Marinette avatar",
-//     gender: "female",
-//     pids: [2],
-//   },
-//   { id: 2,
-//       name: "Anthony Avatar",
-//       gender: "male",
-//       pids: [1],
-//     },
-//     { id: 4,
-//       name: "Rosemary Profil",
-//       gender: "female",
-//       pids: [3],
-//       fid: 1,
-//       mid: 2,
-//     },
-//   { id: 3,
-//     name: "Tim Profil",
-//     gender: "male",
-//     pids: [4],
-//     picture: 'https://i.ibb.co/SNKn7b8/f1.png',
-//   //   fid: 1,
-//   //   mid: 2,
-//   },
-//   { id: 5,
-//     name: "Marie Profil",
-//     gender: "female",
-//     picture: 'https://i.ibb.co/ccSq7Kq/g1.png',
-//     mid: 3,
-//     fid:4,
-//   },
-//   { id: 6,
-//     name: "Justin Profil",
-//     gender: "male",
-//     mid: 3,
-//     fid: 4,
-//   },
-// ]
 export default function Tree() {
   const URL = process.env.NEXT_PUBLIC_URL;
-  let familyID = 1;
+  const [familyID, setFamilyID] = useState("")
+  const { user} = useUser();
+  const router = useRouter()
+
+  if (user) {
+    //GET ALL THE USERS
+    async function getUsers(personLoggingIn) {
+      const res = await fetch(`${URL}/users`, {
+        method: "GET",
+      });
+      const data = await res.json();
+
+      //CHECKING IF THAT USER EXISTS IN THE USERS TABLE
+      const index = data.payload.findIndex((person) => {
+        return person.email === personLoggingIn.email;
+      });
+
+      // setPerson(data.payload[index])
+
+      //IF THAT USER DOES EXISTS, CHECK IF THEY HAVE A FAMILY ID.
+      if (index !== -1 && data.payload[index].family_id) {
+        setFamilyID(data.payload[index].family_id)
+      }
+    }
+
+    //RUN THE FUNCTION WITH THE USER FROM AUTH0
+    getUsers(user);
+  }
+
   const [ourData, setOurData] = useState([]);
 
   useEffect(() => {
@@ -67,32 +50,33 @@ export default function Tree() {
         const res = await fetch(`${URL}/pid/${person.id}`);
         const data = await res.json()
         if(data.payload[1].length===0) {
-          person.pid = null
+          person.pids = null
+          person.name = person.full_name
         } else {
           let array = []
           data.payload[1].forEach((person)=>{
             array.push(person.id)
           })
-          person.pid = array
+          person.pids = array
           person.name = person.full_name
         }
         })
         setOurData(userData.payload)
-  
+
     }
 
     getFamily();
     console.log("useEffect is running");
   }, []);
 
+
   console.log(ourData);
   // here we are displaying the tree developped in the component folder under FamilyTree/mytree.js
-
-  const router = useRouter();
-  return ourData.length > 0 ? (
+  if(ourData.length > 0 && user) {
+  return (
     <div style={{ height: "100%" }}>
-      <AddRelationship />
-      <FamilyTree nodes={ourData}/>
+      <AddRelationship ourData={ourData}/>
+      <FamilyTree nodes={ourData} />
       <button
         className={styles.viewmore}
         onClick={() => {
@@ -102,5 +86,12 @@ export default function Tree() {
         Back
       </button>
     </div>
-  ) : null;
+  )
+} else {
+  return (
+    <button onClick={() => {
+      router.push(`/`);
+    }} className={styles.viewmore}>Please log in</button>
+  );
+}
 }

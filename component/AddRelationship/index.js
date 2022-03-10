@@ -2,7 +2,7 @@ import { useState } from "react";
 import Form from "./Form";
 import styles from "../../styles/CreateTree.module.css";
 
-function AddRelationship({familyID}) {
+function AddRelationship({ourData}) {
   const [display, setDisplay] = useState(false);
 
 
@@ -13,7 +13,7 @@ Add Relationship
 </button> 
 
       <Form onClose={() => setDisplay(false)}
-          display={display} setDisplay={setDisplay} familyID={familyID}/>
+          display={display} setDisplay={setDisplay} ourData={ourData}/>
     </div>
   );
 }
