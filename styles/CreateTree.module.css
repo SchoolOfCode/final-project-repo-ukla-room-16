@@ -83,3 +83,15 @@
   font-weight: bold;
   margin: 15px;
 }
+
+.addrelationshipbutton {
+  margin-top: 2vh;
+  margin-left: 2vh;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  background-color: #cc1010;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
