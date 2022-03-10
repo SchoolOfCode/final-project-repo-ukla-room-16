@@ -79,7 +79,7 @@
 
 .delete {
   width: 8em;
-  height: 2.5em;
+  height: 5em;
   font-size: 18px;
   color: white;
   font-weight: bold;
@@ -87,6 +87,7 @@
   padding: 10px 20px;
   border-radius: 100px;
   cursor: pointer;
+  font-size: 100%;
 }
 
 .App {
@@ -128,7 +129,7 @@
 }
 .eventsdisplay {
   display: flex;
-  justify-content: space-aroundl;
+  justify-content: space-around;
 }
 
 .inputs {
@@ -162,4 +163,12 @@
   border-radius: 10px;
   margin: 10px;
   line-height: 2;
+}
+
+.allbuttons {
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
+  padding-bottom: 1vh;
 }
