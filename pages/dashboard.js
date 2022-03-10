@@ -75,7 +75,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className={styles.tree}>
-        <FamilyTree />
+        {/* <FamilyTree /> */}
         <motion.div
           whileHover={{ scale: 1.1 }}
           className={styles.viewmore}

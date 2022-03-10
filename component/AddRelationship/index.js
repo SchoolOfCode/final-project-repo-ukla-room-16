@@ -18,8 +18,4 @@ Add Relationship
   );
 }
 
-<<<<<<< HEAD
 export default AddRelationship;
-=======
-export default AddRelationship;
->>>>>>> 1a22040b117b232637b40dd678584fe1f7729839
