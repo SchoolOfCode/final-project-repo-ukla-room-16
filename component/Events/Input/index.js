@@ -34,14 +34,15 @@ function Input({ addToList }) {
   return (
     <div className={styles.container}>
       <input
-        placeholder="Insert your Event"
+        placeholder="Write your Event"
         type="text"
         value={text}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         className={styles.input}
       />
-      {/* <Button onClick={handleClick}>+</Button> */}
+        {/* <button onClick={handleClick}>+</button> */}
+       {/* <Button onClick={handleClick}>+</Button>  */}
     </div>
   );
 }

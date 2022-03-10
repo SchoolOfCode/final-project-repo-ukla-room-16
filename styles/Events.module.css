@@ -52,13 +52,19 @@
 .container {
   display: flex;
   justify-content: center;
-  width:5rem;
+  width: 5rem;
 }
 
 .input {
   font-family: "Indie Flower";
-  padding-left: 0.5em;
-  outline: 0;
+  text-align: center;
+  font-size: 15.5px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  /* margin: 10px; */
+  line-height: 2;
+  padding: 8px;
 }
 
 .button {
@@ -84,8 +90,8 @@
 }
 
 .App {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
   font-family: "Spartan";
   display: flex;
   justify-content: center;
@@ -93,7 +99,6 @@
   min-height: 100vh;
   width: 100vw;
 }
-
 
 .container {
   display: flex;
@@ -116,33 +121,37 @@
 .name {
   margin-left: 2vh;
 }
-
+.eventAuthor {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
 .eventsdisplay {
   display: flex;
   justify-content: space-aroundl;
 }
 
 .inputs {
-    justify-content: center;
+  justify-content: center;
 }
 
 .inputs > * {
-    padding-bottom: 2vh;
+  padding-bottom: 2vh;
 }
 
 .image {
-    width: 4vw;
-    height: 4vw;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .h1Title{
-    text-decoration: underline;
-    font-weight: bold;
-  }
+.h1Title {
+  text-decoration: underline;
+  font-weight: bold;
+}
 
 /* --------DATEPICKER-------- */
 .datePicker input {

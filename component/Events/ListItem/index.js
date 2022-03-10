@@ -21,12 +21,14 @@ function ListItem({ text, completed, toggleCompleted, startDate, user}) {
     >
       <div className={styles.eventsdisplay}>
         {date}
-        <div className={styles.name}>{text}</div>
       </div>
-      <div className={styles.by}>
-      <p>By:</p>
+   
+        <div className={styles.name}>{text}</div>
+      <div className={styles.eventAuthor}>
+      <p style={{marginRight:"15px"}}>By:</p>
       <img src={user} className={styles.image}></img>
       </div>
+      <br />
     </li>
   );
 }
