@@ -85,8 +85,7 @@ function Events({ person }) {
     } 
   }
 
-  function clearList() {
-    console.log("clearlist is running");
+  async function clearCompletedList() {
     const newList = list.filter(x => x.completed === true);
     newList.map(async(i)=> {
       try {
@@ -96,13 +95,11 @@ function Events({ person }) {
         const res = await fetch(`${URL}/events/${id}`, {
           method: "DELETE",
         });
-        const data = await res.json();
-        const newList = [
-          ...list.slice(0, index),
-          data.payload[0],
+        const afterDelete = [
+          ...newList.slice(0, index),
           ...list.slice(index + 1),
         ];
-        setList(newList);
+        setList(afterDelete);
       } catch (error) {
         //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
         throw new Error(error);
@@ -110,11 +107,29 @@ function Events({ person }) {
     })
   }
 
+  async function clearList() {
+   list.map(async(i)=> {
+      try {
+        const index = list.findIndex(l => i === l);
+        console.log("index", index)
+        const id = list[index].id
+        const res = await fetch(`${URL}/events/${id}`, {
+          method: "DELETE",
+        });
+      } catch (error) {
+        //NEW POST BEING ADDED TO THE ARRAY OF FEEDS USING SPREAD OPERATOR
+        throw new Error(error);
+      }
+    })
+    setList([]);
+  }
+
+
   console.log("list", list);
   return (
     <div className={styles.App}>
       <div className={styles.container}>
-        <h1 className={styles.h1Title}>Events</h1>
+        <h1>Events</h1>
         <div className={styles.inputs}>
           <EventDate
             class={{ height: "8px" }}
@@ -128,7 +143,8 @@ function Events({ person }) {
           toggleCompleted={toggleCompleted}
           startDate={startDate}
         ></List>
-        <Button  onClick={clearList} type="delete" /* hoverColor="red" */></Button>
+        <Button onClick={clearCompletedList} type="delete" hoverColor="red"></Button>
+        <Button onClick={clearList} type="delete" hoverColor="red"></Button>
       </div>
     </div>
   );

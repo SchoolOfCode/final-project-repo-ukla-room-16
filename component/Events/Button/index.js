@@ -13,7 +13,6 @@ function Button({ onClick, children, /*  hoverColor = "slategray" */ type }) {
             "--hover-color": hoverColor
           }} */
         >
-          Delete List
         </button>
       );
     default:
