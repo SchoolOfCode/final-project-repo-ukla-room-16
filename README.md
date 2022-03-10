@@ -13,17 +13,17 @@ Familia is a family social media app. The app is designed to create a close-knit
 ---
 ## Quick start guide on how to use the Familia App
 
-1. Create an account on the homepage using either your personal email, Facebook, Twitter, or Google accounts.
+1. Create an account on the homepage using either your personal email or Google accounts.
  
 2. You will be redirected to a landing page that prompts you to either join a family tree or create a family tree. It is as simple as that.
  
-3. After joining or creating a family tree, you will be redirected to a dashboard page where you can view most of the features of the app on it.
+3. After joining or creating a family tree, you will be redirected to a dashboard page where you can view most of the features of the app.
  
-4. On the Dashboard page, you can post feeds and pictures, view posts from other members of your family who are on your family tree, like their posts, view upcoming events and so much more. This is fun as you get to read messages from loved ones and keep up to date with birthdays, graduations, and anniversaries.
+4. On the Dashboard page, you can post comments and pictures, view posts from other members of your family who are on your family tree, like their posts, view upcoming events and so much more. This is fun as you get to read messages from loved ones and keep up to date with birthdays, graduations, and anniversaries.
  
 5. With the family tree in Familia, you can add family members to your tree and when they create an account on the app, all they have to do is join the family and they get to view all posts, pictures, videos, and share memories with you.
  
-6. At the top left-hand corner of the page, you have a profile picture which when clicked would take you to your own profile page where you can view and update information like address, favourite food, clothes and shoe size. The fun doesn't stop there as you can also click on the profile pictures of family members and you too can view their profile; however, you can not update their page.
+6. At the top right-hand corner of the page, you have a profile picture which when clicked would take you to your own profile page where you can view and update information like address, favourite food, clothes and shoe size. The fun doesn't stop there as you can also click on the profile pictures of family members and you too can view their profile; however, you can not update their page.
  
 7. If you no longer want to be a part of the family, you can always delete your profile and join a different family if you wish to do so.
 
@@ -55,10 +55,10 @@ Familia is a family social media app. The app is designed to create a close-knit
 - liking a post
   - posts can be liked by users and the likes get sent to the backend database and this gets posted to all users on the same family tree
 
-- Events/Calender
+- Events/Calendar
 
 
-- Recipes
+- Recipes -- in development
 
 
 - Profile page
@@ -69,7 +69,7 @@ Familia is a family social media app. The app is designed to create a close-knit
 ---
 
 ## Ideation and Planning
-add link to digram.net???
+add link to diagram.net???
 
 ---
 ## Figma Wireframes 
