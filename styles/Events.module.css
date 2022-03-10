@@ -128,7 +128,7 @@
 }
 .eventsdisplay {
   display: flex;
-  justify-content: space-aroundl;
+  justify-content: space-around;
 }
 
 .inputs {
