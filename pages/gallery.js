@@ -62,7 +62,7 @@ export default function Gallery({ images }) {
                       console.log(image)
               return (
                 <div key={image.id}>
-                  {/* <a href={image.link} rel="noreferrer"> */}
+                  <a href={image.link} rel="noreferrer">
                     <div className={styles.imageImage}>
                      <Link href={image.image}><a target="_blank">
                       <Image
@@ -76,7 +76,7 @@ export default function Gallery({ images }) {
 
                     </div>
                     
-                  {/* </a> */}
+                  </a>
                 </div>
               );
             })}
