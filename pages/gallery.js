@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "../styles/Gallery.module.css";
+import style from "../styles/Header.module.css";
 
 import NavBar from "../component/NavBar";
 import Header from "../component/Header";
@@ -49,7 +50,7 @@ export default function Gallery({ images }) {
             <meta name="description" content="All my images." />
           </Head>
 
-      <Header user={user} person={person} familyName={familyName} />
+      <Header user={user} person={person} familyName={familyName} className={style.familytext}/>
       <div className={styles.container}>
         <div className={styles.leftcolumn}>
       <NavBar />
