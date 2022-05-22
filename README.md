@@ -17,7 +17,7 @@ Familia is a family social media app. The app is designed to create a close-knit
  
 2. You will be redirected to a landing page that prompts you to either join a family tree or create a family tree. It is as simple as that.
  
-3. After joining or creating a family tree, you will be redirected to a dashboard page where you can view most of the features of the app.
+3. After joining or creating a family tree, you will be redirected to the dashboard page where you can view most of the features of the app.
  
 4. On the Dashboard page, you can post comments and pictures, view posts from other members of your family who are on your family tree, like their posts, view upcoming events and so much more. This is fun as you get to read messages from loved ones and keep up to date with birthdays, graduations, and anniversaries.
  
